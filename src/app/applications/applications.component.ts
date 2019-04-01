@@ -152,7 +152,7 @@ export class ApplicationsComponent implements OnInit, AfterViewInit, OnDestroy {
 
     // load initial apps (unless a sub-component has already turned off this flag)
     if (this.loadInitialApps) {
-      this.getApps();
+      // this.getApps();
     }
   }
 
@@ -284,7 +284,7 @@ export class ApplicationsComponent implements OnInit, AfterViewInit, OnDestroy {
     this.filters = { ...emptyFilters, ...findFilters };
     // clear other filters
     this.explorePanel.clearAllFilters(false);
-    this.getApps();
+    // this.getApps();
     // don't show Find panel automatically
   }
 
@@ -297,7 +297,7 @@ export class ApplicationsComponent implements OnInit, AfterViewInit, OnDestroy {
     this.filters = { ...emptyFilters, ...exploreFilters };
     // clear other filters
     this.findPanel.clearAllFilters(false);
-    this.getApps();
+    // this.getApps();
     // don't show Explore panel automatically
   }
 
@@ -316,7 +316,8 @@ export class ApplicationsComponent implements OnInit, AfterViewInit, OnDestroy {
    * Event handler called when map component view has changed.
    */
   public updateCoordinates() {
-    this.getApps(false); // total number is not affected
+    console.log('updateCoordinates');
+    // this.getApps(false); // total number is not affected
   }
 
   /**
