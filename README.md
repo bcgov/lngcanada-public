@@ -245,3 +245,7 @@ For dev, test, and prod builds on OpenShift/Jenkins see [openshift/README.md](ht
 # How to Contribute
 
 Create pull requests against the `master` branch.
+
+
+# TODO
+Add webhook to github [here](https://github.com/bcgov/lngcanada-public/settings/hooks). The content type should be `application/json` and the url is `https://console.pathfinder.gov.bc.ca:8443/apis/build.openshift.io/v1/namespaces/qf32cm-dev/buildconfigs/lng-canada/webhooks/79c0a23cce0e69fe/github`.
