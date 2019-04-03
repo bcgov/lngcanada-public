@@ -17,6 +17,8 @@ import { takeUntil } from 'rxjs/operators';
 import 'leaflet';
 import 'leaflet.markercluster';
 import * as _ from 'lodash';
+import 'async';
+import 'topojson';
 
 import { Application } from 'app/models/application';
 import { ApplicationService } from 'app/services/application.service';
@@ -32,6 +34,8 @@ declare module 'leaflet' {
 }
 
 const L = window['L'];
+const async = window['async'];
+const topojson = window['topojson'];
 
 const markerIcon = L.icon({
   iconUrl: 'assets/images/baseline-location-24px.svg',
@@ -248,11 +252,13 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     });
 
     // add markers group
-    this.map.addLayer(this.markerClusterGroup);
+    // this.map.addLayer(this.markerClusterGroup);
 
     // ensure that when we zoom to the cluster group we allocate some space around the edge of the map
     // TODO: make this work
     // this.markerClusterGroup.on('clusterclick', a => a.layer.zoomToBounds({padding: [100, 100]}));
+    console.log(topojson);
+    console.log(async);
 
     // define baselayers
     const baseLayers = {
