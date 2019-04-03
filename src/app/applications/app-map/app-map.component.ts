@@ -19,6 +19,7 @@ import 'leaflet.markercluster';
 import * as _ from 'lodash';
 import 'async';
 import 'topojson';
+import 'jquery';
 
 import { Application } from 'app/models/application';
 import { ApplicationService } from 'app/services/application.service';
@@ -36,6 +37,7 @@ declare module 'leaflet' {
 const L = window['L'];
 const async = window['async'];
 const topojson = window['topojson'];
+const $ = window['jQuery']; // Yeah... I know. But I'm in a hurry
 
 const markerIcon = L.icon({
   iconUrl: 'assets/images/baseline-location-24px.svg',
@@ -251,14 +253,39 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       // }
     });
 
-    // add markers group
-    // this.map.addLayer(this.markerClusterGroup);
+    const dataUrls = [
+      '/assets/data/corridor-29mar2019.json',
+      '/assets/data/facilities-29mar2019.json',
+      '/assets/data/semicenterline-sections-29mar2019.json',
+      '/assets/data/semicenter-pipeline-29mar2019.json'
+    ];
 
-    // ensure that when we zoom to the cluster group we allocate some space around the edge of the map
-    // TODO: make this work
-    // this.markerClusterGroup.on('clusterclick', a => a.layer.zoomToBounds({padding: [100, 100]}));
-    console.log(topojson);
-    console.log(async);
+    const getIt = (loc, callback) => {
+      $.get(loc)
+        .fail(() => {
+          callback(`Failed to fetch ${loc}`);
+        })
+        .done(data => {
+          callback(null, data);
+        });
+    };
+
+    const getDone = (err, data) => {
+      if (err) {
+        return console.error(err);
+      } // If there was problem
+
+      const dataGeoJson: any = {}; // This will hold the GeoJSON
+
+      dataGeoJson.corridor = topojson.feature(data[0], data[0].objects['corridor-29mar2019']);
+      dataGeoJson.facilities = topojson.feature(data[1], data[1].objects['facilities-29mar2019']);
+      dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-29mar2019']);
+      dataGeoJson.pipeline = topojson.feature(data[3], data[3].objects['semicenter-pipeline']);
+
+      console.log(dataGeoJson);
+    };
+
+    async.concat(dataUrls, getIt, getDone);
 
     // define baselayers
     const baseLayers = {
