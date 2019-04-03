@@ -94,23 +94,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     private injector: Injector,
     private resolver: ComponentFactoryResolver
   ) {
-    this.urlService.onNavEnd$.pipe(takeUntil(this.ngUnsubscribe)).subscribe(() => {
-      // FUTURE
-      // // try to load new map state
-      // if (this.isMapReady) {
-      //   // TODO: could also get params from event.url
-      //   const lat = this.urlService.query('lat');
-      //   const lng = this.urlService.query('lng');
-      //   const zoom = this.urlService.query('zoom');
-      //   if (lat && lng && zoom) {
-      //     console.log('...updating map state');
-      //     this.map.setView(L.latLng(+lat, +lng), +zoom);
-      //   } else {
-      //     console.log('...fitting default bounds');
-      //     this.fitBounds(); // default bounds
-      //   }
-      // }
-    });
+    this.urlService.onNavEnd$.pipe(takeUntil(this.ngUnsubscribe)).subscribe(() => {});
   }
 
   // for creating custom cluster icon
@@ -240,17 +224,6 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         this.emitCoordinates();
       }
       this.doNotify = true; // reset for next time
-
-      // FUTURE
-      // // save map state
-      // if (this.isMapReady) {
-      //   console.log('...saving map state');
-      //   const center = this.map.getCenter();
-      //   const zoom = this.map.getZoom();
-      //   this.urlService.save('lat', center.lat.toFixed(4).toString());
-      //   this.urlService.save('lng', center.lng.toFixed(4).toString());
-      //   this.urlService.save('zoom', zoom.toFixed(1).toString());
-      // }
     });
 
     const dataUrls = [
@@ -260,7 +233,8 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       '/assets/data/semicenter-pipeline-29mar2019.json'
     ];
 
-    const getIt = (loc, callback) => {
+    // Data collection function
+    const getIt = (loc: string, callback: any) => {
       $.get(loc)
         .fail(() => {
           callback(`Failed to fetch ${loc}`);
@@ -270,21 +244,22 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         });
     };
 
-    const getDone = (err, data) => {
+    // Called when all data has been collected
+    const getDone = (err: string, data: any) => {
       if (err) {
         return console.error(err);
       } // If there was problem
 
       const dataGeoJson: any = {}; // This will hold the GeoJSON
 
+      // Convert topojson to geojson
       dataGeoJson.corridor = topojson.feature(data[0], data[0].objects['corridor-29mar2019']);
       dataGeoJson.facilities = topojson.feature(data[1], data[1].objects['facilities-29mar2019']);
       dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-29mar2019']);
       dataGeoJson.pipeline = topojson.feature(data[3], data[3].objects['semicenter-pipeline']);
-
-      console.log(dataGeoJson);
     };
 
+    // Fetch all layer data in parallel
     async.concat(dataUrls, getIt, getDone);
 
     // define baselayers
