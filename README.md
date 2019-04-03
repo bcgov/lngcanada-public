@@ -1,10 +1,10 @@
-# bcgov/nrts-prc-public
+# bcgov/lngcanada-public
 
-Public front-end for the ACRFD (formerly: PRC) application.
+Public front-end for the LNG Canada project.
 
-* [Admin](https://github.com/bcgov/nrts-prc-admin) - front-end for admin users.
-* [Public](https://github.com/bcgov/nrts-prc-public) - front-end for public users.
-* [Api](https://github.com/bcgov/nrts-prc-api) - back-end that serves both admin and public requests.
+* [Admin](https://github.com/bcgov/lngcanada-admin) - front-end for admin users.
+* [Public](https://github.com/bcgov/lngcanada-public) - front-end for public users.
+* [Api](https://github.com/bcgov/lngcanada-api) - back-end that serves both admin and public requests.
 
 # Prerequisites
 
@@ -15,7 +15,7 @@ Public front-end for the ACRFD (formerly: PRC) application.
 | ng         | 6.x.x   | https://cli.angular.io/ | Angular CLI                               |
 | yarn       | latest  | https://yarnpkg.com/en/ | Package Manager (more efficient than npm) |
 
-_Note: This app also requires [bcgov/nrts-prc-api](https://github.com/bcgov/nrts-prc-api) to handle its requests._
+_Note: This app also requires [bcgov/lngcanada-api](https://github.com/bcgov/lngcanada-api) to handle its requests._
 
 ## Install [Node + NPM](https://nodejs.org/en/)
 
@@ -240,12 +240,8 @@ ng new my-app --routing --style scss
 
 # OpenShift Build and Deployment
 
-For dev, test, and prod builds on OpenShift/Jenkins see [openshift/README.md](https://github.com/bcgov/nrts-prc-public/blob/master/openshift/README.md) for detailed instructions on how to setup in an OpenShift environment using nginx.
+For dev, test, and prod builds on OpenShift/Jenkins see [openshift/README.md](https://github.com/bcgov/lngcanada-public/blob/master/openshift/README.md) for detailed instructions on how to setup in an OpenShift environment using nginx.
 
 # How to Contribute
 
 Create pull requests against the `master` branch.
-
-
-# TODO
-Add webhook to github [here](https://github.com/bcgov/lngcanada-public/settings/hooks). The content type should be `application/json` and the url is `https://console.pathfinder.gov.bc.ca:8443/apis/build.openshift.io/v1/namespaces/qf32cm-dev/buildconfigs/lng-canada/webhooks/79c0a23cce0e69fe/github`.
