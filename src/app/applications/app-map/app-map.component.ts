@@ -83,7 +83,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   private doNotify = true; // whether to emit notification
   private ngUnsubscribe: Subject<boolean> = new Subject<boolean>();
 
-  readonly defaultBounds = L.latLngBounds([48, -139], [60, -114]); // all of BC
+  readonly defaultBounds = L.latLngBounds([51, -130], [57, -120]); // all of BC
 
   constructor(
     private appRef: ApplicationRef,
@@ -233,6 +233,30 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       '/assets/data/semicenter-pipeline-29mar2019.json'
     ];
 
+    const displayData = data => {
+      const tooltipOffset = L.point(0, -15);
+
+      L.geoJSON(data.sections, {
+        style: { color: '#6092ff', weight: 5 },
+        onEachFeature: (feature, layer) => {
+          layer.on('mouseover', e => {
+            e.target.setStyle({ color: '#ff9d00' });
+          });
+          layer.on('mouseout', e => {
+            e.target.setStyle({ color: '#6092ff' });
+          });
+        }
+      })
+        .bindTooltip(
+          layer => {
+            const p = layer.feature.properties;
+            return `From ${p.from} to ${p.to}.`;
+          },
+          { direction: 'top', offset: tooltipOffset }
+        )
+        .addTo(this.map);
+    };
+
     // Data collection function
     const getIt = (loc: string, callback: any) => {
       $.get(loc)
@@ -257,6 +281,8 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       dataGeoJson.facilities = topojson.feature(data[1], data[1].objects['facilities-29mar2019']);
       dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-29mar2019']);
       dataGeoJson.pipeline = topojson.feature(data[3], data[3].objects['semicenter-pipeline']);
+
+      displayData(dataGeoJson);
     };
 
     // Fetch all layer data in parallel
