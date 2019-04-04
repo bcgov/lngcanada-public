@@ -39,6 +39,11 @@ const async = window['async'];
 const topojson = window['topojson'];
 const $ = window['jQuery']; // Yeah... I know. But I'm in a hurry
 
+L.Icon.Default.prototype.options.iconUrl = 'assets/images/baseline-location_on-24px.svg';
+L.Icon.Default.prototype.options.iconRetinaUrl = 'assets/images/baseline-location_on-24px.svg';
+// L.Icon.Default.prototype.options.shadowUrl = 'assets/images/marker-shadow.png';
+console.log(L.Icon.Default.prototype.options);
+
 const markerIcon = L.icon({
   iconUrl: 'assets/images/baseline-location-24px.svg',
   // Retina Icon is not needed here considering we're using an SVG. Enable if you want to change to a raster asset.
@@ -235,10 +240,14 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
     const displayData = data => {
       const tooltipOffset = L.point(0, -15);
+      console.log(data);
+
+      L.geoJSON(data.facilities).addTo(this.map);
 
       L.geoJSON(data.sections, {
         style: { color: '#6092ff', weight: 5 },
         onEachFeature: (feature, layer) => {
+          console.log(feature);
           layer.on('mouseover', e => {
             e.target.setStyle({ color: '#ff9d00' });
           });
