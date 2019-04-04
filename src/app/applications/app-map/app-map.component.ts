@@ -39,9 +39,9 @@ const async = window['async'];
 const topojson = window['topojson'];
 const $ = window['jQuery']; // Yeah... I know. But I'm in a hurry
 
-L.Icon.Default.prototype.options.iconUrl = 'assets/images/baseline-location_on-24px.svg';
-L.Icon.Default.prototype.options.iconRetinaUrl = 'assets/images/baseline-location_on-24px.svg';
-// L.Icon.Default.prototype.options.shadowUrl = 'assets/images/marker-shadow.png';
+L.Icon.Default.prototype.options.iconUrl = 'assets/images/marker-icon.png';
+L.Icon.Default.prototype.options.iconRetinaUrl = 'assets/images/marker-icon-2x.png';
+L.Icon.Default.prototype.options.shadowUrl = 'assets/images/marker-shadow.png';
 console.log(L.Icon.Default.prototype.options);
 
 const markerIcon = L.icon({
