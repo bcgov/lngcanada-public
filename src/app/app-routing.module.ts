@@ -3,45 +3,62 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AboutComponent } from 'app/about/about.component';
 import { ContactComponent } from 'app/contact/contact.component';
-import { ApplicationsComponent } from 'app/applications/applications.component';
-import { HomeProxyComponent } from './home-proxy.component';
-import { ApplicationsProxyComponent } from './applications-proxy.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { ProcessComponent } from './process/process.component';
+import { LngComponent } from './lng/lng.component';
+import { ProjectComponent } from './project/project.component';
+import { OverviewComponent } from './project/overview/overview.component';
+import { BackgroundComponent } from './project/background/background.component';
+import { AuthorizationsComponent } from './project/authorizations/authorizations.component';
+import { ComplianceComponent } from './project/compliance/compliance.component';
+import { NationsComponent } from './project/nations/nations.component';
+import { PlansComponent } from './project/plans/plans.component';
+import { MapComponent } from './project/map/map.component';
 
 const routes: Routes = [
   {
-    // proxy component is needed because fragment in redirectTo doesn't work in Angular v4
-    path: 'home/:showSplashModal',
-    component: HomeProxyComponent
+    path: 'projects',
+    component: ProjectsComponent
+  },
+  {
+    path: 'project/:id',
+    component: ProjectComponent,
+    children: [
+      { path: 'overview', component: OverviewComponent },
+      { path: 'background', component: BackgroundComponent },
+      { path: 'authorizations', component: AuthorizationsComponent },
+      { path: 'compliance', component: ComplianceComponent },
+      { path: 'nations', component: NationsComponent },
+      { path: 'plans', component: PlansComponent },
+      { path: 'map', component: MapComponent },
+      { path: '', redirectTo: 'overview', pathMatch: 'full' },
+      { path: '**', redirectTo: 'overview' }
+    ]
+  },
+  {
+    path: 'process',
+    component: ProcessComponent
+  },
+  {
+    path: 'lng',
+    component: LngComponent
   },
   {
     path: 'about',
     component: AboutComponent
   },
   {
-    path: 'contact',
+    path: 'connect',
     component: ContactComponent
   },
   {
-    path: 'applications',
-    component: ApplicationsComponent
-  },
-  {
-    // redirect from legacy route to new route
-    // eg, /a/5b15c2f743cf9c0019391cfc/application => /applications?id=5b15c2f743cf9c0019391cfc#details
-    // proxy component is needed because query parameter and fragment in redirectTo don't work in Angular v4
-    path: 'a/:id/:tab',
-    component: ApplicationsProxyComponent
-  },
-  {
-    // default route
     path: '',
-    redirectTo: 'home/true',
+    redirectTo: 'projects',
     pathMatch: 'full'
   },
   {
-    // wildcard route
     path: '**',
-    redirectTo: '/home/true'
+    redirectTo: 'projects'
   }
 ];
 

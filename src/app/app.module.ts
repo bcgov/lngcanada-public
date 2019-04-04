@@ -35,7 +35,11 @@ import { ConfigService } from 'app/services/config.service';
 import { DecisionService } from 'app/services/decision.service';
 import { DocumentService } from 'app/services/document.service';
 import { FeatureService } from 'app/services/feature.service';
+import { ProjectsComponent } from './projects/projects.component';
 import { UrlService } from 'app/services/url.service';
+import { ProcessComponent } from './process/process.component';
+import { LngComponent } from './lng/lng.component';
+import { ProjectModule } from './project/project.module';
 
 @NgModule({
   imports: [
@@ -49,6 +53,7 @@ import { UrlService } from 'app/services/url.service';
     NgxPageScrollModule,
     SharedModule,
     ApplicationsModule,
+    ProjectModule,
     AppRoutingModule, // <-- module import order matters - https://angular.io/guide/router#module-import-order-matters
     BootstrapModalModule.forRoot({ container: document.body })
   ],
@@ -62,7 +67,10 @@ import { UrlService } from 'app/services/url.service';
     FileUploadComponent,
     HeaderComponent,
     AboutComponent,
-    FooterComponent
+    FooterComponent,
+    ProjectsComponent,
+    ProcessComponent,
+    LngComponent
   ],
   providers: [
     ApiService,
