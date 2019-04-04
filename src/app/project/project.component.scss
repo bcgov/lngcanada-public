@@ -5,9 +5,9 @@
 
   position: relative;
   padding: 0;
-  border-bottom: 2px solid $gold;
-  background: $header-bg;
-  color: $header-font-color;
+  border-bottom: 2px solid $gray5;
+  background: $gray6;
+  color: $white;
   z-index: 1005;
 }
 
@@ -29,15 +29,15 @@
 
     position: relative;
     border-bottom-width: 2px;
-    border-bottom-color: $gold;
-    background: $header-bg;
-    color: $header-font-color;
+    border-bottom-color: $gray5;
+    background: $gray6;
+    color: $white;
   }
 
   .app-header--solid {
-    border-bottom: 2px solid $gold;
-    background: $header-bg;
-    color: $header-font-color;
+    border-bottom: 2px solid $gray5;
+    background: $gray6;
+    color: $white;
   }
 }
 
@@ -45,8 +45,8 @@
 .navbar-toggler {
   margin-right: 0.5rem;
   padding: 0.5rem 0.4rem;
-  border: 2px solid $gold;
-  color: $gold;
+  border: 2px solid $gray4;
+  color: $white;
   font-size: medium;
   font-weight: 600;
   outline: none; // override user agent stylesheet default
@@ -87,9 +87,9 @@
 }
 
 // NAVBAR
-.navbar {
+.project-navbar {
   padding: 0;
-  background-color: $header-bg;
+  background-color: $gray6;
   z-index: 1000;
 
   .navbar-nav {
@@ -111,7 +111,7 @@
     .dropdown {
       &.show {
         .dropdown-toggle {
-          color: $gold;
+          color: $gray7;
         }
       }
     }
@@ -160,7 +160,7 @@
 }
 
 @media (min-width: 768px) {
-  .navbar {
+  .project-navbar {
     background: transparent;
 
     .navbar-nav {
@@ -228,38 +228,6 @@
   .navbar-collapse {
     flex-grow: 0;
   }
-}
-
-// Navbar Brand
-.navbar-brand {
-  height: 3.4375rem;
-  background-image: url("~assets/images/bcgov-header-vert-SM.png");
-  background-position: 8px center;
-  background-repeat: no-repeat;
-  white-space: normal;
-}
-
-.navbar-brand__title {
-  margin-top: 0.35rem;
-  margin-left: 75px;
-  padding: 0.4rem 0;
-  display: inline-block;
-  color: #fff;
-  line-height: 1.1rem;
-  font-size: 0.875rem;
-
-  .wb {
-    display: block;
-  }
-}
-
-.navbar-brand__version {
-  margin-top: -0.1rem;
-  display: inline-block;
-  color: $gold;
-  font-size: 0.5rem;
-  font-weight: 700;
-  vertical-align: top;
 }
 
 @media (min-width: 1200px) {
