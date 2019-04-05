@@ -17,6 +17,9 @@ import { takeUntil } from 'rxjs/operators';
 import 'leaflet';
 import 'leaflet.markercluster';
 import * as _ from 'lodash';
+import 'async';
+import 'topojson';
+import 'jquery';
 
 import { Application } from 'app/models/application';
 import { ApplicationService } from 'app/services/application.service';
@@ -32,6 +35,14 @@ declare module 'leaflet' {
 }
 
 const L = window['L'];
+const async = window['async'];
+const topojson = window['topojson'];
+const $ = window['jQuery']; // Yeah... I know. But I'm in a hurry
+
+L.Icon.Default.prototype.options.iconUrl = 'assets/images/marker-icon.png';
+L.Icon.Default.prototype.options.iconRetinaUrl = 'assets/images/marker-icon-2x.png';
+L.Icon.Default.prototype.options.shadowUrl = 'assets/images/marker-shadow.png';
+console.log(L.Icon.Default.prototype.options);
 
 const markerIcon = L.icon({
   iconUrl: 'assets/images/baseline-location-24px.svg',
@@ -77,7 +88,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   private doNotify = true; // whether to emit notification
   private ngUnsubscribe: Subject<boolean> = new Subject<boolean>();
 
-  readonly defaultBounds = L.latLngBounds([48, -139], [60, -114]); // all of BC
+  readonly defaultBounds = L.latLngBounds([51, -130], [57, -120]); // all of BC
 
   constructor(
     private appRef: ApplicationRef,
@@ -88,23 +99,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     private injector: Injector,
     private resolver: ComponentFactoryResolver
   ) {
-    this.urlService.onNavEnd$.pipe(takeUntil(this.ngUnsubscribe)).subscribe(() => {
-      // FUTURE
-      // // try to load new map state
-      // if (this.isMapReady) {
-      //   // TODO: could also get params from event.url
-      //   const lat = this.urlService.query('lat');
-      //   const lng = this.urlService.query('lng');
-      //   const zoom = this.urlService.query('zoom');
-      //   if (lat && lng && zoom) {
-      //     console.log('...updating map state');
-      //     this.map.setView(L.latLng(+lat, +lng), +zoom);
-      //   } else {
-      //     console.log('...fitting default bounds');
-      //     this.fitBounds(); // default bounds
-      //   }
-      // }
-    });
+    this.urlService.onNavEnd$.pipe(takeUntil(this.ngUnsubscribe)).subscribe(() => {});
   }
 
   // for creating custom cluster icon
@@ -234,25 +229,86 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         this.emitCoordinates();
       }
       this.doNotify = true; // reset for next time
-
-      // FUTURE
-      // // save map state
-      // if (this.isMapReady) {
-      //   console.log('...saving map state');
-      //   const center = this.map.getCenter();
-      //   const zoom = this.map.getZoom();
-      //   this.urlService.save('lat', center.lat.toFixed(4).toString());
-      //   this.urlService.save('lng', center.lng.toFixed(4).toString());
-      //   this.urlService.save('zoom', zoom.toFixed(1).toString());
-      // }
     });
 
-    // add markers group
-    this.map.addLayer(this.markerClusterGroup);
+    const dataUrls = [
+      '/assets/data/corridor-29mar2019.json',
+      '/assets/data/facilities-29mar2019.json',
+      '/assets/data/semicenterline-sections-29mar2019.json',
+      '/assets/data/semicenter-pipeline-29mar2019.json'
+    ];
 
-    // ensure that when we zoom to the cluster group we allocate some space around the edge of the map
-    // TODO: make this work
-    // this.markerClusterGroup.on('clusterclick', a => a.layer.zoomToBounds({padding: [100, 100]}));
+    const displayData = data => {
+      const tooltipOffset = L.point(0, -15);
+
+      L.geoJSON(data.facilities, {
+        onEachFeature: (feature, layer) => {
+          layer.on('click', () => {
+            console.log(feature);
+            console.log(layer);
+          });
+        }
+      })
+        .bindTooltip(
+          layer => {
+            return layer.feature.properties.LABEL;
+          },
+          { direction: 'top', offset: tooltipOffset }
+        )
+        .addTo(this.map);
+
+      L.geoJSON(data.sections, {
+        style: { color: '#6092ff', weight: 5 },
+        onEachFeature: (feature, layer) => {
+          layer.on('mouseover', e => {
+            e.target.setStyle({ color: '#ff9d00' });
+            console.log(feature);
+          });
+          layer.on('mouseout', e => {
+            e.target.setStyle({ color: '#6092ff' });
+          });
+        }
+      })
+        .bindTooltip(
+          layer => {
+            const p = layer.feature.properties;
+            return `From ${p.from} to ${p.to}.`;
+          },
+          { direction: 'top', offset: tooltipOffset }
+        )
+        .addTo(this.map);
+    };
+
+    // Data collection function
+    const getIt = (loc: string, callback: any) => {
+      $.get(loc)
+        .fail(() => {
+          callback(`Failed to fetch ${loc}`);
+        })
+        .done(data => {
+          callback(null, data);
+        });
+    };
+
+    // Called when all data has been collected
+    const getDone = (err: string, data: any) => {
+      if (err) {
+        return console.error(err);
+      } // If there was problem
+
+      const dataGeoJson: any = {}; // This will hold the GeoJSON
+
+      // Convert topojson to geojson
+      dataGeoJson.corridor = topojson.feature(data[0], data[0].objects['corridor-29mar2019']);
+      dataGeoJson.facilities = topojson.feature(data[1], data[1].objects['facilities-29mar2019']);
+      dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-29mar2019']);
+      dataGeoJson.pipeline = topojson.feature(data[3], data[3].objects['semicenter-pipeline']);
+
+      displayData(dataGeoJson);
+    };
+
+    // Fetch all layer data in parallel
+    async.concat(dataUrls, getIt, getDone);
 
     // define baselayers
     const baseLayers = {
