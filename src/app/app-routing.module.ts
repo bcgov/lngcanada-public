@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AboutComponent } from 'app/about/about.component';
 import { ContactComponent } from 'app/contact/contact.component';
-import { ProjectsComponent } from './projects/projects.component';
+// import { ProjectsComponent } from './projects/projects.component';
 import { ProcessComponent } from './process/process.component';
 import { LngComponent } from './lng/lng.component';
 import { ProjectComponent } from './project/project.component';
@@ -14,11 +14,12 @@ import { ComplianceComponent } from './project/compliance/compliance.component';
 import { NationsComponent } from './project/nations/nations.component';
 import { PlansComponent } from './project/plans/plans.component';
 import { MapComponent } from './project/map/map.component';
+import { ApplicationsComponent } from './applications/applications.component';
 
 const routes: Routes = [
   {
     path: 'projects',
-    component: ProjectsComponent
+    component: ApplicationsComponent
   },
   {
     path: 'project/:id',
