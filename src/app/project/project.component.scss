@@ -1,5 +1,13 @@
 @import "~assets/styles/base/base.scss";
 
+// Fill vertical space
+:host {
+  @include flex(1 1 auto);
+
+  display: block;
+  background: $white;
+}
+
 .app-header {
   @include clearfix;
 
@@ -249,3 +257,13 @@
     font-size: 0.6rem;
   }
 }
+
+// :host {
+//   display: block;
+
+//   @include flex-box();
+//   @include flex-direction(column);
+
+//   min-height: 100vh;
+//   background: #036;
+// }
