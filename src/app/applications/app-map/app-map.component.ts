@@ -240,16 +240,22 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
     const displayData = data => {
       const tooltipOffset = L.point(0, -15);
-      console.log(data);
 
-      L.geoJSON(data.facilities).addTo(this.map);
+      L.geoJSON(data.facilities, {
+        onEachFeature: (feature, layer) => {
+          layer.on('click', e => {
+            console.log(feature);
+            console.log(layer);
+          });
+        }
+      }).addTo(this.map);
 
       L.geoJSON(data.sections, {
         style: { color: '#6092ff', weight: 5 },
         onEachFeature: (feature, layer) => {
-          console.log(feature);
           layer.on('mouseover', e => {
             e.target.setStyle({ color: '#ff9d00' });
+            console.log(feature);
           });
           layer.on('mouseout', e => {
             e.target.setStyle({ color: '#6092ff' });
