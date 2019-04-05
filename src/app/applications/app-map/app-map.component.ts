@@ -243,12 +243,19 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
       L.geoJSON(data.facilities, {
         onEachFeature: (feature, layer) => {
-          layer.on('click', e => {
+          layer.on('click', () => {
             console.log(feature);
             console.log(layer);
           });
         }
-      }).addTo(this.map);
+      })
+        .bindTooltip(
+          layer => {
+            return layer.feature.properties.LABEL;
+          },
+          { direction: 'top', offset: tooltipOffset }
+        )
+        .addTo(this.map);
 
       L.geoJSON(data.sections, {
         style: { color: '#6092ff', weight: 5 },
