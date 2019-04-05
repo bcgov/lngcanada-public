@@ -39,10 +39,9 @@ const async = window['async'];
 const topojson = window['topojson'];
 const $ = window['jQuery']; // Yeah... I know. But I'm in a hurry
 
-L.Icon.Default.prototype.options.iconUrl = 'assets/images/marker-icon.png';
-L.Icon.Default.prototype.options.iconRetinaUrl = 'assets/images/marker-icon-2x.png';
-L.Icon.Default.prototype.options.shadowUrl = 'assets/images/marker-shadow.png';
-console.log(L.Icon.Default.prototype.options);
+// L.Icon.Default.prototype.options.iconUrl = 'assets/images/marker-icon.png';
+// L.Icon.Default.prototype.options.iconRetinaUrl = 'assets/images/marker-icon-2x.png';
+// L.Icon.Default.prototype.options.shadowUrl = 'assets/images/marker-shadow.pngonsole.log(L.Icon.Default.prototype.options);
 
 const markerIcon = L.icon({
   iconUrl: 'assets/images/baseline-location-24px.svg',
@@ -241,21 +240,14 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     const displayData = data => {
       const tooltipOffset = L.point(0, -15);
 
-      L.geoJSON(data.facilities, {
-        onEachFeature: (feature, layer) => {
-          layer.on('click', () => {
-            console.log(feature);
-            console.log(layer);
-          });
-        }
-      })
-        .bindTooltip(
-          layer => {
-            return layer.feature.properties.LABEL;
-          },
-          { direction: 'top', offset: tooltipOffset }
-        )
-        .addTo(this.map);
+      // L.Icon.Default.prototype.options.iconUrl = 'assets/images/marker-icon.png';
+      // L.Icon.Default.prototype.options.iconRetinaUrl = 'assets/images/marker-icon-2x.png';
+      // L.Icon.Default.prototype.options.shadowUrl = 'assets/images/marker-shadow.png';
+      // const icon = new L.icon({
+      //     iconUrl: 'assets/images/marker-icon.png',
+      //     iconRetinaUrl: 'assets/images/marker-icon-2x.png',
+      //     shadowUrl: 'assets/images/marker-shadow.png'
+      //   });
 
       L.geoJSON(data.sections, {
         style: { color: '#6092ff', weight: 5 },
@@ -273,6 +265,43 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           layer => {
             const p = layer.feature.properties;
             return `From ${p.from} to ${p.to}.`;
+          },
+          { direction: 'top', offset: tooltipOffset }
+        )
+        .addTo(this.map);
+
+      const markerOptions = {
+        radius: 10,
+        stroke: false,
+        weight: 2,
+        color: 'white',
+        fill: true,
+        fillColor: '#6092ff',
+        fillOpacity: 1
+      };
+
+      L.geoJSON(data.facilities, {
+        pointToLayer: (feature, latlng) => {
+          console.log(feature);
+          return L.circleMarker(latlng, markerOptions);
+        },
+        onEachFeature: (feature, layer) => {
+          layer.on('click', () => {
+            console.log(feature);
+            console.log(layer);
+          });
+          layer.on('mouseover', e => {
+            e.target.setStyle({ fillColor: '#ff9d00' });
+            console.log(feature);
+          });
+          layer.on('mouseout', e => {
+            e.target.setStyle({ fillColor: '#6092ff' });
+          });
+        }
+      })
+        .bindTooltip(
+          layer => {
+            return layer.feature.properties.LABEL;
           },
           { direction: 'top', offset: tooltipOffset }
         )
