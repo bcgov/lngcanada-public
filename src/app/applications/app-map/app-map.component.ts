@@ -281,12 +281,13 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       };
 
       L.geoJSON(data.facilities, {
-        pointToLayer: (feature, latlng) => {
+        pointToLayer: (_, latlng) => {
           return L.circleMarker(latlng, markerOptions);
         },
         onEachFeature: (_, layer) => {
-          layer.on('click', () => {
-            this.urlService.save('id', 'blah');
+          layer.on('click', e => {
+            const f = e.target.feature;
+            this.urlService.save('segment', f.properties.LABEL);
             this.urlService.setFragment('details');
           });
           layer.on('mouseover', e => {
