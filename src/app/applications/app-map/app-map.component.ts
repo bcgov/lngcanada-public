@@ -286,11 +286,13 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           console.log(feature);
           return L.circleMarker(latlng, markerOptions);
         },
-        onEachFeature: (feature, layer) => {
-          layer.on('click', this.onMarkerClick2);
+        onEachFeature: (_, layer) => {
+          layer.on('click', () => {
+            this.urlService.save('id', 'blah');
+            this.urlService.setFragment('details');
+          });
           layer.on('mouseover', e => {
             e.target.setStyle({ fillColor: '#ff9d00' });
-            console.log(feature);
           });
           layer.on('mouseout', e => {
             e.target.setStyle({ fillColor: '#6092ff' });
@@ -298,19 +300,15 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         }
       })
         .bindPopup(() => {
-          const popupOptions = {
-            className: 'map-popup-content',
-            autoPanPaddingTopLeft: L.point(40, 300),
-            autoPanPaddingBottomRight: L.point(40, 20)
-          };
-
           // compile marker popup component
           const compFactory = this.resolver.resolveComponentFactory(MarkerPopupComponent);
           const compRef = compFactory.create(this.injector);
-          compRef.instance.id = app._id;
-          this.appRef.attachView(compRef.hostView);
-          compRef.onDestroy(() => this.appRef.detachView(compRef.hostView));
-          const div = document.createElement('div').appendChild(compRef.location.nativeElement);
+          console.log(compRef);
+          return 'testing';
+          // compRef.instance.id = app._id;
+          // this.appRef.attachView(compRef.hostView);
+          // compRef.onDestroy(() => this.appRef.detachView(compRef.hostView));
+          // const div = document.createElement('div').appendChild(compRef.location.nativeElement);
         })
         .bindTooltip(
           layer => {
