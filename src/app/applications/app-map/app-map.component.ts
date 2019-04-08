@@ -252,10 +252,9 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       // Add the pipeline segment layer
       L.geoJSON(data.sections, {
         style: { color: '#6092ff', weight: 5 },
-        onEachFeature: (feature, layer) => {
+        onEachFeature: (_, layer) => {
           layer.on('mouseover', e => {
             e.target.setStyle({ color: '#ff9d00' });
-            console.log(feature);
           });
           layer.on('mouseout', e => {
             e.target.setStyle({ color: '#6092ff' });
@@ -283,7 +282,6 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
       L.geoJSON(data.facilities, {
         pointToLayer: (feature, latlng) => {
-          console.log(feature);
           return L.circleMarker(latlng, markerOptions);
         },
         onEachFeature: (_, layer) => {
@@ -299,17 +297,6 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           });
         }
       })
-        .bindPopup(() => {
-          // compile marker popup component
-          const compFactory = this.resolver.resolveComponentFactory(MarkerPopupComponent);
-          const compRef = compFactory.create(this.injector);
-          console.log(compRef);
-          return 'testing';
-          // compRef.instance.id = app._id;
-          // this.appRef.attachView(compRef.hostView);
-          // compRef.onDestroy(() => this.appRef.detachView(compRef.hostView));
-          // const div = document.createElement('div').appendChild(compRef.location.nativeElement);
-        })
         .bindTooltip(
           layer => {
             return layer.feature.properties.LABEL;
