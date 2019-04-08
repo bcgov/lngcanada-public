@@ -1,8 +1,108 @@
 @import "~assets/styles/base/base.scss";
 
+// Page structure
 :host {
   @include flex(1 1 auto);
 
   display: block;
   background: $white;
+}
+
+.flex {
+  display: flex;
+}
+
+.left-side {
+  &-1 {
+    flex: 1 1;
+  }
+
+  &-2 {
+    flex: 2 2;
+  }
+}
+
+.right-side {
+  &-1 {
+    flex: 1 1;
+  }
+}
+
+// Dummy placeholder
+.dummy-placeholder {
+  position: relative;
+  background-color: rgba($header-bg, 1);
+  background-image: url("~assets/images/prc-hero-banner-img.jpg");
+  background-position: center bottom;
+  // background-size: 350%;
+  box-shadow: 0 0 4rem #00264d inset;
+  width: 100%;
+  height: 100%;
+}
+
+// Contact Blocks
+.block {
+  margin-right: 1rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  vertical-align: bottom;
+
+  .inner-block {
+    border: 1px solid $black;
+
+    .inner-block-top {
+      padding: 1rem;
+      border-radius: 0.4rem;
+      background: #f7f8fa;
+    }
+
+    .inner-block-bottom {
+      padding: 1rem;
+      background: $gray4;
+      color: $white;
+    }
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.25rem;
+  }
+
+  a {
+    display: inline-block;
+    font-weight: 600;
+  }
+
+  strong {
+    font-weight: 600;
+    color: #007bff;
+  }
+
+  .icon-container {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding-top: 0.25rem;
+    text-align: center;
+    font-size: 32px !important;
+
+    i {
+      color: $black;
+      font-size: 20px;
+
+      &-light {
+        color: $white;
+      }
+    }
+  }
+}
+
+.material-icons {
+  line-height: 32px !important;
 }
