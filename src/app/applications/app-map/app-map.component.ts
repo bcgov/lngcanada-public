@@ -249,6 +249,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       //     shadowUrl: 'assets/images/marker-shadow.png'
       //   });
 
+      // Add the pipeline segment layer
       L.geoJSON(data.sections, {
         style: { color: '#6092ff', weight: 5 },
         onEachFeature: (feature, layer) => {
@@ -286,10 +287,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           return L.circleMarker(latlng, markerOptions);
         },
         onEachFeature: (feature, layer) => {
-          layer.on('click', () => {
-            console.log(feature);
-            console.log(layer);
-          });
+          layer.on('click', this.onMarkerClick2);
           layer.on('mouseover', e => {
             e.target.setStyle({ fillColor: '#ff9d00' });
             console.log(feature);
@@ -299,6 +297,21 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           });
         }
       })
+        .bindPopup(() => {
+          const popupOptions = {
+            className: 'map-popup-content',
+            autoPanPaddingTopLeft: L.point(40, 300),
+            autoPanPaddingBottomRight: L.point(40, 20)
+          };
+
+          // compile marker popup component
+          const compFactory = this.resolver.resolveComponentFactory(MarkerPopupComponent);
+          const compRef = compFactory.create(this.injector);
+          compRef.instance.id = app._id;
+          this.appRef.attachView(compRef.hostView);
+          compRef.onDestroy(() => this.appRef.detachView(compRef.hostView));
+          const div = document.createElement('div').appendChild(compRef.location.nativeElement);
+        })
         .bindTooltip(
           layer => {
             return layer.feature.properties.LABEL;
@@ -569,6 +582,11 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     // }
     // console.log('numberVisible =', count);
   }
+
+  // called when user clicks on app marker
+
+  // update selected item in app list
+  // this.toggleCurrentApp.emit(app); // DO NOT TOGGLE LIST ITEM AT THIS TIME
 
   // called when user clicks on app marker
   private onMarkerClick(...args: any[]) {
