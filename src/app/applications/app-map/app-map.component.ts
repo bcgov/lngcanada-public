@@ -87,7 +87,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   private doNotify = true; // whether to emit notification
   private ngUnsubscribe: Subject<boolean> = new Subject<boolean>();
 
-  readonly defaultBounds = L.latLngBounds([51, -130], [57, -120]); // all of BC
+  readonly defaultBounds = L.latLngBounds([53.6, -129.5], [56.1, -120]); // all of BC
 
   constructor(
     private appRef: ApplicationRef,
