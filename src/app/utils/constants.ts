@@ -1,4 +1,16 @@
 export class Constants {
+  public static readonly agencies = [
+    'ENVIRONMENTAL ASSESSMENT OFFICE',
+    'BC OIL & GAS COMMISSION',
+    'MINISTRY OF ENVIRONMENT'
+  ];
+
+  public static readonly complianceDocumentTypes = [
+    'COMPANY SELF REPORT',
+    'GOVERNMENT INSTPECTION',
+    'ENFORCEMENT ORDER'
+  ];
+
   public static readonly types = [
     'CERTIFICATE OF PURCHASE',
     'CROWN GRANT',

@@ -1,0 +1,58 @@
+<div class="flex">
+
+  <section class="section-left left-side-1">
+    <div>
+      <app-explore-panel #explorePanel (hideSidePanel)="closeSidePanel()"></app-explore-panel>
+    </div>
+  </section>
+
+  <section class="right-side-1">
+    <table class="table">
+      <thead>
+        <tr>
+          <th class="sortable" (click)="sort('name')">
+            Name
+            <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'name' && sortDirection < 0), 'sort-desc': (sortColumn == 'name' && sortDirection > 0) }" aria-hidden="true"></i>
+          </th>
+          <th class="sortable" (click)="sort('agency')">
+            Government Agency
+            <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'agency' && sortDirection < 0), 'sort-desc': (sortColumn == 'agency' && sortDirection > 0) }" aria-hidden="true"></i>
+          </th>
+          <th class="sortable" (click)="sort('complianceDocumentType')">
+            Compliance Document Type
+            <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'complianceDocumentType' && sortDirection < 0), 'sort-desc': (sortColumn == 'complianceDocumentType' && sortDirection > 0) }" aria-hidden="true"></i>
+          </th>
+          <th class="sortable" (click)="sort('date')">
+            Date
+            <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'date' && sortDirection < 0), 'sort-desc': (sortColumn == 'date' && sortDirection > 0) }" aria-hidden="true"></i>
+          </th>
+          <th>
+          </th>
+        </tr>
+      </thead>
+      <ng-container *ngFor="let document of documents | orderBy: {property: sortColumn, direction: sortDirection}">
+        <tr>
+          <td>
+            {{document.name}}
+          </td>
+          <td>
+            {{document.agency}}
+          </td>
+          <td>
+            {{document.complianceDocumentType}}
+          </td>
+          <td>
+            {{document.date | date}}
+          </td>
+          <td>
+            <button class="btn btn-primary">
+              <i class="material-icons">cloud_download</i>
+              <label class="control-label">Download</label>
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+    </table>
+  </section>
+
+</div>
