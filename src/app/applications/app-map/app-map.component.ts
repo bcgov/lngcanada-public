@@ -87,7 +87,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   private doNotify = true; // whether to emit notification
   private ngUnsubscribe: Subject<boolean> = new Subject<boolean>();
 
-  readonly defaultBounds = L.latLngBounds([51, -130], [57, -120]); // all of BC
+  readonly defaultBounds = L.latLngBounds([53.6, -129.5], [56.1, -120]); // all of BC
 
   constructor(
     private appRef: ApplicationRef,
@@ -233,7 +233,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     const dataUrls = [
       '/assets/data/corridor-29mar2019.json',
       '/assets/data/facilities-29mar2019.json',
-      '/assets/data/semicenterline-sections-29mar2019.json',
+      '/assets/data/semicenterline-sections-09apr2019.json',
       '/assets/data/semicenter-pipeline-29mar2019.json'
     ];
 
@@ -249,12 +249,12 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       //     shadowUrl: 'assets/images/marker-shadow.png'
       //   });
 
+      // Add the pipeline segment layer
       L.geoJSON(data.sections, {
         style: { color: '#6092ff', weight: 5 },
-        onEachFeature: (feature, layer) => {
+        onEachFeature: (_, layer) => {
           layer.on('mouseover', e => {
             e.target.setStyle({ color: '#ff9d00' });
-            console.log(feature);
           });
           layer.on('mouseout', e => {
             e.target.setStyle({ color: '#6092ff' });
@@ -270,32 +270,61 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         )
         .addTo(this.map);
 
+      // Default marker style
       const markerOptions = {
-        radius: 10,
-        stroke: false,
+        radius: 4,
+        stroke: true,
         weight: 2,
-        color: 'white',
+        color: '#6092ff',
         fill: true,
-        fillColor: '#6092ff',
+        fillColor: 'white',
         fillOpacity: 1
       };
 
       L.geoJSON(data.facilities, {
-        pointToLayer: (feature, latlng) => {
-          console.log(feature);
+        pointToLayer: (_, latlng) => {
           return L.circleMarker(latlng, markerOptions);
         },
-        onEachFeature: (feature, layer) => {
-          layer.on('click', () => {
-            console.log(feature);
-            console.log(layer);
+        onEachFeature: (_, layer) => {
+          // Remove the Meter Station for now
+          console.log(layer.feature.properties.LABEL);
+          switch (layer.feature.properties.LABEL) {
+            case 'Vanderhoof Meter Station': {
+              layer.setStyle({
+                radius: 0,
+                stroke: false,
+                fill: false
+              });
+              break;
+            }
+            case 'Wilde Lake M/S': {
+              layer.setStyle({
+                radius: 8,
+                weight: 3,
+                fillColor: '#a5ff82'
+              });
+              break;
+            }
+            case 'Kitimat M/S': {
+              layer.setStyle({
+                radius: 8,
+                weight: 3,
+                fillColor: '#c682ff'
+              });
+              break;
+            }
+          }
+
+          layer.on('click', e => {
+            const f = e.target.feature;
+            this.urlService.save('segment', f.properties.LABEL);
+            this.urlService.setFragment('details');
           });
           layer.on('mouseover', e => {
-            e.target.setStyle({ fillColor: '#ff9d00' });
-            console.log(feature);
+            e.target.setStyle({ color: '#ff9d00' });
           });
           layer.on('mouseout', e => {
-            e.target.setStyle({ fillColor: '#6092ff' });
+            e.target.setStyle({ color: '#6092ff' });
           });
         }
       })
@@ -330,7 +359,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       // Convert topojson to geojson
       dataGeoJson.corridor = topojson.feature(data[0], data[0].objects['corridor-29mar2019']);
       dataGeoJson.facilities = topojson.feature(data[1], data[1].objects['facilities-29mar2019']);
-      dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-29mar2019']);
+      dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-09apr2019']);
       dataGeoJson.pipeline = topojson.feature(data[3], data[3].objects['semicenter-pipeline']);
 
       displayData(dataGeoJson);
@@ -569,6 +598,11 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     // }
     // console.log('numberVisible =', count);
   }
+
+  // called when user clicks on app marker
+
+  // update selected item in app list
+  // this.toggleCurrentApp.emit(app); // DO NOT TOGGLE LIST ITEM AT THIS TIME
 
   // called when user clicks on app marker
   private onMarkerClick(...args: any[]) {
