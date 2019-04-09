@@ -233,7 +233,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     const dataUrls = [
       '/assets/data/corridor-29mar2019.json',
       '/assets/data/facilities-29mar2019.json',
-      '/assets/data/semicenterline-sections-29mar2019.json',
+      '/assets/data/semicenterline-sections-09apr2019.json',
       '/assets/data/semicenter-pipeline-29mar2019.json'
     ];
 
@@ -270,13 +270,14 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         )
         .addTo(this.map);
 
+      // Default marker style
       const markerOptions = {
-        radius: 10,
-        stroke: false,
+        radius: 4,
+        stroke: true,
         weight: 2,
-        color: 'white',
+        color: '#6092ff',
         fill: true,
-        fillColor: '#6092ff',
+        fillColor: 'white',
         fillOpacity: 1
       };
 
@@ -285,16 +286,45 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           return L.circleMarker(latlng, markerOptions);
         },
         onEachFeature: (_, layer) => {
+          // Remove the Meter Station for now
+          console.log(layer.feature.properties.LABEL);
+          switch (layer.feature.properties.LABEL) {
+            case 'Vanderhoof Meter Station': {
+              layer.setStyle({
+                radius: 0,
+                stroke: false,
+                fill: false
+              });
+              break;
+            }
+            case 'Wilde Lake M/S': {
+              layer.setStyle({
+                radius: 8,
+                weight: 3,
+                fillColor: '#a5ff82'
+              });
+              break;
+            }
+            case 'Kitimat M/S': {
+              layer.setStyle({
+                radius: 8,
+                weight: 3,
+                fillColor: '#c682ff'
+              });
+              break;
+            }
+          }
+
           layer.on('click', e => {
             const f = e.target.feature;
             this.urlService.save('segment', f.properties.LABEL);
             this.urlService.setFragment('details');
           });
           layer.on('mouseover', e => {
-            e.target.setStyle({ fillColor: '#ff9d00' });
+            e.target.setStyle({ color: '#ff9d00' });
           });
           layer.on('mouseout', e => {
-            e.target.setStyle({ fillColor: '#6092ff' });
+            e.target.setStyle({ color: '#6092ff' });
           });
         }
       })
@@ -329,7 +359,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       // Convert topojson to geojson
       dataGeoJson.corridor = topojson.feature(data[0], data[0].objects['corridor-29mar2019']);
       dataGeoJson.facilities = topojson.feature(data[1], data[1].objects['facilities-29mar2019']);
-      dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-29mar2019']);
+      dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-09apr2019']);
       dataGeoJson.pipeline = topojson.feature(data[3], data[3].objects['semicenter-pipeline']);
 
       displayData(dataGeoJson);
