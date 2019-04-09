@@ -1,0 +1,23 @@
+@import "~assets/styles/base/base.scss";
+
+.flex {
+  @include flex-box();
+}
+
+.left-side {
+  &-1 {
+    flex: 1 1;
+  }
+}
+
+.right-side {
+  &-1 {
+    flex: 3 3;
+  }
+}
+
+.section {
+  &-left {
+    margin-right: 1rem;
+  }
+}

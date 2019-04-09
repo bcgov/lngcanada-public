@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 
 // Modules
 import { SharedModule } from 'app/shared.module';
+import { DocumentsModule } from './documents/documents.module';
 
 // Components
 import { ProjectComponent } from 'app/project/project.component';
@@ -18,7 +19,7 @@ import { PlansComponent } from './plans/plans.component';
 import { MapComponent } from './map/map.component';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, NgbModule.forRoot(), RouterModule, SharedModule],
+  imports: [CommonModule, FormsModule, NgbModule.forRoot(), RouterModule, DocumentsModule, SharedModule],
   declarations: [
     ProjectComponent,
     OverviewComponent,
