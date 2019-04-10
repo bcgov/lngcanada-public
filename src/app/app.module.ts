@@ -37,6 +37,8 @@ import { DocumentService } from 'app/services/document.service';
 import { FeatureService } from 'app/services/feature.service';
 import { ProjectsComponent } from './projects/projects.component';
 import { UrlService } from 'app/services/url.service';
+import { Project1Service } from 'app/services/project1.service';
+import { Project2Service } from 'app/services/project2.service';
 import { ProcessComponent } from './process/process.component';
 import { LngComponent } from './lng/lng.component';
 import { ProjectModule } from './project/project.module';
@@ -81,7 +83,9 @@ import { ProjectModule } from './project/project.module';
     DecisionService,
     DocumentService,
     FeatureService,
-    UrlService
+    UrlService,
+    Project1Service,
+    Project2Service
   ],
   entryComponents: [CommentModalComponent, ConfirmComponent],
   bootstrap: [AppComponent]

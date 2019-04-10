@@ -7,7 +7,7 @@ export class Constants {
 
   public static readonly complianceDocumentTypes = [
     'COMPANY SELF REPORT',
-    'GOVERNMENT INSTPECTION',
+    'GOVERNMENT INSPECTION',
     'ENFORCEMENT ORDER'
   ];
 

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/cor
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import * as _ from 'lodash';
-import * as moment from 'moment';
+import moment from 'moment';
 
 import { Constants } from 'app/utils/constants';
 import { UrlService } from 'app/services/url.service';
@@ -17,8 +17,8 @@ export class ExplorePanelComponent implements OnInit, OnDestroy {
   @Output() hideSidePanel = new EventEmitter(); // to applications component // used in template
   @Output() resetView = new EventEmitter(); // to applications component
 
-  readonly minDate = moment('2018-03-23').toDate(); // first app created
-  readonly maxDate = moment().toDate(); // today
+  readonly minDate = moment('1900-01-01').toDate(); // first app created
+  readonly maxDate = moment('2100-12-31').toDate(); // today
 
   private ngUnsubscribe: Subject<boolean> = new Subject<boolean>();
 

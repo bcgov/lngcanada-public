@@ -3,7 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import * as _ from 'lodash';
-import * as moment from 'moment';
+import moment from 'moment';
 
 import { Constants } from 'app/utils/constants';
 import { ApplicationService } from 'app/services/application.service';

@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import * as LinkifyIt from 'linkify-it';
+import LinkifyIt from 'linkify-it';
 
 /**
  * Finds urls and replaces them with anchor tags.
@@ -15,7 +15,7 @@ export class LinkifyPipe implements PipeTransform {
       return '';
     }
 
-    const linkify = new LinkifyIt();
+    const linkify = LinkifyIt();
 
     const matches = linkify.match(str);
     if (matches) {
