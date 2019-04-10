@@ -10,9 +10,9 @@ Public front-end for the LNG Canada project.
 
 | Technology | Version | Website                 | Description |
 |------------|---------|-------------------------|-------------------------------------------|
-| node       | 8.x.x   | https://nodejs.org/en/  | JavaScript Runtime                        |
+| node       | 10.x.x   | https://nodejs.org/en/  | JavaScript Runtime                        |
 | npm        | 6.x.x   | https://www.npmjs.com/  | Node Package Manager                      |
-| ng         | 6.x.x   | https://cli.angular.io/ | Angular CLI                               |
+| ng         | 7.x.x   | https://cli.angular.io/ | Angular CLI                               |
 | yarn       | latest  | https://yarnpkg.com/en/ | Package Manager (more efficient than npm) |
 
 _Note: This app also requires [bcgov/lngcanada-api](https://github.com/bcgov/lngcanada-api) to handle its requests._

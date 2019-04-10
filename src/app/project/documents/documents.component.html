@@ -2,7 +2,7 @@
 
   <section class="section-left left-side-1">
     <div>
-      <app-explore-panel #explorePanel (hideSidePanel)="closeSidePanel()"></app-explore-panel>
+      <app-explore-panel #explorePanel (updateFilters)="updateDocumentFilters($event)" (hideSidePanel)="closeSidePanel()"></app-explore-panel>
     </div>
   </section>
 
@@ -45,7 +45,7 @@
             {{document.date | date}}
           </td>
           <td>
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" (click)="downloadFile(document)">
               <i class="material-icons">cloud_download</i>
               <label class="control-label">Download</label>
             </button>

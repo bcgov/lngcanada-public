@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of, combineLatest, merge } from 'rxjs';
 import { map, mergeMap, catchError } from 'rxjs/operators';
 import * as _ from 'lodash';
-import * as moment from 'moment';
+import moment from 'moment';
 
 import { IFiltersType } from 'app/applications/applications.component';
 import { Application } from 'app/models/application';

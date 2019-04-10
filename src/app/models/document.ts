@@ -1,21 +1,23 @@
 export class Document {
   _id: string;
-  _application: string; // objectid -> Application
-  _comment: string; // objectid -> Comment
-  _decision: string; // objectid -> Decision
-  documentFileName: string;
-  displayName: string;
-  internalURL: string;
-  internalMime: string;
+  fileName: string;
+  name: string;
+  agency: string;
+  complianceDocumentType: string;
+  date: Date;
+  description: string;
+  url: string;
+  mime: string;
 
   constructor(obj?: any) {
     this._id = (obj && obj._id) || null;
-    this._application = (obj && obj._application) || null;
-    this._comment = (obj && obj._comment) || null;
-    this._decision = (obj && obj._decision) || null;
-    this.documentFileName = (obj && obj.documentFileName) || null;
-    this.displayName = (obj && obj.displayName) || null;
-    this.internalURL = (obj && obj.internalURL) || null;
-    this.internalMime = (obj && obj.internalMime) || null;
+    this.fileName = (obj && obj.fileName) || null;
+    this.name = (obj && obj.name) || null;
+    this.agency = (obj && obj.agency) || null;
+    this.complianceDocumentType = (obj && obj.complianceDocumentType) || null;
+    this.date = (obj && obj.date && new Date(obj.date)) || null;
+    this.description = (obj && obj.description) || null;
+    this.url = (obj && obj.url) || null;
+    this.mime = (obj && obj.mime) || null;
   }
 }
