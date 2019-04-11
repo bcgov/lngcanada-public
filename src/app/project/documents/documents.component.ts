@@ -39,6 +39,8 @@ export class DocumentsComponent implements OnInit {
   public sortColumn = '';
   public sortDirection = 0;
 
+  public documentCountMessage = 'Total Results: ';
+
   public isExplorePanelVisible = false;
 
   constructor(private injector: Injector, public route: ActivatedRoute) {
@@ -53,6 +55,7 @@ export class DocumentsComponent implements OnInit {
 
   ngOnInit() {
     this.filterDocuments();
+    this.updateDocumentCountMessage();
   }
 
   public sort(sortBy: string) {
@@ -68,9 +71,15 @@ export class DocumentsComponent implements OnInit {
     }
   }
 
+  public updateDocumentCountMessage() {
+    console.log(this.documents.length);
+    this.documentCountMessage = `Total Results: ${this.documents.length}`;
+  }
+
   public updateDocumentFilters(documentFilters: IDocumentFilters) {
     this.filters = { ...EMPTY_DOCUMENT_FILTERS, ...documentFilters };
     this.filterDocuments();
+    this.updateDocumentCountMessage();
   }
 
   public filterDocuments() {

@@ -34,5 +34,257 @@
     "date": "April 12, 2000",
     "description": "This is a description. This is a description. This is a description.",
     "url": "https://www.bcogc.ca/node/11268/download"
+  },
+  "5": {
+    "fileName": "doc1",
+    "name": "Document 1",
+    "agency": "Ministry of Environment",
+    "complianceDocumentType": "Government Inspection",
+    "date": "June 1, 2015",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/13274/download"
+  },
+  "6": {
+    "fileName": "doc2",
+    "name": "Document 3",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "Dec 31, 2019",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/11009/download"
+  },
+  "7": {
+    "fileName": "doc3",
+    "name": "Document 2",
+    "agency": "Environmental Assessment Office",
+    "complianceDocumentType": "Company Self Report",
+    "date": "June 1, 2018",
+    "description": "This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/5944/download"
+  },
+  "8": {
+    "fileName": "doc4",
+    "name": "Document 4",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "April 12, 2000",
+    "description": "This is a description. This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/11268/download"
+  },
+  "9": {
+    "fileName": "doc1",
+    "name": "Document 1",
+    "agency": "Ministry of Environment",
+    "complianceDocumentType": "Government Inspection",
+    "date": "June 1, 2015",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/13274/download"
+  },
+  "10": {
+    "fileName": "doc2",
+    "name": "Document 3",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "Dec 31, 2019",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/11009/download"
+  },
+  "11": {
+    "fileName": "doc3",
+    "name": "Document 2",
+    "agency": "Environmental Assessment Office",
+    "complianceDocumentType": "Company Self Report",
+    "date": "June 1, 2018",
+    "description": "This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/5944/download"
+  },
+  "12": {
+    "fileName": "doc4",
+    "name": "Document 4",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "April 12, 2000",
+    "description": "This is a description. This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/11268/download"
+  },
+  "13": {
+    "fileName": "doc1",
+    "name": "Document 1",
+    "agency": "Ministry of Environment",
+    "complianceDocumentType": "Government Inspection",
+    "date": "June 1, 2015",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/13274/download"
+  },
+  "14": {
+    "fileName": "doc2",
+    "name": "Document 3",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "Dec 31, 2019",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/11009/download"
+  },
+  "15": {
+    "fileName": "doc3",
+    "name": "Document 2",
+    "agency": "Environmental Assessment Office",
+    "complianceDocumentType": "Company Self Report",
+    "date": "June 1, 2018",
+    "description": "This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/5944/download"
+  },
+  "16": {
+    "fileName": "doc4",
+    "name": "Document 4",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "April 12, 2000",
+    "description": "This is a description. This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/11268/download"
+  },
+  "17": {
+    "fileName": "doc1",
+    "name": "Document 1",
+    "agency": "Ministry of Environment",
+    "complianceDocumentType": "Government Inspection",
+    "date": "June 1, 2015",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/13274/download"
+  },
+  "18": {
+    "fileName": "doc2",
+    "name": "Document 3",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "Dec 31, 2019",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/11009/download"
+  },
+  "19": {
+    "fileName": "doc3",
+    "name": "Document 2",
+    "agency": "Environmental Assessment Office",
+    "complianceDocumentType": "Company Self Report",
+    "date": "June 1, 2018",
+    "description": "This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/5944/download"
+  },
+  "20": {
+    "fileName": "doc4",
+    "name": "Document 4",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "April 12, 2000",
+    "description": "This is a description. This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/11268/download"
+  },
+  "21": {
+    "fileName": "doc1",
+    "name": "Document 1",
+    "agency": "Ministry of Environment",
+    "complianceDocumentType": "Government Inspection",
+    "date": "June 1, 2015",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/13274/download"
+  },
+  "22": {
+    "fileName": "doc2",
+    "name": "Document 3",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "Dec 31, 2019",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/11009/download"
+  },
+  "23": {
+    "fileName": "doc3",
+    "name": "Document 2",
+    "agency": "Environmental Assessment Office",
+    "complianceDocumentType": "Company Self Report",
+    "date": "June 1, 2018",
+    "description": "This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/5944/download"
+  },
+  "24": {
+    "fileName": "doc4",
+    "name": "Document 4",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "April 12, 2000",
+    "description": "This is a description. This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/11268/download"
+  },
+  "25": {
+    "fileName": "doc1",
+    "name": "Document 1",
+    "agency": "Ministry of Environment",
+    "complianceDocumentType": "Government Inspection",
+    "date": "June 1, 2015",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/13274/download"
+  },
+  "26": {
+    "fileName": "doc2",
+    "name": "Document 3",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "Dec 31, 2019",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/11009/download"
+  },
+  "27": {
+    "fileName": "doc3",
+    "name": "Document 2",
+    "agency": "Environmental Assessment Office",
+    "complianceDocumentType": "Company Self Report",
+    "date": "June 1, 2018",
+    "description": "This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/5944/download"
+  },
+  "28": {
+    "fileName": "doc4",
+    "name": "Document 4",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "April 12, 2000",
+    "description": "This is a description. This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/11268/download"
+  },
+  "29": {
+    "fileName": "doc1",
+    "name": "Document 1",
+    "agency": "Ministry of Environment",
+    "complianceDocumentType": "Government Inspection",
+    "date": "June 1, 2015",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/13274/download"
+  },
+  "30": {
+    "fileName": "doc2",
+    "name": "Document 3",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "Dec 31, 2019",
+    "description": "This is a description",
+    "url": "https://www.bcogc.ca/node/11009/download"
+  },
+  "31": {
+    "fileName": "doc3",
+    "name": "Document 2",
+    "agency": "Environmental Assessment Office",
+    "complianceDocumentType": "Company Self Report",
+    "date": "June 1, 2018",
+    "description": "This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/5944/download"
+  },
+  "32": {
+    "fileName": "doc4",
+    "name": "Document 4",
+    "agency": "BC Oil & Gas Commission",
+    "complianceDocumentType": "Enforcement Order",
+    "date": "April 12, 2000",
+    "description": "This is a description. This is a description. This is a description.",
+    "url": "https://www.bcogc.ca/node/11268/download"
   }
 }
