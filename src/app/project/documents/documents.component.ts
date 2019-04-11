@@ -22,6 +22,14 @@ const EMPTY_DOCUMENT_FILTERS: IDocumentFilters = {
   dateRangeTo: null
 };
 
+/**
+ * Documents component.
+ * Displays a list of documents, including filter side panel.
+ *
+ * @export
+ * @class DocumentsComponent
+ * @implements {OnInit}
+ */
 @Component({
   selector: 'app-documents',
   templateUrl: './documents.component.html',
@@ -55,9 +63,14 @@ export class DocumentsComponent implements OnInit {
 
   ngOnInit() {
     this.filterDocuments();
-    this.updateDocumentCountMessage();
   }
 
+  /**
+   * Sets the sort properties (column, direction) used by the OrderBy pipe.
+   *
+   * @param {string} sortBy
+   * @memberof DocumentsComponent
+   */
   public sort(sortBy: string) {
     this.sortColumn = sortBy;
     this.sortDirection = this.sortDirection > 0 ? -1 : 1;
@@ -71,17 +84,34 @@ export class DocumentsComponent implements OnInit {
     }
   }
 
+  /**
+   * Updates the total results message.  THis string can be displayed as is.
+   *
+   * @memberof DocumentsComponent
+   */
   public updateDocumentCountMessage() {
-    console.log(this.documents.length);
     this.documentCountMessage = `Total Results: ${this.documents.length}`;
   }
 
+  /**
+   * Updates the document filters:
+   * - Updates the filters object.
+   * - Updates the documents array, which dictates which documents to show on the page.
+   * - Updates the total results message.
+   *
+   * @param {IDocumentFilters} documentFilters
+   * @memberof DocumentsComponent
+   */
   public updateDocumentFilters(documentFilters: IDocumentFilters) {
     this.filters = { ...EMPTY_DOCUMENT_FILTERS, ...documentFilters };
     this.filterDocuments();
-    this.updateDocumentCountMessage();
   }
 
+  /**
+   * Uses the document filters to filter the list of all documents.
+   *
+   * @memberof DocumentsComponent
+   */
   public filterDocuments() {
     setTimeout(() => {
       this.documents = [];
@@ -94,6 +124,7 @@ export class DocumentsComponent implements OnInit {
           this.documents.push(doc);
         }
       });
+      this.updateDocumentCountMessage();
     });
   }
 
