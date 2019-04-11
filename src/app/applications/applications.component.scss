@@ -34,6 +34,7 @@ $side-nav-item-height-lg: 5.5rem;
 .side-nav {
   @include flex(0 0 auto);
 
+  display: none; // Hidden for now
   position: relative;
   z-index: 1002;
   order: 0;
