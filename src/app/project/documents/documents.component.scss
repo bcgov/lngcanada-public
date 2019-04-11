@@ -4,6 +4,14 @@
   @include flex-box();
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
 .left-side {
   &-1 {
     flex: 1 1;
@@ -20,4 +28,12 @@
   &-left {
     margin-right: 1rem;
   }
+
+  &-right {
+    margin-left: 1rem;
+  }
+}
+
+.results-count {
+  float: right;
 }
