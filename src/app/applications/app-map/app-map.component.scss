@@ -1,6 +1,6 @@
 @import "~assets/styles/base/base.scss";
 
-$map-control-button-bg:         #fff;
+$map-control-button-bg: #fff;
 
 #map,
 .map-container {
@@ -16,6 +16,25 @@ $map-control-button-bg:         #fff;
   .cluster-marker-count {
     text-align: center;
   }
+}
+
+#legend {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  z-index: 1000;
+  background: white;
+  padding: 1rem 2rem 1rem 2rem;
+}
+
+#legend button {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+#legend button span {
+  margin-left: 1rem;
 }
 
 // Leaflet Control Customization
