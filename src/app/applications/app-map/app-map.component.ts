@@ -300,8 +300,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
             case 'Wilde Lake M/S': {
               layer.setStyle({
                 radius: 8,
-                weight: 3,
-                fillColor: '#a5ff82'
+                weight: 3
               });
               break;
             }
@@ -309,7 +308,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
               layer.setStyle({
                 radius: 8,
                 weight: 3,
-                fillColor: '#c682ff'
+                fillColor: '#a5ff82'
               });
               break;
             }
@@ -377,7 +376,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     };
 
     // add layer control
-    L.control.layers(baseLayers, null, { position: 'topright' }).addTo(this.map);
+    // L.control.layers(baseLayers, null, { position: 'topright' }).addTo(this.map);
 
     // map attribution
     L.control.attribution({ position: 'bottomright' }).addTo(this.map);
