@@ -10,9 +10,10 @@ import { LinkifyPipe } from 'app/pipes/linkify.pipe';
 
 import { VarDirective } from 'app/utils/ng-var.directive';
 import { DragMoveDirective } from 'app/utils/drag-move.directive';
+import { SlideshowModule } from 'ng-simple-slideshow';
 
 @NgModule({
-  imports: [BrowserModule, MatProgressBarModule, MatSnackBarModule, NgxTextOverflowClampModule],
+  imports: [BrowserModule, MatProgressBarModule, MatSnackBarModule, NgxTextOverflowClampModule, SlideshowModule],
   declarations: [OrderByPipe, NewlinesPipe, ObjectFilterPipe, LinkifyPipe, VarDirective, DragMoveDirective],
   exports: [
     MatProgressBarModule,
@@ -23,7 +24,8 @@ import { DragMoveDirective } from 'app/utils/drag-move.directive';
     ObjectFilterPipe,
     LinkifyPipe,
     VarDirective,
-    DragMoveDirective
+    DragMoveDirective,
+    SlideshowModule
   ]
 })
 export class SharedModule {}
