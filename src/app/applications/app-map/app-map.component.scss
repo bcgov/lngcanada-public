@@ -1,6 +1,6 @@
 @import "~assets/styles/base/base.scss";
 
-$map-control-button-bg:         #fff;
+$map-control-button-bg: #fff;
 
 #map,
 .map-container {
@@ -16,6 +16,70 @@ $map-control-button-bg:         #fff;
   .cluster-marker-count {
     text-align: center;
   }
+}
+
+#legend {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  z-index: 1000;
+  background: $white;
+  padding: 0.75rem 0 0.75rem 0;
+  border-radius: 0.5rem;
+  // background-color: #eed;
+  box-shadow: 5px 5px 5px  rgba(0, 0, 0, 0.4);
+}
+
+#legend #title {
+  font-size: 1.5rem;
+  font-weight: bolder;
+  margin-left: 1rem;
+}
+
+#legend #sub-title {
+  position: absolute;
+  font-size: 0.75rem;
+  right: 1rem;
+  margin-top: -1rem;
+  // margin-left: 2rem;
+}
+
+#legend hr {
+  margin: 5px 0 0 0;
+}
+
+#legend .button {
+  padding: 0.75rem;
+  display: grid;
+  grid-template-columns: 2rem auto 12rem;
+  align-items: center;
+  justify-items: start;
+  cursor: pointer;
+}
+
+#legend .button:hover {
+  background: $gray2;
+}
+
+#legend svg {
+  width: 22px;
+  height: 22px;
+  margin-right: 0.5rem;
+}
+
+#legend button {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+#legend button span {
+  margin-left: 1rem;
+}
+
+#legend .button-title {
+  font-weight: 800;
+  margin-right: 2rem;
 }
 
 // Leaflet Control Customization
