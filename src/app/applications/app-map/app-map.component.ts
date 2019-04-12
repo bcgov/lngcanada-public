@@ -304,13 +304,15 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           </div>
           <hr class="popup-hr">
           <div class="popup-value">Other High Value Info</div>
-          <div class="popup-button">
-            <button type="button" class="btn btn-primary" routerLink="/project/2">
-              <i class="material-icons mr-1">image</i>
-              <i class="material-icons mr-1">menu</i>
-              <span>Go to Details</span>
-            </button>
-          </div>
+          <a href="/project/2">
+            <div class="popup-button">
+              <button type="button" class="btn btn-primary" routerLink="/project/2">
+                <i class="material-icons mr-1">image</i>
+                <i class="material-icons mr-1">menu</i>
+                <span>Go to Details</span>
+              </button>
+            </div>
+          </a>
         </div>
       `;
 
