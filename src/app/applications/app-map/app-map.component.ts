@@ -281,13 +281,50 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         fillOpacity: 1
       };
 
+      const gasPopup = `
+        <div class="popup-header">
+          <div class="popup-title">COAST GASLINK PIPELINE</div>
+          <div class="popup-subtitle">Trans Canada - Coastal Gaslink Pipeline Ltd.</div>
+        </div>
+        <div class="popup-content">
+          <div class="popup-desc-title">Application Description</div>
+          <div class="popup-desc">
+            Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua. Viverra justo nec ultrices
+            dui sapien eget mi. Elit duis tristique sollicitudin
+            nibh. Molestie nunc non blandit massa enim nec dui nunc.
+            Nec ultrices dui sapien eget mi proin sed libero.
+            Vestibulum mattis ullamcorper velit sed ullamcorper.
+            Enim tortor at auctor urna nunc id cursus.
+            Mattis molestie a iaculis at erat pellentesque
+            adipiscing commodo. Magna eget est lorem ipsum
+            dolor sit amet consectetur adipiscing.
+          </div>
+          <hr class="popup-hr">
+          <div class="popup-value">Other High Value Info</div>
+          <div class="popup-button">
+            <button type="button" class="btn btn-primary" routerLink="/project/2">
+              <i class="material-icons mr-1">image</i>
+              <i class="material-icons mr-1">menu</i>
+              <span>Go to Details</span>
+            </button>
+          </div>
+        </div>
+      `;
+
       L.geoJSON(data.facilities, {
         pointToLayer: (_, latlng) => {
           return L.circleMarker(latlng, markerOptions);
         },
         onEachFeature: (_, layer) => {
           // Remove the Meter Station for now
-          console.log(layer.feature.properties.LABEL);
+          const popupOptions = {
+            className: 'map-popup-content',
+            autoPanPaddingTopLeft: L.point(40, 220),
+            autoPanPaddingBottomRight: L.point(40, 20)
+          };
           switch (layer.feature.properties.LABEL) {
             case 'Vanderhoof Meter Station': {
               layer.setStyle({
@@ -302,6 +339,8 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
                 radius: 8,
                 weight: 3
               });
+              const popup = L.popup(popupOptions).setContent(gasPopup);
+              layer.bindPopup(popup);
               break;
             }
             case 'Kitimat M/S': {
@@ -310,15 +349,18 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
                 weight: 3,
                 fillColor: '#a5ff82'
               });
+              const popup = L.popup(popupOptions).setContent(gasPopup);
+              layer.bindPopup(popup);
               break;
             }
           }
 
-          layer.on('click', e => {
-            const f = e.target.feature;
-            this.urlService.save('segment', f.properties.LABEL);
-            this.urlService.setFragment('details');
-          });
+          // TODO: Highlight legend entry
+          // layer.on('click', e => {
+          //   const f = e.target.feature;
+          //   this.urlService.save('segment', f.properties.LABEL);
+          //   this.urlService.setFragment('details');
+          // });
           layer.on('mouseover', e => {
             e.target.setStyle({ color: '#ff9d00' });
           });
