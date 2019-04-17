@@ -14,10 +14,19 @@
     </button>
     <div class="collapse navbar-collapse" id="mainNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" title="Projects" routerLink="/projects">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <span>Projects</span>
+            <span class="caret"></span>
           </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" title="Project 1" routerLink="/project/1">
+              <strong>Project 1</strong>
+            </a>
+            <a class="dropdown-item" title="Project 2" routerLink="/project/2">
+              <strong>Project 2</strong>
+            </a>
+          </div>
         </li>
         <li class="nav-item">
           <a class="nav-link" title="Projects" routerLink="/map">

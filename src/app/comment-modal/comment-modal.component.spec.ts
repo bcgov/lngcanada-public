@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CommentModalComponent } from './comment-modal.component';
 import { FormsModule } from '@angular/forms';
-import { FileUploadComponent } from 'app/file-upload/file-upload.component';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { MatProgressBarModule } from '@angular/material';
 import { CommentService } from 'app/services/comment.service';
@@ -15,7 +14,7 @@ describe('CommentModalComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CommentModalComponent, FileUploadComponent],
+      declarations: [CommentModalComponent],
       imports: [FormsModule, MatProgressBarModule],
       providers: [NgbActiveModal, { provide: CommentService }, { provide: DocumentService }]
     }).compileComponents();

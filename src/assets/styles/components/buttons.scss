@@ -170,6 +170,7 @@
   opacity: 0;
   border-color: $gold;
   background: $gold;
+  z-index: 9999;
   transform: translateY(1rem);
   transition: all ease-out 0.2s;
 

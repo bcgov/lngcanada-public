@@ -15,7 +15,6 @@ import { UrlService } from 'app/services/url.service';
 export class ExplorePanelComponent implements OnInit, OnDestroy {
   @Output() updateFilters = new EventEmitter(); // to applications component
   @Output() hideSidePanel = new EventEmitter(); // to applications component // used in template
-  @Output() resetView = new EventEmitter(); // to applications component
 
   readonly minDate = moment('1900-01-01').toDate(); // first app created
   readonly maxDate = moment('2100-12-31').toDate(); // today
@@ -140,9 +139,6 @@ export class ExplorePanelComponent implements OnInit, OnDestroy {
   }
 
   public applyAllFilters(doNotify: boolean = true) {
-    // notify applications component to reset map view so user has context of what results are returned
-    this.resetView.emit();
-
     // apply all temporary filters
     this.complianceDocumentTypeFilters = { ...this._complianceDocumentTypeFilters };
     this.agencyFilters = { ...this._agencyFilters };
@@ -181,13 +177,18 @@ export class ExplorePanelComponent implements OnInit, OnDestroy {
       }
     });
 
-    this.urlService.save('complianceDocumentTypes', complianceDocumentTypes);
-    this.urlService.save('agencies', agencies);
+    this.urlService.save('complianceDocumentTypes', complianceDocumentTypes, false);
+    this.urlService.save('agencies', agencies, false);
     this.urlService.save(
       'dateRangeFrom',
-      this.dateRangeFromFilter && moment(this.dateRangeFromFilter).format('YYYY-MM-DD')
+      this.dateRangeFromFilter && moment(this.dateRangeFromFilter).format('YYYY-MM-DD'),
+      false
     );
-    this.urlService.save('dateRangeTo', this.dateRangeToFilter && moment(this.dateRangeToFilter).format('YYYY-MM-DD'));
+    this.urlService.save(
+      'dateRangeTo',
+      this.dateRangeToFilter && moment(this.dateRangeToFilter).format('YYYY-MM-DD'),
+      false
+    );
   }
 
   // clear all temporary filters

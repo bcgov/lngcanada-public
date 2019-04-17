@@ -1,65 +1,96 @@
-<div class="flex flex-column">
+<div class="documents-view" [ngClass]="{'filter-panel__open': isFilterPanelVisible}">
 
-  <section>
+  <!-- <section>
+
+  </section> -->
+
+  <!-- <section>
+    <div class="side-nav">
+      <ul>
+        <li class="side-nav-item"
+          [ngClass]="{'active': isFilterPanelVisible}">
+          <button class="btn" (click)="toggleFilterPanel()">
+            <i class="material-icons">visibility</i>
+            <div>Explore</div>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </section> -->
+
+  <section class="filter-nav">
+    <button class="filter-btn btn btn-primary" (click)="toggleFilterPanel()">
+      <i class="material-icons">visibility</i>
+      <label class="control-label">Filter Documents</label>
+    </button>
     <div class="results-count">
       {{documentCountMessage}}
     </div>
   </section>
 
-  <div class="flex flex-row">
-    <section class="left-side-1 section-left">
-      <div>
-        <app-explore-panel #explorePanel (updateFilters)="updateDocumentFilters($event)" (hideSidePanel)="closeSidePanel()"></app-explore-panel>
-      </div>
-    </section>
+  <!-- <section class="left-side-1 section-left">
+    <div>
+      <app-explore-panel #explorePanel (updateFilters)="updateDocumentFilters($event)" (hideSidePanel)="closeSidePanel()"></app-explore-panel>
+    </div>
+  </section> -->
 
-    <section class="right-side-1">
-      <table class="table">
-        <thead>
-          <tr>
-            <th class="sortable" (click)="sort('name')">
-              Name
-              <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'name' && sortDirection < 0), 'sort-desc': (sortColumn == 'name' && sortDirection > 0) }" aria-hidden="true"></i>
-            </th>
-            <th class="sortable" (click)="sort('agency')">
-              Government Agency
-              <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'agency' && sortDirection < 0), 'sort-desc': (sortColumn == 'agency' && sortDirection > 0) }" aria-hidden="true"></i>
-            </th>
-            <th class="sortable" (click)="sort('complianceDocumentType')">
-              Compliance Document Type
-              <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'complianceDocumentType' && sortDirection < 0), 'sort-desc': (sortColumn == 'complianceDocumentType' && sortDirection > 0) }" aria-hidden="true"></i>
-            </th>
-            <th class="sortable" (click)="sort('date')">
-              Date
-              <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'date' && sortDirection < 0), 'sort-desc': (sortColumn == 'date' && sortDirection > 0) }" aria-hidden="true"></i>
-            </th>
-            <th>
-            </th>
-          </tr>
-        </thead>
-        <ng-container *ngFor="let document of documents | orderBy: {property: sortColumn, direction: sortDirection}">
-          <tr>
-            <td>
-              {{document.name}}
-            </td>
-            <td>
-              {{document.agency}}
-            </td>
-            <td>
-              {{document.complianceDocumentType}}
-            </td>
-            <td>
-              {{document.date | date}}
-            </td>
-            <td>
-              <button class="btn btn-primary" (click)="downloadFile(document)">
-                <i class="material-icons">cloud_download</i>
-                <label class="control-label">Download</label>
-              </button>
-            </td>
-          </tr>
-        </ng-container>
-      </table>
-    </section>
-  </div>
+  <section class="table-panel">
+    <div class="filter-panel">
+      <button class="close-btn btn btn-icon" (click)="closeSidePanel()">
+        <i class="material-icons">close</i>
+      </button>
+      <app-explore-panel #explorePanel
+        (updateFilters)="updateDocumentFilters($event)"
+        (hideSidePanel)="closeSidePanel()">
+      </app-explore-panel>
+    </div>
+
+    <table class="table-cards-large">
+      <thead>
+        <tr>
+          <th class="sortable" (click)="sort('name')">
+            Name
+            <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'name' && sortDirection < 0), 'sort-desc': (sortColumn == 'name' && sortDirection > 0) }" aria-hidden="true"></i>
+          </th>
+          <th class="sortable" (click)="sort('agency')">
+            Government Agency
+            <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'agency' && sortDirection < 0), 'sort-desc': (sortColumn == 'agency' && sortDirection > 0) }" aria-hidden="true"></i>
+          </th>
+          <th class="sortable" (click)="sort('complianceDocumentType')">
+            Compliance Document Type
+            <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'complianceDocumentType' && sortDirection < 0), 'sort-desc': (sortColumn == 'complianceDocumentType' && sortDirection > 0) }" aria-hidden="true"></i>
+          </th>
+          <th class="sortable" (click)="sort('date')">
+            Date
+            <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'date' && sortDirection < 0), 'sort-desc': (sortColumn == 'date' && sortDirection > 0) }" aria-hidden="true"></i>
+          </th>
+          <th>
+          </th>
+        </tr>
+      </thead>
+      <ng-container *ngFor="let document of documents | orderBy: {property: sortColumn, direction: sortDirection}">
+        <tr>
+          <td>
+            {{document.name}}
+          </td>
+          <td>
+            {{document.agency}}
+          </td>
+          <td>
+            {{document.complianceDocumentType}}
+          </td>
+          <td>
+            {{document.date | date}}
+          </td>
+          <td>
+            <button class="btn btn-primary" (click)="downloadFile(document)">
+              <i class="material-icons">cloud_download</i>
+              <label class="control-label">Download</label>
+            </button>
+          </td>
+        </tr>
+      </ng-container>
+    </table>
+  </section>
+
 </div>

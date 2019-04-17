@@ -21,7 +21,6 @@ import { AppComponent } from 'app/app.component';
 import { CommentModalComponent } from 'app/comment-modal/comment-modal.component';
 import { ConfirmComponent } from 'app/confirm/confirm.component';
 import { ContactComponent } from 'app/contact/contact.component';
-import { FileUploadComponent } from 'app/file-upload/file-upload.component';
 import { HeaderComponent } from 'app/header/header.component';
 import { AboutComponent } from 'app/about/about.component';
 import { FooterComponent } from 'app/footer/footer.component';
@@ -66,7 +65,6 @@ import { HomeComponent } from './home/home.component';
     CommentModalComponent,
     ConfirmComponent,
     ContactComponent,
-    FileUploadComponent,
     HeaderComponent,
     AboutComponent,
     FooterComponent,
