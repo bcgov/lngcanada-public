@@ -1,11 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
-// import moment from 'moment';
-
-import { DataService } from 'app/services/data.service';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Activity } from 'app/models/activity';
-import { PageTypes } from 'app/utils/page-types.enum';
 
 /**
  * Activity component.
@@ -20,10 +14,8 @@ import { PageTypes } from 'app/utils/page-types.enum';
   templateUrl: './activity.component.html',
   styleUrls: ['./activity.component.scss']
 })
-export class ActivityComponent implements OnInit {
-  @Input() pageType: PageTypes;
-
-  public id: number;
+export class ActivityComponent implements OnInit, OnChanges {
+  @Input() activitiesJSON: string[];
 
   public allActivities: Activity[] = [];
 
@@ -35,28 +27,30 @@ export class ActivityComponent implements OnInit {
 
   public activitiesToDisplay: Activity[] = [];
 
-  constructor(private dataService: DataService, public route: ActivatedRoute) {
-    this.route.parent.params.subscribe(params => {
-      this.id = params.id;
-      this.updateActivities();
-    });
-  }
+  constructor() {}
 
   ngOnInit() {
     this.updateActivities();
   }
 
-  public updateActivities(): void {
-    this.updateAllActivities();
-    this.setInitialPagination();
-    this.updateActivitiesToDisplay();
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.activitiesJSON) {
+      this.updateActivities();
+    }
   }
 
-  public updateAllActivities(): void {
-    const activitiesJSON = this.dataService.getActivities(this.id, this.pageType);
+  public updateActivities(): void {
+    console.log(this.activitiesJSON);
+    this.initializeActivities();
+    this.setInitialPagination();
+    this.updateActivitiesToDisplay();
+    console.log(this.activitiesJSON);
+  }
+
+  public initializeActivities(): void {
     const activities: Activity[] = [];
-    Object.keys(activitiesJSON).forEach(key => {
-      activities.push(new Activity(activitiesJSON[key]));
+    Object.keys(this.activitiesJSON).forEach(key => {
+      activities.push(new Activity(this.activitiesJSON[key]));
     });
 
     this.allActivities = activities;
