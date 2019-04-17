@@ -34,6 +34,78 @@
   }
 }
 
-.results-count {
-  float: right;
+.documents-view {
+  @include flex-box();
+
+  flex-direction: column;
+}
+
+.table-panel {
+  flex: 1 1 auto;
+  position: relative;
+}
+
+.filter-nav {
+  margin-bottom: 1rem;
+
+  .results-count {
+    float: right;
+  }
+
+  .filter-btn {
+    width: 10rem;
+  }
+}
+
+.filter-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow-x: hidden;
+  background: $white;
+  box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.25);
+  z-index: 1000;
+  transition: transform ease-out 0.2s;
+  transform: translateX(-110%);
+
+  .close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1001;
+  }
+
+  // ::ng-deep {
+  //   .flex-panel {
+  //     position: absolute;
+  //     top: 0;
+  //     right: 0;
+  //     bottom: 0;
+  //     left: 0;
+  //   }
+  // }
+}
+
+@media (min-width: 1024px) {
+  .filter-panel {
+    width: 30rem;
+    box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    transition: transform ease-out 0.2s;
+    transform: translateX(-110%);
+
+    // ::ng-deep {
+    //   .flex-panel {
+    //     left: auto;
+    //     width: 30rem;
+    //   }
+    // }
+  }
+}
+
+.filter-panel__open {
+  .filter-panel {
+    transform: translateX(0);
+  }
 }

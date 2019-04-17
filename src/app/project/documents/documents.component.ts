@@ -49,7 +49,7 @@ export class DocumentsComponent implements OnInit {
 
   public documentCountMessage = 'Total Results: ';
 
-  public isExplorePanelVisible = false;
+  public isFilterPanelVisible = false;
 
   constructor(private injector: Injector, public route: ActivatedRoute) {
     this.route.parent.params.subscribe(params => {
@@ -209,14 +209,16 @@ export class DocumentsComponent implements OnInit {
   }
 
   // toggle Explore side panel
-  public toggleExplore() {
-    this.isExplorePanelVisible = !this.isExplorePanelVisible;
+  public toggleFilterPanel() {
+    this.isFilterPanelVisible = !this.isFilterPanelVisible;
+
+    console.log(this.isFilterPanelVisible);
 
     // this.urlService.setFragment(this.isSidePanelVisible ? 'explore' : null);
   }
 
   public closeSidePanel() {
-    this.isExplorePanelVisible = false;
+    this.isFilterPanelVisible = false;
     // this.urlService.setFragment(null);
   }
 }

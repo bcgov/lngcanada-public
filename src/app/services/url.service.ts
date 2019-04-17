@@ -3,6 +3,7 @@ import { Params, ActivatedRoute, Router, NavigationEnd, Event } from '@angular/r
 import { Observable } from 'rxjs';
 import { filter, share } from 'rxjs/operators';
 import * as _ from 'lodash';
+import { Location } from '@angular/common';
 
 //
 // This service/class provides a centralized mechanism to save and restore a page's parameters
@@ -16,7 +17,7 @@ export class UrlService {
   private _params: Params = {};
   private _fragment: string = null;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private router: Router, private location: Location) {
     // create a new observable that publishes only the NavigationEnd event
     // used for subscribers to know when to refresh their parameters
     // NB: use share() so this fires only once each time even with multiple subscriptions
@@ -45,8 +46,16 @@ export class UrlService {
     return this._params[key] || null; // returns null if key not found
   }
 
-  // save specified key in URL
-  public save(key: string, val: string) {
+  /**
+   * Save the parameters in the url.
+   *
+   * @param {string} key url key
+   * @param {string} val url parameters
+   * @param {boolean} [refresh=true] optional flag to indicate if this action should trigger a delayed (100ms) page
+   *   refresh (optional) (default: true)
+   * @memberof UrlService
+   */
+  public save(key: string, val: string, refresh: boolean = true) {
     // check if val has changed
     if (val !== this.query(key)) {
       // check if not null or empty
@@ -57,23 +66,39 @@ export class UrlService {
         // remove key
         delete this._params[key];
       }
-      this.navigate();
+      this.navigate(refresh);
     }
   }
 
   // save specified fragment in URL
-  public setFragment(fragment: string) {
+  public setFragment(fragment: string, refresh: boolean = true) {
     // check if fragment has changed
     if (fragment !== this._fragment) {
       this._fragment = fragment;
-      this.navigate();
+      this.navigate(refresh);
     }
   }
 
   // update browser URL
   // NB: debounced function executes when 100ms have elapsed since last call
   // tslint:disable-next-line:member-ordering
-  private navigate = _.debounce(() => {
-    this.router.navigate([], { relativeTo: this.activatedRoute, queryParams: this._params, fragment: this._fragment });
+  private navigate = _.debounce(refresh => {
+    if (refresh) {
+      this.router.navigate([], {
+        relativeTo: this.activatedRoute,
+        queryParams: this._params,
+        fragment: this._fragment
+      });
+    } else {
+      const url = this.router
+        .createUrlTree([], {
+          relativeTo: this.activatedRoute,
+          queryParams: this._params,
+          fragment: this._fragment
+        })
+        .toString();
+
+      this.location.go(url);
+    }
   }, 100);
 }

@@ -8,7 +8,7 @@
   background: $white;
 }
 
-.app-header {
+.project-app-header {
   @include clearfix;
 
   position: relative;
@@ -16,11 +16,11 @@
   border-bottom: 2px solid $gray5;
   background: $gray6;
   color: $white;
-  z-index: 1005;
+  z-index: 1004;
 }
 
 @media (min-width: 768px) {
-  .app-header {
+  .project-app-header {
     position: fixed;
     top: 0;
     left: 0;
@@ -32,7 +32,7 @@
     transition: all linear 0.2s;
   }
 
-  .app-header--flex {
+  .project-app-header--flex {
     @include flex(0 0 auto);
 
     position: relative;
@@ -42,7 +42,7 @@
     color: $white;
   }
 
-  .app-header--solid {
+  .project-app-header--solid {
     border-bottom: 2px solid $gray5;
     background: $gray6;
     color: $white;
@@ -237,33 +237,3 @@
     flex-grow: 0;
   }
 }
-
-@media (min-width: 1200px) {
-  .navbar-brand {
-    height: 4.2rem;
-    background-image: url("~assets/images/bcgov-header-vert-MD.png");
-    background-position: 10px center;
-  }
-
-  .navbar-brand__title {
-    margin-left: 88px;
-    margin-top: 0.65rem;
-    line-height: 1.2rem;
-    font-size: 1rem;
-    font-weight: 400;
-  }
-
-  .navbar-brand__version {
-    font-size: 0.6rem;
-  }
-}
-
-// :host {
-//   display: block;
-
-//   @include flex-box();
-//   @include flex-direction(column);
-
-//   min-height: 100vh;
-//   background: #036;
-// }

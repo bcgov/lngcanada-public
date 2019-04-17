@@ -122,6 +122,7 @@
       border: none;
       border-radius: 0;
       background-color: transparent;
+      z-index: 9999;
 
       .dropdown-item {
         padding: 0.5rem 1rem;
@@ -187,6 +188,7 @@
           padding: 0.5rem;
           min-width: 16rem;
           background-color: #002663;
+          z-index: 9999;
 
           &.dm-sm {
             min-width: 12rem;
