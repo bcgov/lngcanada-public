@@ -254,7 +254,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         style: { color: '#6092ff', weight: 5 },
         onEachFeature: (_, layer) => {
           layer.on('mouseover', e => {
-            e.target.setStyle({ color: '#ff9d00' });
+            e.target.setStyle({ color: '#00f6ff' });
           });
           layer.on('mouseout', e => {
             e.target.setStyle({ color: '#6092ff' });
@@ -379,7 +379,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           //   this.urlService.setFragment('details');
           // });
           layer.on('mouseover', e => {
-            e.target.setStyle({ color: '#ff9d00' });
+            e.target.setStyle({ color: '#00f6ff' });
           });
           layer.on('mouseout', e => {
             e.target.setStyle({ color: '#6092ff' });
