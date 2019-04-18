@@ -487,6 +487,19 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     }
   }
 
+  public ngOnLegendLngEnter () {
+    console.log('enter');
+  }
+  public ngOnLegendLngLeave () {
+    console.log('leave');
+  }
+  public ngOnLegendGasEnter () {
+    console.log('enter');
+  }
+  public ngOnLegendGasLeave () {
+    console.log('leave');
+  }
+
   // called when apps list changes
   public ngOnChanges(changes: SimpleChanges) {
     // update map only if it's visible
