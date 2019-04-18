@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewChild, Injector } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import moment from 'moment';
 
 import { ExplorePanelComponent } from './explore-panel/explore-panel.component';
-import { Project1Service } from 'app/services/project1.service';
-import { Project2Service } from 'app/services/project2.service';
 import { Document } from 'app/models/document';
+import { PageTypes } from 'app/utils/page-types.enum';
+import { DataService } from 'app/services/data.service';
 
 export interface IDocumentFilters {
   agencies: string[];
@@ -36,9 +36,10 @@ const EMPTY_DOCUMENT_FILTERS: IDocumentFilters = {
   styleUrls: ['./documents.component.scss']
 })
 export class DocumentsComponent implements OnInit {
+  @Input() pageType: PageTypes;
   @ViewChild('explorePanel') explorePanel: ExplorePanelComponent;
 
-  public projectService;
+  public id: number;
 
   public filters: IDocumentFilters = EMPTY_DOCUMENT_FILTERS;
 
@@ -51,13 +52,10 @@ export class DocumentsComponent implements OnInit {
 
   public isFilterPanelVisible = false;
 
-  constructor(private injector: Injector, public route: ActivatedRoute) {
+  constructor(private dataService: DataService, public route: ActivatedRoute) {
     this.route.parent.params.subscribe(params => {
-      if (params.id && params.id === '1') {
-        this.projectService = this.injector.get(Project1Service);
-      } else if (params.id && params.id === '2') {
-        this.projectService = this.injector.get(Project2Service);
-      }
+      this.id = params.id;
+      this.filterDocuments();
     });
   }
 
@@ -116,7 +114,7 @@ export class DocumentsComponent implements OnInit {
     setTimeout(() => {
       this.documents = [];
 
-      const documentsJson = this.projectService.getDocuments();
+      const documentsJson = this.dataService.getDocuments(this.id, this.pageType);
       Object.keys(documentsJson).forEach(key => {
         const doc: Document = new Document(documentsJson[key]);
 
@@ -189,7 +187,7 @@ export class DocumentsComponent implements OnInit {
   }
 
   /**
-   * Applies compliance document type filterse and returns true if the agency is included in the filters,
+   * Applies compliance document type filters and returns true if the agency is included in the filters,
    * false otherwise.
    *
    * @param {string} agency

@@ -15,6 +15,7 @@ import { AuthorizationsComponent } from './authorizations/authorizations.compone
 import { ComplianceComponent } from './compliance/compliance.component';
 import { NationsComponent } from './nations/nations.component';
 import { PlansComponent } from './plans/plans.component';
+import { ActivityComponent } from './activity/activity.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, NgbModule.forRoot(), RouterModule, DocumentsModule, SharedModule],
@@ -24,7 +25,8 @@ import { PlansComponent } from './plans/plans.component';
     AuthorizationsComponent,
     ComplianceComponent,
     NationsComponent,
-    PlansComponent
+    PlansComponent,
+    ActivityComponent
   ],
   entryComponents: []
 })

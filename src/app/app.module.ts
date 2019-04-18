@@ -36,8 +36,7 @@ import { DocumentService } from 'app/services/document.service';
 import { FeatureService } from 'app/services/feature.service';
 import { ProjectsComponent } from './projects/projects.component';
 import { UrlService } from 'app/services/url.service';
-import { Project1Service } from 'app/services/project1.service';
-import { Project2Service } from 'app/services/project2.service';
+import { DataService } from 'app/services/data.service';
 import { FaqComponent } from './faq/faq.component';
 import { ProjectModule } from './project/project.module';
 import { HomeComponent } from './home/home.component';
@@ -82,8 +81,7 @@ import { HomeComponent } from './home/home.component';
     DocumentService,
     FeatureService,
     UrlService,
-    Project1Service,
-    Project2Service
+    DataService
   ],
   entryComponents: [CommentModalComponent, ConfirmComponent],
   bootstrap: [AppComponent]

@@ -1,0 +1,53 @@
+{
+  "text": [
+    "British Columbia has been the location of natural gas exploration and production for more than 50 years.",
+    "Liquefied natural gas, or LNG, is a technical process that involves cooling raw natural gas into a liquid form. As a liquid, it can be transported overseas by ship.",
+    "The industry has been operating in some form or another for almost 100 years, but it has never developed in Canada – until now.",
+    "LNG Canada will be the first large-scale export facility of its kind in British Columbia. Once operational, LNG Canada will ship natural gas to markets in Asia where it will be processed for energy needs.",
+    "The Government of British Columbia has statutory responsibilities to ensure the natural gas industry, including the companies involved with LNG Canada, are permitted and compliant with all government legislation and requirements."
+  ],
+  "activities": [
+    {
+      "type": "Construction",
+      "title": "Activity Update 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
+      "date": "Jan 15, 2018"
+    },
+    {
+      "type": "Stage",
+      "title": "Activity Update 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
+      "date": "June 1, 2015"
+    },
+    {
+      "type": "Stage",
+      "title": "Activity Update 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus.",
+      "date": "June 1, 2015"
+    },
+    {
+      "type": "Stage",
+      "title": "Activity Update 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "date": "June 1, 2015"
+    },
+    {
+      "type": "Stage",
+      "title": "Activity Update 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "date": "June 1, 2015"
+    },
+    {
+      "type": "Stage",
+      "title": "Activity Update 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "date": "June 1, 2015"
+    },
+    {
+      "type": "Stage",
+      "title": "Activity Update 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "date": "June 1, 2015"
+    }
+  ]
+}
