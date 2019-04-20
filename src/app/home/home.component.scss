@@ -40,3 +40,52 @@ p {
 #map-btn #btn-icon-right {
   margin-left: 0.5rem;
 }
+
+#right-column .card-img-top {
+  opacity: 0.8;
+  transition: 0.5s ease-in-out;
+}
+
+#right-column .card-img-top:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+#right-column .card {
+  max-width: 28rem;
+}
+
+#right-column .card-body {
+  padding: 0.8rem;
+}
+
+#right-column .card-company {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+#right-column .card-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: $gray6;
+  margin-bottom: 0.5rem;
+}
+
+#right-column .card-location {
+  font-weight: 600;
+}
+
+#right-column .card button {
+  position: absolute;
+  right: 0.7rem;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  font-weight: 600;
+  color: $gray7;
+  margin-top: -2.2rem;
+}
+
+#right-column .card button span {
+  margin-left: 1rem;
+}
