@@ -254,7 +254,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         style: { color: '#6092ff', weight: 5 },
         onEachFeature: (_, layer) => {
           layer.on('mouseover', e => {
-            e.target.setStyle({ color: '#ff9d00' });
+            e.target.setStyle({ color: '#00f6ff' });
           });
           layer.on('mouseout', e => {
             e.target.setStyle({ color: '#6092ff' });
@@ -289,21 +289,11 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         <div class="popup-content">
           <div class="popup-desc-title">Application Description</div>
           <div class="popup-desc">
-            Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit,
-            sed do eiusmod tempor incididunt ut labore
-            et dolore magna aliqua. Viverra justo nec ultrices
-            dui sapien eget mi. Elit duis tristique sollicitudin
-            nibh. Molestie nunc non blandit massa enim nec dui nunc.
-            Nec ultrices dui sapien eget mi proin sed libero.
-            Vestibulum mattis ullamcorper velit sed ullamcorper.
-            Enim tortor at auctor urna nunc id cursus.
-            Mattis molestie a iaculis at erat pellentesque
-            adipiscing commodo. Magna eget est lorem ipsum
-            dolor sit amet consectetur adipiscing.
+            A 670-kilometer pipeline that will supply the LNG Canada export facility
+            with raw natural gas from northeastern British Columbia.
           </div>
           <hr class="popup-hr">
-          <div class="popup-value">Other High Value Info</div>
+          <div class="popup-value"></div>
           <a href="/project/2">
             <div class="popup-button">
               <button type="button" class="btn btn-primary" routerLink="/project/2">
@@ -315,6 +305,31 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           </a>
         </div>
       `;
+      const lngPopup = `
+        <div class="popup-header">
+          <div class="popup-title">COAST GASLINK PIPELINE</div>
+          <div class="popup-subtitle">Trans Canada - Coastal Gaslink Pipeline Ltd.</div>
+        </div>
+        <div class="popup-content">
+          <div class="popup-desc-title">Application Description</div>
+          <div class="popup-desc">
+            A large-scale natural gas processing and export facility located in Kitimat,
+            British Columbia. After natural gas is converted into a liquid form it will
+            be shipped to Asia.
+          </div>
+          <hr class="popup-hr">
+          <div class="popup-value"></div>
+          <a href="/project/2">
+            <div class="popup-button">
+              <button type="button" class="btn btn-primary" routerLink="/project/2">
+                <i class="material-icons mr-1">image</i>
+                <i class="material-icons mr-1">menu</i>
+                <span>Go to Details</span>
+              </button>
+            </div>
+          </a>
+        </div>
+      `
 
       L.geoJSON(data.facilities, {
         pointToLayer: (_, latlng) => {
@@ -351,7 +366,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
                 weight: 3,
                 fillColor: '#a5ff82'
               });
-              const popup = L.popup(popupOptions).setContent(gasPopup);
+              const popup = L.popup(popupOptions).setContent(lngPopup);
               layer.bindPopup(popup);
               break;
             }
@@ -364,7 +379,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           //   this.urlService.setFragment('details');
           // });
           layer.on('mouseover', e => {
-            e.target.setStyle({ color: '#ff9d00' });
+            e.target.setStyle({ color: '#00f6ff' });
           });
           layer.on('mouseout', e => {
             e.target.setStyle({ color: '#6092ff' });
@@ -470,6 +485,19 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     } else {
       setTimeout(this.fixMap.bind(this), 50);
     }
+  }
+
+  public ngOnLegendLngEnter () {
+    console.log('enter');
+  }
+  public ngOnLegendLngLeave () {
+    console.log('leave');
+  }
+  public ngOnLegendGasEnter () {
+    console.log('enter');
+  }
+  public ngOnLegendGasLeave () {
+    console.log('leave');
   }
 
   // called when apps list changes

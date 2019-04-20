@@ -4,7 +4,10 @@
     <div id="title"> PROJECTS </div>
     <div id="sub-title">Select a project to see more details</div>
     <hr>
-    <div class="button" id="lng-button">
+    <div class="button" id="lng-button"
+      (mouseenter) = "ngOnLegendLngEnter()"
+      (mouseleave) = "ngOnLegendLngLeave()"
+    >
       <div class="icon">
         <svg>
           <circle
@@ -26,7 +29,10 @@
         </button>
       </div>
     </div>
-    <div class="button" id="gas-button">
+    <div class="button" id="gas-button"
+      (mouseenter) = "ngOnLegendGasEnter()"
+      (mouseleave) = "ngOnLegendGasLeave()"
+    >
       <div class="icon">
         <svg>
           <circle
