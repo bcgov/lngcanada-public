@@ -6,3 +6,37 @@
   display: block;
   background: $white;
 }
+
+h3 {
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+#activities {
+  margin-top: 2rem;
+  border: solid;
+  border-width: 1.3px;
+  color: $gray5;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  height: 30rem;
+}
+
+#activities h3 {
+  color: $gray5;
+}
+
+#map-btn button {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  font-weight: 600;
+  background-color: $primary7;
+}
+
+#map-btn #btn-icon-right {
+  margin-left: 0.5rem;
+}
