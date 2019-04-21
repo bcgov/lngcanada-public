@@ -16,6 +16,7 @@ p {
   margin-bottom: 1rem;
 }
 
+/* Here is some spiffy mobile first grid stuff */
 #home-content {
   display: grid;
   grid-gap: 2rem;
@@ -30,6 +31,14 @@ p {
 #right-column {
   grid-area: sidebar;
 }
+
+@media only screen and (max-width: 1000px) {
+  #home-content {
+    display: block;
+  }
+}
+
+/* ******************************************* */
 
 .container {
   padding-top: 0;
