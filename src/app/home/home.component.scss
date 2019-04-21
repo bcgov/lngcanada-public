@@ -16,6 +16,25 @@ p {
   margin-bottom: 1rem;
 }
 
+#home-content {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 28rem;
+  grid-template-areas: "content sidebar";
+}
+
+#left-column {
+  grid-area: content;
+}
+
+#right-column {
+  grid-area: sidebar;
+}
+
+.container {
+  padding-top: 0;
+}
+
 #activities {
   margin-top: 2rem;
   border: solid;
@@ -51,9 +70,6 @@ p {
   cursor: pointer;
 }
 
-#right-column {
-  max-width: 28rem;
-}
 
 #right-column .card {
   margin: 1.4rem 0.1rem 1.4rem 0.1rem;
