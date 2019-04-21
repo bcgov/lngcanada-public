@@ -6,3 +6,118 @@
   display: block;
   background: $white;
 }
+
+h3 {
+  font-weight: 700;
+  font-size: 20px;
+  color: $gray8;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: $gray9;
+}
+
+/* Here is some spiffy mobile first grid stuff */
+#home-content {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: 1fr 28rem;
+  grid-template-areas: "content sidebar";
+}
+
+#left-column {
+  grid-area: content;
+}
+
+#right-column {
+  grid-area: sidebar;
+}
+
+@media only screen and (max-width: 1000px) {
+  #home-content {
+    display: block;
+  }
+}
+
+/* ******************************************* */
+
+.container {
+  padding-top: 0;
+}
+
+#activities {
+  margin-top: 2rem;
+  border: solid;
+  border-width: 1.3px;
+  color: $gray5;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  height: 30rem;
+}
+
+#activities h3 {
+  color: $gray5;
+}
+
+#map-btn button {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  font-weight: 600;
+  background-color: $primary7;
+}
+
+#map-btn #btn-icon-right {
+  margin-left: 0.5rem;
+}
+
+#right-column .card-img-top {
+  opacity: 0.8;
+  transition: 0.5s ease-in-out;
+}
+
+#right-column .card-img-top:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+#right-column .card {
+  margin: 1.4rem 0.1rem 1.4rem 0.1rem;
+}
+
+#right-column .card-body {
+  padding: 0.8rem;
+}
+
+#right-column .card-company {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+#right-column .card-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: $gray6;
+  margin-bottom: 0.5rem;
+}
+
+#right-column .card-location {
+  font-weight: 600;
+}
+
+#right-column .card button {
+  position: absolute;
+  right: 0.7rem;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  font-weight: 600;
+  color: $gray7;
+  margin-top: -2.2rem;
+}
+
+#right-column .card button span {
+  margin-left: 1rem;
+}
