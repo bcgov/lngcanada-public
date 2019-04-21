@@ -51,8 +51,12 @@ p {
   cursor: pointer;
 }
 
-#right-column .card {
+#right-column {
   max-width: 28rem;
+}
+
+#right-column .card {
+  margin: 1.4rem 0.1rem 1.4rem 0.1rem;
 }
 
 #right-column .card-body {
