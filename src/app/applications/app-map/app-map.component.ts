@@ -329,7 +329,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
             </div>
           </a>
         </div>
-      `
+      `;
 
       L.geoJSON(data.facilities, {
         pointToLayer: (_, latlng) => {
