@@ -487,16 +487,16 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     }
   }
 
-  public ngOnLegendLngEnter () {
+  public ngOnLegendLngEnter() {
     console.log('enter');
   }
-  public ngOnLegendLngLeave () {
+  public ngOnLegendLngLeave() {
     console.log('leave');
   }
-  public ngOnLegendGasEnter () {
+  public ngOnLegendGasEnter() {
     console.log('enter');
   }
-  public ngOnLegendGasLeave () {
+  public ngOnLegendGasLeave() {
     console.log('leave');
   }
 
