@@ -13,11 +13,14 @@ export class OverviewComponent implements OnInit {
 
   public id: number;
   public text: string[];
+  public activities: string[];
 
   constructor(private dataService: DataService, private route: ActivatedRoute) {
     this.route.parent.params.subscribe(params => {
       this.id = params.id;
+
       this.text = this.dataService.getText(this.id, this.pageType);
+      this.activities = this.dataService.getActivities(this.id, this.pageType);
     });
   }
 
