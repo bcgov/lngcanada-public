@@ -6,7 +6,11 @@ export class Constants {
 
   public static readonly complianceDocumentTypes = [
     'Certificate',
-    'Permit'
+    'Permit',
+    'Inspection',
+    'Compliance Self-Report',
+    'Warning Letter',
+    'Enforcement Action'
   ];
 
   public static readonly types = [
