@@ -1,33 +1,31 @@
 export class Constants {
   public static readonly agencies = [
-    'ENVIRONMENTAL ASSESSMENT OFFICE',
-    'BC OIL & GAS COMMISSION',
-    'MINISTRY OF ENVIRONMENT'
+    'Environmental Assessment Office',
+    'BC Oil and Gas Commission'
   ];
 
   public static readonly complianceDocumentTypes = [
-    'COMPANY SELF REPORT',
-    'GOVERNMENT INSPECTION',
-    'ENFORCEMENT ORDER'
+    'Certificate',
+    'Permit'
   ];
 
   public static readonly types = [
-    'CERTIFICATE OF PURCHASE',
-    'CROWN GRANT',
-    'DEVELOPMENT AGREEMENT',
-    'DOMINION PATENTS',
-    'INCLUSION',
-    'INVENTORY',
-    'LEASE',
-    'LICENCE',
-    'OIC ECOLOGICAL RESERVE ACT',
-    'PERMIT',
-    'PRE-TANTALIS',
-    'PROVINCIAL PARK',
-    'RESERVE/NOTATION',
-    'REVENUE SHARING AGREEMENT',
-    'RIGHT-OF-WAY',
-    'TRANSFER OF ADMINISTRATION/CONTROL'
+    'Certificate',
+    'Crown Grant',
+    'Development Agreement',
+    'Dominion Patents',
+    'Inclusion',
+    'Inventory',
+    'Lease',
+    'Licence',
+    'OIC Ecological Reserve Act',
+    'Permit',
+    'Pre-Tantalis',
+    'Provincial Park',
+    'Reserve/Notation',
+    'Revenue Sharing Agreement',
+    'Right-of-Way',
+    'Transfer of AdminiStRation/Control'
   ];
 
   public static readonly subtypes = {
