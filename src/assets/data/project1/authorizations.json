@@ -10,8 +10,8 @@
       "description": "LNG Canada Development Inc. has received an Environmental Assessment Certificate for the LNG Canada Export Terminal Project. The LNG Canada Export Terminal is the first project to be granted a certificate following a substituted environmental assessment.",
       "complianceDocumentType": "Certificate",
       "complianceDocumentSubtype": "General",
-      "OGCLabel": "Environmental Assessment Certificate #E15-01",
-      "name": "",
+      "OGCLabel": "",
+      "name": "Environmental Assessment Certificate #E15-01",
       "url": "https://projects.eao.gov.bc.ca/api/document/58869074e036fb0105768b53/fetch"
     },
     {
@@ -22,8 +22,8 @@
       "description": "Table of Conditions for Environmental Assessment Certificate #E15-01 for the LNG Canada Project dated June 2015",
       "complianceDocumentType": "Certificate",
       "complianceDocumentSubtype": "Project Description",
-      "OGCLabel": "Certified Project Description",
-      "name": "",
+      "OGCLabel": "",
+      "name": "Certified Project Description",
       "url": "https://projects.eao.gov.bc.ca/api/document/58869074e036fb0105768b52/fetch"
     },
     {
@@ -34,8 +34,8 @@
       "description": "Certified Project Description for Environmental Assessment Certificate #E15-01 for the LNG Canada Project dated June 2016",
       "complianceDocumentType": "Certificate",
       "complianceDocumentSubtype": "Table of Conditions",
-      "OGCLabel": "Table of Conditions",
-      "name": "",
+      "OGCLabel": "",
+      "name": "Table of Conditions",
       "url": "https://projects.eao.gov.bc.ca/api/document/58869074e036fb0105768b51/fetch"
     },
     {
@@ -46,8 +46,8 @@
       "description": "Environmental Assessment Certificate Amendment #1 to Certificate #E15-01 originally issued June 17, 2015",
       "complianceDocumentType": "Certificate",
       "complianceDocumentSubtype": "Amendment",
-      "OGCLabel": "Certificate Amendment to #E15-01",
-      "name": "",
+      "OGCLabel": "",
+      "name": "Certificate Amendment to #E15-01",
       "url": "https://projects.eao.gov.bc.ca/api/document/5886907ae036fb0105768b6c/fetch"
     },
     {
@@ -58,8 +58,8 @@
       "description": "Certificate Amendment 1 - Amended Project Description",
       "complianceDocumentType": "Certificate",
       "complianceDocumentSubtype": "Project Description",
-      "OGCLabel": "Amended Project Description",
-      "name": "",
+      "OGCLabel": "",
+      "name": "Amended Project Description",
       "url": "https://projects.eao.gov.bc.ca/api/document/5886907ae036fb0105768b6a/fetch"
     },
     {

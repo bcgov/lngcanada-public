@@ -10,8 +10,8 @@
       "description": "Environmental Assessment Certificate Amendment #1 to Certificate #E14-03 originally issued October 23, 2014. ",
       "complianceDocumentType": "Certificate",
       "complianceDocumentSubtype": "Amendment",
-      "OGCLabel": "Section 19 Certificate Amendment ",
-      "name": "",
+      "OGCLabel": "",
+      "name": "Section 19 Certificate Amendment",
       "url": "https://projects.eao.gov.bc.ca/api/document/5afb5689e8ad530024ed67ff/fetch/Section_19_Certificate_Amendment_SHAR_-_FINAL_SIGNED.pdf"
     },
     {
@@ -22,8 +22,8 @@
       "description": "Certified Project Description for Environmental Assessment Certificate #E14-03 for the CGL Project dated October 23, 2014.",
       "complianceDocumentType": "Certificate",
       "complianceDocumentSubtype": "Project Description",
-      "OGCLabel": "Certified Project Description",
-      "name": "",
+      "OGCLabel": "",
+      "name": "Certified Project Description",
       "url": "https://projects.eao.gov.bc.ca/api/document/58868fd9e036fb0105768798/fetch"
     },
     {
@@ -46,8 +46,8 @@
       "description": "Table of Conditions for Certificate #E14-03 for the CGL Project dated October 23, 2014.",
       "complianceDocumentType": "Certificate",
       "complianceDocumentSubtype": "Table of Conditions",
-      "OGCLabel": "Table of Conditions ",
-      "name": "",
+      "OGCLabel": "",
+      "name": "Table of Conditions",
       "url": "https://projects.eao.gov.bc.ca/api/document/58868fd8e036fb0105768796/fetch/Table_of_Conditions"
     },
     {
@@ -58,8 +58,8 @@
       "description": "Signed Certificate document issued on October 23, 2014 ",
       "complianceDocumentType": "Certificate",
       "complianceDocumentSubtype": "General",
-      "OGCLabel": "Environmental Assessment Certificate #E14-03",
-      "name": "",
+      "OGCLabel": "",
+      "name": "Environmental Assessment Certificate #E14-03",
       "url": "https://projects.eao.gov.bc.ca/api/document/58868fd3e036fb010576876e/fetch"
     },
     {
