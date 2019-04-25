@@ -43,10 +43,11 @@ export class DocumentsComponent implements OnInit {
 
   public filters: IDocumentFilters = EMPTY_DOCUMENT_FILTERS;
 
+  public headers: string[] = [];
   public documents: Document[] = [];
 
   public sortColumn = '';
-  public sortDirection = 0;
+  public sortDirection = 1;
 
   public documentCountMessage = 'Total Results: ';
 
@@ -74,11 +75,11 @@ export class DocumentsComponent implements OnInit {
     this.sortDirection = this.sortDirection > 0 ? -1 : 1;
   }
 
-  public downloadFile(data) {
-    if (data.url) {
-      window.open(data.url);
+  public downloadFile(document: Document) {
+    if (document.url) {
+      window.open(document.url);
     } else {
-      // handle with real file downloads
+      // handle real file downloads when documents are hosted
     }
   }
 
@@ -114,14 +115,18 @@ export class DocumentsComponent implements OnInit {
     setTimeout(() => {
       this.documents = [];
 
-      const documentsJson = this.dataService.getDocuments(this.id, this.pageType);
-      Object.keys(documentsJson).forEach(key => {
-        const doc: Document = new Document(documentsJson[key]);
+      const documentsData = this.dataService.getDocuments(this.id, this.pageType);
+
+      this.headers = documentsData.headers;
+
+      Object.keys(documentsData.docs).forEach(key => {
+        const doc: Document = new Document(documentsData.docs[key]);
 
         if (this.isFiltered(doc)) {
           this.documents.push(doc);
         }
       });
+
       this.updateDocumentCountMessage();
     });
   }
@@ -148,7 +153,7 @@ export class DocumentsComponent implements OnInit {
    * @returns {boolean}
    * @memberof DocumentsComponent
    */
-  public isDateRangeFiltered(date: Date): boolean {
+  public isDateRangeFiltered(date: string): boolean {
     if (!this.filters.dateRangeFrom && !this.filters.dateRangeTo) {
       return true;
     }

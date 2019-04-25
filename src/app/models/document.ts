@@ -1,21 +1,27 @@
+import moment from 'moment';
+
 export class Document {
   _id: string;
+  num: number;
   fileName: string;
   name: string;
   agency: string;
   complianceDocumentType: string;
-  date: Date;
+  complianceDocumentSubtype: string;
+  date: string;
   description: string;
   url: string;
   mime: string;
 
   constructor(obj?: any) {
     this._id = (obj && obj._id) || null;
+    this.num = (obj && obj.num) || null;
     this.fileName = (obj && obj.fileName) || null;
     this.name = (obj && obj.name) || null;
     this.agency = (obj && obj.agency) || null;
     this.complianceDocumentType = (obj && obj.complianceDocumentType) || null;
-    this.date = (obj && obj.date && new Date(obj.date)) || null;
+    this.complianceDocumentSubtype = (obj && obj.complianceDocumentSubtype) || null;
+    this.date = (obj && obj.date && moment(obj.date, "DD-MMM'YY").format('MMMM DD, YYYY')) || null;
     this.description = (obj && obj.description) || null;
     this.url = (obj && obj.url) || null;
     this.mime = (obj && obj.mime) || null;

@@ -65,6 +65,14 @@ export class DataService {
     return projectData[id][pageType.toString()].text;
   }
 
+  getDetails(id: number, pageType: PageTypes) {
+    if (!id || !pageType) {
+      return;
+    }
+
+    return projectData[id][pageType.toString()].details;
+  }
+
   getDocuments(id: number, pageType: PageTypes) {
     if (!id || !pageType) {
       return;
