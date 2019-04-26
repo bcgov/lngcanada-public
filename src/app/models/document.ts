@@ -21,7 +21,7 @@ export class Document {
     this.agency = (obj && obj.agency) || null;
     this.complianceDocumentType = (obj && obj.complianceDocumentType) || null;
     this.complianceDocumentSubtype = (obj && obj.complianceDocumentSubtype) || null;
-    this.date = (obj && obj.date && moment(obj.date, "DD-MMM'YY").format('MMMM DD, YYYY')) || null;
+    this.date = (obj && obj.date && moment(obj.date, 'DD-MMM-YY').format('MMMM DD, YYYY')) || null;
     this.description = (obj && obj.description) || null;
     this.url = (obj && obj.url) || null;
     this.mime = (obj && obj.mime) || null;
