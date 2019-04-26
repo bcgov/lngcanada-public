@@ -1,16 +1,16 @@
 {
   "text": [
-    "LNG Canada will be the first large-scale LNG export facility built in Canada.",
-    "The facility is a join-venture between multiple companies – Shell, PETRONAS, PetroChina, Mitsubishi Corporation and KOGAS.",
-    "Natural gas supply will come from the Montney basin in northeast British Columbia. The Coastal GasLink pipeline will transport natural gas from the Dawson Creek area to the export facility in Kitimat.",
-    "After natural gas is converted into a liquid form at the export facility it will be shipped to markets in Asia.",
-    "Initial site construction is underway in Kitimat. LNG Canada is scheduled to be in service in 2023."
+    "Coastal GasLink is a 670-kilometer pipeline that will supply LNG Canada with natural gas from northeastern British Columbia. The pipeline will run from the Dawson Creek area to the LNG Canada facility in Kitimat.",
+    "Coastal GasLink is owned by TransCanada who was selected by LNG Canada to design, build and operate the pipeline.",
+    "The pipeline is being built in eight stages before construction is complete. Building the pipeline in eight separate sections across the province allows the company mange labour demands and schedule construction so it can be completed in time for LNG Canada’s operational date.",
+    "Construction activities are underway. The pipeline is scheduled to be ready in early 2022."
   ],
   "details": {
-    "type": "",
-    "Company": "",
-    "location": "",
-    "timeline": ["Construction Start: dd MMM yyyy", "Construction End: dd MMM yyyy"]
+    "type": "Natural gas pipeline",
+    "proponent": "Coastal GasLink Ltd.",
+    "proponentURL" :"http://www.coastalgaslink.com/",
+    "location": "Dawson Creek, BC to Kitimat, BC (670-kilometres)",
+    "status": "Preliminary construction activities underway"
   },
   "activities": [
     {
@@ -23,6 +23,36 @@
       "type": "Stage",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
+      "date": "June 1, 2015"
+    },
+    {
+      "type": "Stage",
+      "title": "Activity Update 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus.",
+      "date": "June 1, 2015"
+    },
+    {
+      "type": "Stage",
+      "title": "Activity Update 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "date": "June 1, 2015"
+    },
+    {
+      "type": "Stage",
+      "title": "Activity Update 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "date": "June 1, 2015"
+    },
+    {
+      "type": "Stage",
+      "title": "Activity Update 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "date": "June 1, 2015"
+    },
+    {
+      "type": "Stage",
+      "title": "Activity Update 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "date": "June 1, 2015"
     }
   ]
