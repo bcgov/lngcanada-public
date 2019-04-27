@@ -19,31 +19,25 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label class="control-label">Agency</label>
-      <div class="select-badge-group">
-        <div class="select-badge" *ngFor="let key of agencyKeys">
-          <input type="checkbox" name="{{key}}" id="_{{key}}" [(ngModel)]="_agencyFilters[key]" />
-          <label for="_{{key}}">{{key | titlecase}}</label>
+    <ng-container *ngFor="let section of filterSections">
+      <div class="form-group">
+        <label class="control-label">{{section.displayName}}</label>
+        <div class="select-badge-group">
+          <ng-container *ngFor="let filter of section.textFilters">
+            <div class="select-badge">
+              <input type="checkbox" name="{{filter.fieldName}}" id="_{{filter.fieldName}}" [(ngModel)]="_textFilters[filter.fieldName]" />
+              <label for="_{{filter.fieldName}}">{{filter.displayName | titlecase}}</label>
+            </div>
+          </ng-container>
         </div>
       </div>
-    </div>
-
-    <div class="form-group">
-      <label class="control-label">Compliance Document Type</label>
-      <div class="select-badge-group">
-        <div class="select-badge" *ngFor="let key of complianceDocumentTypeKeys">
-          <input type="checkbox" name="{{key}}" id="_{{key}}" [(ngModel)]="_complianceDocumentTypeFilters[key]" />
-          <label for="_{{key}}">{{key | titlecase}}</label>
-        </div>
-      </div>
-    </div>
+    </ng-container>
 
     <div class="form-btns">
       <button class="btn btn-primary gtm-apply-filters explore-btn-lg-device" type="button" title="Apply filters" (click)="applyAllFilters()">
         Filter Results
       </button>
-      <button class="btn btn-primary gtm-apply-filters explore-btn-sm-device" type="button" title="Apply filters" (click)="applyAllFilters();hideSidePanel.emit()">
+      <button class="btn btn-primary gtm-apply-filters explore-btn-sm-device" type="button" title="Apply filters" (click)="applyAllFilters(); hideSidePanel.emit()">
         Filter Results
       </button>
       <button class="btn btn-light" type="button" title="Clear filters" (click)="clearAllFilters()">

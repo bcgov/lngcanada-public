@@ -40,11 +40,9 @@ export class ActivityComponent implements OnInit, OnChanges {
   }
 
   public updateActivities(): void {
-    console.log(this.activitiesJSON);
     this.initializeActivities();
     this.setInitialPagination();
     this.updateActivitiesToDisplay();
-    console.log(this.activitiesJSON);
   }
 
   public initializeActivities(): void {

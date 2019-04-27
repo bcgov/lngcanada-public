@@ -1,26 +1,21 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import * as _ from 'lodash';
 import moment from 'moment';
 
 import { ExplorePanelComponent } from './explore-panel/explore-panel.component';
 import { Document } from 'app/models/document';
+import { DocumentHeader } from 'app/models/documentHeader';
+import { FilterSection, TextFilter } from 'app/models/documentFilter';
 import { PageTypes } from 'app/utils/page-types.enum';
 import { DataService } from 'app/services/data.service';
 
 export interface IDocumentFilters {
-  agencies: string[];
-  complianceDocumentTypes: string[];
   dateRangeFrom: Date;
   dateRangeTo: Date;
+  textFilters: TextFilter[];
 }
-
-const EMPTY_DOCUMENT_FILTERS: IDocumentFilters = {
-  agencies: [],
-  complianceDocumentTypes: [],
-  dateRangeFrom: null,
-  dateRangeTo: null
-};
 
 /**
  * Documents component.
@@ -41,9 +36,9 @@ export class DocumentsComponent implements OnInit {
 
   public id: number;
 
-  public filters: IDocumentFilters = EMPTY_DOCUMENT_FILTERS;
-
-  public headers: string[] = [];
+  public headers: DocumentHeader[] = [];
+  public filters: IDocumentFilters = { dateRangeFrom: null, dateRangeTo: null, textFilters: [] };
+  public filterSections: FilterSection[] = [];
   public documents: Document[] = [];
 
   public sortColumn = '';
@@ -53,34 +48,20 @@ export class DocumentsComponent implements OnInit {
 
   public isFilterPanelVisible = false;
 
-  constructor(private dataService: DataService, public route: ActivatedRoute) {
-    this.route.parent.params.subscribe(params => {
-      this.id = params.id;
-      this.filterDocuments();
-    });
-  }
+  constructor(private dataService: DataService, public route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.filterDocuments();
-  }
+    this.route.parent.params.subscribe(params => {
+      this.id = params.id;
 
-  /**
-   * Sets the sort properties (column, direction) used by the OrderBy pipe.
-   *
-   * @param {string} sortBy
-   * @memberof DocumentsComponent
-   */
-  public sort(sortBy: string) {
-    this.sortColumn = sortBy;
-    this.sortDirection = this.sortDirection > 0 ? -1 : 1;
-  }
+      const filtersJSON = this.dataService.getDocumentFilters(this.id, this.pageType);
 
-  public downloadFile(document: Document) {
-    if (document.url) {
-      window.open(document.url);
-    } else {
-      // handle real file downloads when documents are hosted
-    }
+      for (const sectionJSON of filtersJSON) {
+        this.filterSections.push(new FilterSection(sectionJSON));
+      }
+
+      this.filterDocuments();
+    });
   }
 
   /**
@@ -102,7 +83,25 @@ export class DocumentsComponent implements OnInit {
    * @memberof DocumentsComponent
    */
   public updateDocumentFilters(documentFilters: IDocumentFilters) {
-    this.filters = { ...EMPTY_DOCUMENT_FILTERS, ...documentFilters };
+    this.filters = { dateRangeFrom: null, dateRangeTo: null, textFilters: [] };
+
+    this.filters.dateRangeFrom = documentFilters.dateRangeFrom;
+
+    this.filters.dateRangeTo = documentFilters.dateRangeTo;
+
+    // TODO this could be removed if the explore-panel component returned TextFilter objects to begin with.
+    if (documentFilters.textFilters && documentFilters.textFilters.length) {
+      this.filterSections.forEach((filterSection: FilterSection) => {
+        filterSection.textFilters.forEach((textFilter: TextFilter) => {
+          documentFilters.textFilters.forEach(documentTextFilter => {
+            if (textFilter.fieldName === documentTextFilter.fieldName) {
+              this.filters.textFilters.push(textFilter);
+            }
+          });
+        });
+      });
+    }
+
     this.filterDocuments();
   }
 
@@ -113,14 +112,18 @@ export class DocumentsComponent implements OnInit {
    */
   public filterDocuments() {
     setTimeout(() => {
+      const documentHeadersJSON = this.dataService.getDocumentHeaders(this.id, this.pageType);
+
+      this.headers = [];
+      for (const header of documentHeadersJSON) {
+        this.headers.push(new DocumentHeader(header));
+      }
+
+      const documentsJSON = this.dataService.getDocuments(this.id, this.pageType);
+
       this.documents = [];
-
-      const documentsData = this.dataService.getDocuments(this.id, this.pageType);
-
-      this.headers = documentsData.headers;
-
-      Object.keys(documentsData.docs).forEach(key => {
-        const doc: Document = new Document(documentsData.docs[key]);
+      Object.keys(documentsJSON).forEach(key => {
+        const doc: Document = new Document(documentsJSON[key]);
 
         if (this.isFiltered(doc)) {
           this.documents.push(doc);
@@ -132,18 +135,16 @@ export class DocumentsComponent implements OnInit {
   }
 
   /**
-   * Applies all fiters, and returns true if the document is included in the filters, false otherwise.
+   * Applies all filters, and returns true if the document is included in the filters, false otherwise.
    *
    * @param {Document} document
    * @returns {boolean}
    * @memberof DocumentsComponent
    */
   public isFiltered(document: Document): boolean {
-    return (
-      this.isDateRangeFiltered(document.date) &&
-      this.isAgencyFiltered(document.agency) &&
-      this.isComplianceDocumentTypeFiltered(document.complianceDocumentType)
-    );
+    const x = this.isDateRangeFiltered(document.date);
+    const y = this.isTextFiltered(document);
+    return x && y;
   }
 
   /**
@@ -173,55 +174,69 @@ export class DocumentsComponent implements OnInit {
   }
 
   /**
-   * Applies agency filters and returns true if the agency is included in the filters, false otherwise.
+   * Applies a text filter and returns true if the document is included in the filters, false otherwise.
    *
    * @param {string} agency
    * @returns {boolean}
    * @memberof DocumentsComponent
    */
-  public isAgencyFiltered(agency: string): boolean {
-    if (!this.filters.agencies || !this.filters.agencies.length) {
+  public isTextFiltered(document: Document): boolean {
+    if (!this.filters || !this.filters.textFilters || !this.filters.textFilters.length) {
       return true;
     }
 
     return (
-      this.filters.agencies.filter(agencyVal => {
-        return agencyVal.toLowerCase() === agency.toLowerCase();
+      this.filters.textFilters.filter((textFilter: TextFilter) => {
+        return textFilter.documentFieldValues
+          .map(x => x.toLowerCase())
+          .includes(document[textFilter.documentFieldName].toLowerCase());
       }).length > 0
     );
   }
 
   /**
-   * Applies compliance document type filters and returns true if the agency is included in the filters,
-   * false otherwise.
+   * Toggle Explore side panel open or clos.
    *
-   * @param {string} agency
-   * @returns {boolean}
    * @memberof DocumentsComponent
    */
-  public isComplianceDocumentTypeFiltered(complianceDocumentType: string): boolean {
-    if (!this.filters.complianceDocumentTypes || !this.filters.complianceDocumentTypes.length) {
-      return true;
-    }
-
-    return (
-      this.filters.complianceDocumentTypes.filter(complianceDocumentTypeVal => {
-        return complianceDocumentTypeVal.toLowerCase() === complianceDocumentType.toLowerCase();
-      }).length > 0
-    );
-  }
-
-  // toggle Explore side panel
   public toggleFilterPanel() {
     this.isFilterPanelVisible = !this.isFilterPanelVisible;
-
-    console.log(this.isFilterPanelVisible);
 
     // this.urlService.setFragment(this.isSidePanelVisible ? 'explore' : null);
   }
 
+  /**
+   * Close the Explore Side panel.
+   *
+   * @memberof DocumentsComponent
+   */
   public closeSidePanel() {
     this.isFilterPanelVisible = false;
     // this.urlService.setFragment(null);
+  }
+
+  /**
+   * Sets the sort properties (column, direction) used by the OrderBy pipe.
+   *
+   * @param {string} sortBy
+   * @memberof DocumentsComponent
+   */
+  public sort(sortBy: string) {
+    this.sortColumn = sortBy;
+    this.sortDirection = this.sortDirection > 0 ? -1 : 1;
+  }
+
+  /**
+   * Opens a document url.
+   *
+   * @param {Document} document
+   * @memberof DocumentsComponent
+   */
+  public downloadFile(document: Document) {
+    if (document.url) {
+      window.open(document.url);
+    } else {
+      // handle real file downloads when documents are hosted
+    }
   }
 }

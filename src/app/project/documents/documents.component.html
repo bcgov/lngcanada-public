@@ -40,6 +40,7 @@
         <i class="material-icons">close</i>
       </button>
       <app-explore-panel #explorePanel
+        [filterSections]="filterSections"
         (updateFilters)="updateDocumentFilters($event)"
         (hideSidePanel)="closeSidePanel()">
       </app-explore-panel>
@@ -49,9 +50,9 @@
       <thead>
         <tr>
           <ng-container *ngFor="let header of headers">
-            <th class="sortable" (click)="sort(header['fieldName'])">
-              {{header['displayName']}}
-              <i class="sort" [ngClass]="{'sort-asc': (sortColumn == 'name' && sortDirection < 0), 'sort-desc': (sortColumn == 'name' && sortDirection > 0) }" aria-hidden="true"></i>
+            <th class="sortable" (click)="sort(header.fieldName)">
+              {{header.displayName}}
+              <i class="sort" [ngClass]="{'sort-asc': (sortColumn == header.fieldName && sortDirection < 0), 'sort-desc': (sortColumn == header.fieldName && sortDirection > 0) }" aria-hidden="true"></i>
             </th>
           </ng-container>
           <th>
@@ -62,7 +63,7 @@
         <tr>
           <ng-container *ngFor="let header of headers">
             <td>
-              {{document[header['fieldName']]}}
+              {{document[header.fieldName]}}
             </td>
           </ng-container>
           <td>
