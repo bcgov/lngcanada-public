@@ -8,4 +8,17 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   constructor(public router: Router) {}
+
+  project = ((proj) => {
+    // console.log(this.router);
+    switch(proj){
+      case 1: return "LNG Canada";
+      case 2: return "Coastal Gas Link";
+      default: return "Projects"
+    }
+  })(1);
+
+  ngOnInit () {
+    console.log(this.router);
+  }
 }
