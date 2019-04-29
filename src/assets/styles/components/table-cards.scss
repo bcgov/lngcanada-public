@@ -281,11 +281,23 @@ table {
 .table-cards {
   @extend %responive-tables;
 
-  @include responive-tables('Name', 'Agency', 'Compliance Document Type', 'Date');
+  &.authorizations {
+    @include responive-tables('Name', 'Government Agency', 'Authorization Type', 'Date');
+  }
+
+  &.compliance {
+    @include responive-tables('Name', 'Government Agency', 'Author', 'Authorization Type', 'Status', 'Date');
+  }
 }
 
 .table-cards-large {
   @extend %responive-tables-large;
 
-  @include responive-tables-large('Name', 'Agency', 'Compliance Document Type', 'Date');
+  &.authorizations {
+    @include responive-tables-large('Name', 'Government Agency', 'Authorization Type', 'Date');
+  }
+
+  &.compliance {
+    @include responive-tables-large('Name', 'Government Agency', 'Author', 'Authorization Type', 'Status', 'Date');
+  }
 }
