@@ -14,6 +14,7 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+// import { takeUntil, map } from 'rxjs/operators';
 import 'leaflet';
 import 'leaflet.markercluster';
 import * as _ from 'lodash';
@@ -196,16 +197,6 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     // identify when map has initialized with a view
     this.map.whenReady(() => (this.isMapReady = true));
 
-    // map state change events
-    this.map.on(
-      'zoomstart',
-      () => {
-        // console.log('zoomstart');
-        // this.oldZoom = this.map.getZoom();
-      },
-      this
-    );
-
     // this.map.on('movestart', function () {
     //   console.log('movestart');
     // }, this);
@@ -238,11 +229,27 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       '/assets/data/pipeline-29apr2019.json'
     ];
 
+    const layers = {
+      facility: null,
+      facilities: null,
+      pipeline: null,
+      sections: null
+    };
+
     const displayData = data => {
       const tooltipOffset = L.point(0, -15);
+      console.log(data);
+
+      layers.facility = L.geoJSON(data.facility, {
+        style:{color: '#6092ff', weight: 2}
+      }).addTo(this.map);
+
+      layers.pipeline = L.geoJSON(data.pipeline, {
+        style:{color: '#6092ff', weight: 2}
+      }).addTo(this.map);
 
       // Add the pipeline segment layer
-      L.geoJSON(data.sections, {
+      layers.sections = L.geoJSON(data.sections, {
         style: { color: '#6092ff', weight: 5 },
         onEachFeature: (_, layer) => {
           layer.on('mouseover', e => {
@@ -323,7 +330,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         </div>
       `;
 
-      L.geoJSON(data.facilities, {
+      layers.facilities = L.geoJSON(data.facilities, {
         pointToLayer: (_, latlng) => {
           return L.circleMarker(latlng, markerOptions);
         },
@@ -386,6 +393,28 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         )
         .addTo(this.map);
     };
+
+    // map state change events
+    this.map.on(
+      'zoomend',
+      () => {
+        const z = this.map.getZoom();
+        if (z >= 10) {
+          if (this.map.hasLayer(layers.facility)) {
+            this.map.removeLayer(layers.facility);
+          }
+        } else {
+            // layers.facility.getElement.style.display = 'none';
+            // layers.facilities.getElement().style.display = 'none';
+            // layers.pipeline.getElement().style.display = 'none';
+            // layers.sections.getElement().style.display = 'none';
+        }
+        // console.log('zoomstart');
+        // this.oldZoom = this.map.getZoom();
+      },
+      this
+    );
+
 
     // Data collection function
     const getIt = (loc: string, callback: any) => {
