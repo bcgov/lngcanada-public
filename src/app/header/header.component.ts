@@ -15,13 +15,13 @@ export class HeaderComponent {
         const r = /\/project\/(\d)\//;
         const match = r.exec(location.pathname) || [];
         this.project = ((proj) => {
-          switch(proj){
-            case '1': return "LNG Canada";
-            case '2': return "Coastal Gas Link";
-            default: return "Projects"
+          switch (proj) {
+            case '1': return 'LNG Canada';
+            case '2': return 'Coastal Gas Link';
+            default: return 'Projects';
           }
         })(match[1]);
       }
-    })
+    });
   }
 }
