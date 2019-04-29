@@ -234,20 +234,12 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       '/assets/data/corridor-29mar2019.json',
       '/assets/data/facilities-29mar2019.json',
       '/assets/data/semicenterline-sections-09apr2019.json',
-      '/assets/data/semicenter-pipeline-29mar2019.json'
+      '/assets/data/facility-29apr2019.json',
+      '/assets/data/pipeline-29apr2019.json'
     ];
 
     const displayData = data => {
       const tooltipOffset = L.point(0, -15);
-
-      // L.Icon.Default.prototype.options.iconUrl = 'assets/images/marker-icon.png';
-      // L.Icon.Default.prototype.options.iconRetinaUrl = 'assets/images/marker-icon-2x.png';
-      // L.Icon.Default.prototype.options.shadowUrl = 'assets/images/marker-shadow.png';
-      // const icon = new L.icon({
-      //     iconUrl: 'assets/images/marker-icon.png',
-      //     iconRetinaUrl: 'assets/images/marker-icon-2x.png',
-      //     shadowUrl: 'assets/images/marker-shadow.png'
-      //   });
 
       // Add the pipeline segment layer
       L.geoJSON(data.sections, {
@@ -418,7 +410,8 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       dataGeoJson.corridor = topojson.feature(data[0], data[0].objects['corridor-29mar2019']);
       dataGeoJson.facilities = topojson.feature(data[1], data[1].objects['facilities-29mar2019']);
       dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-09apr2019']);
-      dataGeoJson.pipeline = topojson.feature(data[3], data[3].objects['semicenter-pipeline']);
+      dataGeoJson.facility = topojson.feature(data[3], data[3].objects['facility-29apr2019']);
+      dataGeoJson.pipeline = topojson.feature(data[4], data[4].objects['pipline-29apr2019']);
 
       displayData(dataGeoJson);
     };
