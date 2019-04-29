@@ -7,6 +7,60 @@
       { "displayName": "Authorization Type", "fieldName": "complianceDocumentSubtype" },
       { "displayName": "Date", "fieldName": "date" }
     ],
+    "filters": [
+      {
+        "displayName": "Agency",
+        "textFilters": [
+          {
+            "displayName": "Environmental Assessment Office",
+            "fieldName": "agencyEAO",
+            "documentFieldName": "agency",
+            "documentFieldValues": ["Environmental Assessment Office"]
+          },
+          {
+            "displayName": "BC Oil & Gas Commission",
+            "fieldName": "agencyBCOGC",
+            "documentFieldName": "agency",
+            "documentFieldValues": ["BC Oil and Gas Commission"]
+          }
+        ]
+      },
+      {
+        "displayName": "Authorization Type",
+        "textFilters": [
+          {
+            "displayName": "Project General",
+            "fieldName": "projectGeneral",
+            "documentFieldName": "complianceDocumentSubtype",
+            "documentFieldValues": ["General"]
+          },
+          {
+            "displayName": "Investigative Use",
+            "fieldName": "investigativeUse",
+            "documentFieldName": "complianceDocumentSubtype",
+            "documentFieldValues": ["Investigative Use"]
+          },
+          {
+            "displayName": "Road",
+            "fieldName": "road",
+            "documentFieldName": "complianceDocumentSubtype",
+            "documentFieldValues": ["Road"]
+          },
+          {
+            "displayName": "Water",
+            "fieldName": "water",
+            "documentFieldName": "complianceDocumentSubtype",
+            "documentFieldValues": ["Water"]
+          },
+          {
+            "displayName": "Ancillary Site",
+            "fieldName": "ancillarySite",
+            "documentFieldName": "complianceDocumentSubtype",
+            "documentFieldValues": ["Ancillary Site"]
+          }
+        ]
+      }
+    ],
     "docs": [
       {
         "num": 1,

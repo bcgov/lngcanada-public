@@ -6,6 +6,7 @@ export class Document {
   fileName: string;
   name: string;
   agency: string;
+  author: string;
   complianceDocumentType: string;
   complianceDocumentSubtype: string;
   date: string;
@@ -19,6 +20,7 @@ export class Document {
     this.fileName = (obj && obj.fileName) || null;
     this.name = (obj && obj.name) || null;
     this.agency = (obj && obj.agency) || null;
+    this.author = (obj && obj.author) || null;
     this.complianceDocumentType = (obj && obj.complianceDocumentType) || null;
     this.complianceDocumentSubtype = (obj && obj.complianceDocumentSubtype) || null;
     this.date = (obj && obj.date && moment(obj.date, 'DD-MMM-YY').format('MMMM DD, YYYY')) || null;

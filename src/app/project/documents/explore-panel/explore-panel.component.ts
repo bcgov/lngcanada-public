@@ -1,149 +1,134 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
-import { Subject } from 'rxjs';
-import { takeUntil } from 'rxjs/operators';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import * as _ from 'lodash';
 import moment from 'moment';
 
-import { Constants } from 'app/utils/constants';
 import { UrlService } from 'app/services/url.service';
+import { IDocumentFilters } from '../documents.component';
+import { FilterSection, TextFilter } from 'app/models/documentFilter';
 
 @Component({
   selector: 'app-explore-panel',
   templateUrl: './explore-panel.component.html',
   styleUrls: ['./explore-panel.component.scss']
 })
-export class ExplorePanelComponent implements OnInit, OnDestroy {
+export class ExplorePanelComponent implements OnInit {
+  @Input() filterSections: FilterSection[] = []; // document filter sections // used in template
+
   @Output() updateFilters = new EventEmitter(); // to applications component
   @Output() hideSidePanel = new EventEmitter(); // to applications component // used in template
 
   readonly minDate = moment('1900-01-01').toDate(); // first app created
   readonly maxDate = moment('2100-12-31').toDate(); // today
 
-  private ngUnsubscribe: Subject<boolean> = new Subject<boolean>();
-
-  public agencyKeys: string[] = [];
-  public agencyFilters: object = {}; // array-like object
-  public _agencyFilters: object = {}; // temporary filters for Cancel feature
-
-  public complianceDocumentTypeKeys: string[] = [];
-  public complianceDocumentTypeFilters: object = {}; // array-like object
-  public _complianceDocumentTypeFilters: object = {}; // temporary filters for Cancel feature
-
-  public dateRangeFromFilter: Date = null;
+  public dateRangeFromFilter: Date = null; // applied filters
   public _dateRangeFromFilter: Date = null; // temporary filters for Cancel feature
 
-  public dateRangeToFilter: Date = null;
+  public dateRangeToFilter: Date = null; // applied filters
   public _dateRangeToFilter: Date = null; // temporary filters for Cancel feature
 
-  constructor(private urlService: UrlService) {
-    // declare agencies keys
-    Constants.agencies.forEach(agency => {
-      this.agencyKeys.push(agency.toUpperCase());
-    });
-    Constants.complianceDocumentTypes.forEach(complianceDocumentType => {
-      this.complianceDocumentTypeKeys.push(complianceDocumentType.toUpperCase());
-    });
+  public textFilterKeys: string[] = []; // all supported filters
+  public textFilters: object = {}; // applied filters
+  public _textFilters: object = {}; // temporary filters for Cancel feature
 
-    // initialize temporary filters
-    this.agencyKeys.forEach(key => {
-      this._agencyFilters[key] = false;
-    });
-    this.complianceDocumentTypeKeys.forEach(key => {
-      this._complianceDocumentTypeFilters[key] = false;
-    });
+  constructor(private urlService: UrlService) {}
 
-    // watch for URL param changes
-    // NB: this must be in constructor to get initial parameters
-    this.urlService.onNavEnd$.pipe(takeUntil(this.ngUnsubscribe)).subscribe(() => {
-      // get initial or updated parameters
-      // TODO: could also get params from event.url
-      const hasChanges = this.getParameters();
+  public ngOnInit() {
+    for (const section of this.filterSections) {
+      for (const textFilter of section.textFilters) {
+        // set allowed filters
+        this.textFilterKeys.push(textFilter.fieldName);
 
-      // notify applications component that we have new filters
-      if (hasChanges) {
-        this.updateFilters.emit(this.getFilters());
+        // set temporary filters
+        this._textFilters[textFilter.fieldName] = false;
       }
-    });
+    }
+
+    // get url filter parameters, if any
+    const hasChanges = this.getParameters();
+
+    // notify parent component that we have new filters
+    if (hasChanges) {
+      this.updateFilters.emit(this.getFilters());
+    }
   }
 
+  /**
+   * Parses the url for filter values, and updates the applied nd temporary filters accordingly.
+   *
+   * @private
+   * @returns {boolean} true if the url filters differ from the current filters, false otherwise.
+   * @memberof ExplorePanelComponent
+   */
   private getParameters(): boolean {
-    const complianceDocumentTypes = (this.urlService.query('complianceDocumentTypes') || '').split('|');
-    this.complianceDocumentTypeKeys.forEach(key => {
-      this.complianceDocumentTypeFilters[key] = complianceDocumentTypes.includes(key);
-    });
-
-    const agencies = (this.urlService.query('agencies') || '').split('|');
-    this.agencyKeys.forEach(key => {
-      this.agencyFilters[key] = agencies.includes(key);
-    });
-
     this.dateRangeFromFilter = this.urlService.query('dateRangeFrom')
       ? moment(this.urlService.query('dateRangeFrom')).toDate()
       : null;
+
     this.dateRangeToFilter = this.urlService.query('dateRangeTo')
       ? moment(this.urlService.query('dateRangeTo')).toDate()
       : null;
 
-    const hasChanges =
-      !_.isEqual(this._complianceDocumentTypeFilters, this.complianceDocumentTypeFilters) ||
-      !_.isEqual(this._agencyFilters, this.agencyFilters) ||
-      !_.isEqual(this._dateRangeFromFilter, this.dateRangeFromFilter) ||
-      !_.isEqual(this._dateRangeToFilter, this.dateRangeToFilter);
+    const filterText = (this.urlService.query('filterText') || '').split('|');
+    for (const key of this.textFilterKeys) {
+      // set applied filters
+      this.textFilters[key] = filterText.includes(key);
+    }
 
-    // copy all data from actual to temporary properties
-    this._complianceDocumentTypeFilters = { ...this.complianceDocumentTypeFilters };
-    this._agencyFilters = { ...this.agencyFilters };
+    // true, if the applied filters, pulled from the url, differ from the temporary filters
+    const hasChanges =
+      !_.isEqual(this._dateRangeFromFilter, this.dateRangeFromFilter) ||
+      !_.isEqual(this._dateRangeToFilter, this.dateRangeToFilter) ||
+      !_.isEqual(this._textFilters, this.textFilters);
+
+    // copy all data from applied filters to temporary filters
     this._dateRangeFromFilter = this.dateRangeFromFilter;
     this._dateRangeToFilter = this.dateRangeToFilter;
+    this._textFilters = this.textFilters;
 
     return hasChanges;
   }
 
-  public ngOnInit() {}
+  /**
+   * Parses the applied filters and returns them as an IDocumentFilters object
+   *
+   * @returns {IDocumentFilters}
+   * @memberof ExplorePanelComponent
+   */
+  public getFilters(): IDocumentFilters {
+    const documentFilters: IDocumentFilters = { dateRangeFrom: null, dateRangeTo: null, textFilters: [] };
 
-  public ngOnDestroy() {
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
-  }
+    documentFilters.dateRangeFrom = this.dateRangeFromFilter
+      ? moment(this.dateRangeFromFilter)
+          .startOf('day')
+          .toDate()
+      : null;
 
-  public getFilters(): object {
-    // convert array-like objects to arrays
-    const complianceDocumentTypes: string[] = [];
-    Object.keys(this.complianceDocumentTypeFilters).forEach(key => {
-      if (this.complianceDocumentTypeFilters[key]) {
-        complianceDocumentTypes.push(key);
+    documentFilters.dateRangeTo = this.dateRangeToFilter
+      ? moment(this.dateRangeToFilter)
+          .endOf('day')
+          .toDate()
+      : null;
+
+    _.keys(this.textFilters).forEach(key => {
+      if (this.textFilters[key]) {
+        documentFilters.textFilters.push(new TextFilter({ fieldName: key }));
       }
     });
 
-    const agencies: string[] = [];
-    Object.keys(this.agencyFilters).forEach(key => {
-      if (this.agencyFilters[key]) {
-        agencies.push(key);
-      }
-    });
-
-    return {
-      complianceDocumentTypes: complianceDocumentTypes,
-      agencies: agencies,
-      dateRangeFrom: this.dateRangeFromFilter
-        ? moment(this.dateRangeFromFilter)
-            .startOf('day')
-            .toDate()
-        : null,
-      dateRangeTo: this.dateRangeToFilter
-        ? moment(this.dateRangeToFilter)
-            .endOf('day')
-            .toDate()
-        : null
-    };
+    return documentFilters;
   }
 
+  /**
+   * Updates the applied filters based on the temporary filters.
+   *
+   * @param {boolean} [doNotify=true] if True the updateFilters event will be emitted.
+   * @memberof ExplorePanelComponent
+   */
   public applyAllFilters(doNotify: boolean = true) {
     // apply all temporary filters
-    this.complianceDocumentTypeFilters = { ...this._complianceDocumentTypeFilters };
-    this.agencyFilters = { ...this._agencyFilters };
     this.dateRangeFromFilter = this._dateRangeFromFilter;
     this.dateRangeToFilter = this._dateRangeToFilter;
+    this.textFilters = { ...this._textFilters };
 
     // save parameters
     this._saveParameters();
@@ -154,67 +139,68 @@ export class ExplorePanelComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Saves the current filters as URL parameters
+   *
+   * @private
+   * @memberof ExplorePanelComponent
+   */
   private _saveParameters() {
-    let complianceDocumentTypes: string = null;
-    this.complianceDocumentTypeKeys.forEach(key => {
-      if (this.complianceDocumentTypeFilters[key]) {
-        if (!complianceDocumentTypes) {
-          complianceDocumentTypes = key;
-        } else {
-          complianceDocumentTypes += '|' + key;
-        }
-      }
-    });
-
-    let agencies: string = null;
-    this.agencyKeys.forEach(key => {
-      if (this.agencyFilters[key]) {
-        if (!agencies) {
-          agencies = key;
-        } else {
-          agencies += '|' + key;
-        }
-      }
-    });
-
-    this.urlService.save('complianceDocumentTypes', complianceDocumentTypes, false);
-    this.urlService.save('agencies', agencies, false);
     this.urlService.save(
       'dateRangeFrom',
       this.dateRangeFromFilter && moment(this.dateRangeFromFilter).format('YYYY-MM-DD'),
       false
     );
+
     this.urlService.save(
       'dateRangeTo',
       this.dateRangeToFilter && moment(this.dateRangeToFilter).format('YYYY-MM-DD'),
       false
     );
+
+    let filterText: string = null;
+    this.textFilterKeys.forEach(key => {
+      if (this.textFilters[key]) {
+        if (!filterText) {
+          filterText = key;
+        } else {
+          filterText += '|' + key;
+        }
+      }
+    });
+
+    this.urlService.save('filterText', filterText, false);
   }
 
-  // clear all temporary filters
+  /**
+   * Clear all temporary filters.
+   *
+   * @param {boolean} [doNotify=true] if True the updateFilters event will be emitted.
+   * @memberof ExplorePanelComponent
+   */
   public clearAllFilters(doNotify: boolean = true) {
-    if (this.filterCount() > 0) {
-      this.complianceDocumentTypeKeys.forEach(key => {
-        this._complianceDocumentTypeFilters[key] = false;
-      });
-      this.agencyKeys.forEach(key => {
-        this._agencyFilters[key] = false;
-      });
+    if (this.arefiltersApplied()) {
       this._dateRangeFromFilter = null;
       this._dateRangeToFilter = null;
+      this.textFilterKeys.forEach(key => {
+        this._textFilters[key] = false;
+      });
 
       this.applyAllFilters(doNotify);
     }
   }
 
-  // return count of filters
-  public filterCount(): number {
-    const complianceDocumentTypeCount = this.complianceDocumentTypeKeys.filter(
-      key => this.complianceDocumentTypeFilters[key]
-    ).length;
-    const agencyCount = this.agencyKeys.filter(key => this.agencyFilters[key]).length;
-    const dateRangeCount = this.dateRangeFromFilter || this.dateRangeToFilter ? 1 : 0;
-
-    return complianceDocumentTypeCount + agencyCount + dateRangeCount;
+  /**
+   * Return true if at least 1 filter is in use, false otherwise.
+   *
+   * @returns {boolean}
+   * @memberof ExplorePanelComponent
+   */
+  public arefiltersApplied(): boolean {
+    return (
+      this.dateRangeFromFilter !== null ||
+      this.dateRangeToFilter !== null ||
+      this.textFilterKeys.filter(key => this.textFilters[key]).length > 0
+    );
   }
 }

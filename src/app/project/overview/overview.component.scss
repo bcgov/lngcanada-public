@@ -20,7 +20,7 @@
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: auto;
+  grid-template-rows: 20rem minmax(20rem, auto);
   grid-template-areas:
     "text text"
     "details map";
@@ -80,6 +80,13 @@
     box-shadow: 0 0 4rem #00264d inset;
     width: 100%;
     height: 100%;
+    opacity: 0.8;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+      cursor: pointer;
+    }
   }
 }
 
