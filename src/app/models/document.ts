@@ -7,6 +7,7 @@ export class Document {
   name: string;
   agency: string;
   author: string;
+  status: string;
   complianceDocumentType: string;
   complianceDocumentSubtype: string;
   date: string;
@@ -21,6 +22,7 @@ export class Document {
     this.name = (obj && obj.name) || null;
     this.agency = (obj && obj.agency) || null;
     this.author = (obj && obj.author) || null;
+    this.status = (obj && obj.status) || null;
     this.complianceDocumentType = (obj && obj.complianceDocumentType) || null;
     this.complianceDocumentSubtype = (obj && obj.complianceDocumentSubtype) || null;
     this.date = (obj && obj.date && moment(obj.date, 'DD-MMM-YY').format('MMMM DD, YYYY')) || null;
