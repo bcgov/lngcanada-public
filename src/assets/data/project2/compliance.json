@@ -6,6 +6,7 @@
       { "displayName": "Government Agency", "fieldName": "agency" },
       { "displayName": "Author", "fieldName": "author" },
       { "displayName": "Authorization Type", "fieldName": "complianceDocumentType" },
+      { "displayName": "Status", "fieldName": "status" },
       { "displayName": "Date", "fieldName": "date" }
     ],
     "filters": [
