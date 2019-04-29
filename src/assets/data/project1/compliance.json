@@ -1,83 +1,162 @@
 {
-  "text": [
-  ],
-  "documents": [
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/58869078e036fb0105768b62/fetch",
-      "description": "LNG Canada Annual Status of Condition Compliance Report. Annual Compliance Self-Report submitted in accordance with Condition #1b of the Environmental Assessment Certificate #E15-01 ",
-      "name": "Compliance",
-      "date": "29-Jan-16",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Compliance Self-Report",
-      "segment": "",
-      "author": "LNG Canada"
-    },
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/5908ffd4589f82001db6ec21/fetch",
-      "description": " LNG Canada Annual Status of Condition Compliance Report for\nthe 2015 reporting year. Annual Compliance Self-Report submitted in accordance with Condition #1b of the Environmental Assessment Certificate #E15-01 ",
-      "name": "Compliance",
-      "date": "30-Jan-17",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Compliance Self-Report",
-      "segment": "",
-      "author": "LNG Canada"
-    },
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/58869078e036fb0105768b61/fetch",
-      "description": "Compliance Self-Report submitted in accordance with Condition #1a of the Environmental Assessment Certificate #E15-01. Submitted at least 30 days prior to the start of construction. ",
-      "name": "Compliance",
-      "date": "28-Oct-15",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Compliance Self-Report",
-      "segment": "",
-      "author": "LNG Canada"
-    },
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/5c86e2d2e9647600240bf99e/fetch",
-      "description": "2018 Annual Compliance Self-Report submitted in accordance with Condition #1b of the Environmental Assessment Certificate #E15-01 ",
-      "name": "Compliance",
-      "date": "31-Jan-19",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Compliance Self-Report",
-      "segment": "",
-      "author": "LNG Canada"
-    },
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/5a7cd765f7fae400194a5b3e/fetch",
-      "description": "LNG Canada Annual Status of Compliance Report for the 2017 reporting year.  Annual Compliance Self-Report submitted in accordance with Condition #1b of the Environmental Assessment Certificate #E15-01 ",
-      "name": "Compliance",
-      "date": "30-Jan-18",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Compliance Self-Report",
-      "segment": "",
-      "author": "LNG Canada"
-    },
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/5c6f38d5ee3c67002498a798/fetch",
-      "description": "On December 4th, 2018 Environmental Assessment Office (EAO) Compliance and Enforcement Officers Justin Carlson and Shayla Frechette (collectively EAO C&E) conducted a field and administrative inspection on the Project (EAC# E15-01) located near Kitimat, BC.",
-      "name": "Compliance",
-      "date": "04-Dec-18",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Inspection",
-      "segment": "",
-      "author": "EAO"
-    },
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/58869079e036fb0105768b67/fetch",
-      "description": "On 2015-11-02, EAO C&E conducted an inspection of the LNG Canada (LNGC) Project site near Kitimat. LNGC informed EAO C&E September 14, 2015 that they may proceed to construction Mid October 2015 (as per Appendix B Condition 1).",
-      "name": "Compliance",
-      "date": "02-Nov-15",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Inspection",
-      "segment": "",
-      "author": "EAO"
-    }
-  ]
+  "text": [],
+  "documents": {
+    "headers": [
+      { "displayName": "Name", "fieldName": "name" },
+      { "displayName": "Government Agency", "fieldName": "agency" },
+      { "displayName": "Author", "fieldName": "author" },
+      { "displayName": "Authorization Type", "fieldName": "complianceDocumentType" },
+      { "displayName": "Date", "fieldName": "date" }
+    ],
+    "filters": [
+      {
+        "displayName": "Document Type",
+        "textFilters": [
+          {
+            "displayName": "Inspection",
+            "fieldName": "inspection",
+            "documentFieldName": "complianceDocumentType",
+            "documentFieldValues": ["Inspection"]
+          },
+          {
+            "displayName": "Enforcement Action",
+            "fieldName": "enforcementAction",
+            "documentFieldName": "complianceDocumentType",
+            "documentFieldValues": ["Enforcement Action"]
+          },
+          {
+            "displayName": "Warning Letter",
+            "fieldName": "warningLetter",
+            "documentFieldName": "complianceDocumentType",
+            "documentFieldValues": ["Warning Letter"]
+          },
+          {
+            "displayName": "Compliance Self Report",
+            "fieldName": "complianceSelfReport",
+            "documentFieldName": "complianceDocumentType",
+            "documentFieldValues": ["Compliance Self Report"]
+          }
+        ]
+      },
+      {
+        "displayName": "Status",
+        "textFilters": [
+          {
+            "displayName": "Active",
+            "fieldName": "active",
+            "documentFieldName": "status",
+            "documentFieldValues": ["Active"]
+          },
+          {
+            "displayName": "Rescinded",
+            "fieldName": "rescinded",
+            "documentFieldName": "status",
+            "documentFieldValues": ["N/A"]
+          },
+          {
+            "displayName": "Resolved",
+            "fieldName": "resolved",
+            "documentFieldName": "status",
+            "documentFieldValues": ["Complete"]
+          }
+        ]
+      },
+      {
+        "displayName": "Author",
+        "textFilters": [
+          {
+            "displayName": "Environmental Assessment Office",
+            "fieldName": "authorEAO",
+            "documentFieldName": "author",
+            "documentFieldValues": ["Environmental Assessment Office"]
+          },
+          {
+            "displayName": "LNG Canada",
+            "fieldName": "authorLNG",
+            "documentFieldName": "author",
+            "documentFieldValues": ["LNG Canada"]
+          }
+        ]
+      }
+    ],
+    "docs": [
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/58869078e036fb0105768b62/fetch",
+        "description": "LNG Canada Annual Status of Condition Compliance Report. Annual Compliance Self-Report submitted in accordance with Condition #1b of the Environmental Assessment Certificate #E15-01 ",
+        "name": "Compliance",
+        "date": "29-Jan-16",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Compliance Self-Report",
+        "segment": "",
+        "author": "LNG Canada"
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5908ffd4589f82001db6ec21/fetch",
+        "description": " LNG Canada Annual Status of Condition Compliance Report for\nthe 2015 reporting year. Annual Compliance Self-Report submitted in accordance with Condition #1b of the Environmental Assessment Certificate #E15-01 ",
+        "name": "Compliance",
+        "date": "30-Jan-17",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Compliance Self-Report",
+        "segment": "",
+        "author": "LNG Canada"
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/58869078e036fb0105768b61/fetch",
+        "description": "Compliance Self-Report submitted in accordance with Condition #1a of the Environmental Assessment Certificate #E15-01. Submitted at least 30 days prior to the start of construction. ",
+        "name": "Compliance",
+        "date": "28-Oct-15",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Compliance Self-Report",
+        "segment": "",
+        "author": "LNG Canada"
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5c86e2d2e9647600240bf99e/fetch",
+        "description": "2018 Annual Compliance Self-Report submitted in accordance with Condition #1b of the Environmental Assessment Certificate #E15-01 ",
+        "name": "Compliance",
+        "date": "31-Jan-19",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Compliance Self-Report",
+        "segment": "",
+        "author": "LNG Canada"
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5a7cd765f7fae400194a5b3e/fetch",
+        "description": "LNG Canada Annual Status of Compliance Report for the 2017 reporting year.  Annual Compliance Self-Report submitted in accordance with Condition #1b of the Environmental Assessment Certificate #E15-01 ",
+        "name": "Compliance",
+        "date": "30-Jan-18",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Compliance Self-Report",
+        "segment": "",
+        "author": "LNG Canada"
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5c6f38d5ee3c67002498a798/fetch",
+        "description": "On December 4th, 2018 Environmental Assessment Office (EAO) Compliance and Enforcement Officers Justin Carlson and Shayla Frechette (collectively EAO C&E) conducted a field and administrative inspection on the Project (EAC# E15-01) located near Kitimat, BC.",
+        "name": "Compliance",
+        "date": "04-Dec-18",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "segment": "",
+        "author": "Environmental Assessment Office"
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/58869079e036fb0105768b67/fetch",
+        "description": "On 2015-11-02, EAO C&E conducted an inspection of the LNG Canada (LNGC) Project site near Kitimat. LNGC informed EAO C&E September 14, 2015 that they may proceed to construction Mid October 2015 (as per Appendix B Condition 1).",
+        "name": "Compliance",
+        "date": "02-Nov-15",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "segment": "",
+        "author": "Environmental Assessment Office"
+      }
+    ]
+  }
 }

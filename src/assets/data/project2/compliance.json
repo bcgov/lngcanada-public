@@ -1,118 +1,197 @@
 {
-  "text": [
-  ],
-  "documents": [
-    {
-      "url": "https://www.bcogc.ca/node/15344/download",
-      "description": "Warning letter issued to Coastal Gaslink Pipeline Ltd for failing to provide notice of construction start to the Oil and Gas Comission a minimum of 48 hours prior to the commencement of activities.",
-      "name": "Warning Letter 2019-001TE CGL",
-      "date": "07-Feb-19",
-      "agency": "BC Oil and Gas Comission",
-      "category": "Compliance",
-      "complianceDocumentType": "Warning Letter",
-      "complianceDocumentSubtype": "",
-      "segment": "Unknown",
-      "status": "Active ",
-      "lat": "",
-      "long": "",
-      "nation": "",
-      "author": "BC Oil and Gas Comission"
-    },
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/5bf73809cfbe8f00249a10ed/fetch",
-      "description": "Compliance Self Report for the pre-construction phase of the Coastal Gaslink Pipeline Project submitted in accordance with the Environmental Assessment Certificate #E14-03 Condition 1 - Compliance Report.",
-      "name": "Pre-Construction Self Report",
-      "date": "19-Nov-18",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Compliance Self Report",
-      "complianceDocumentSubtype": "",
-      "segment": "All",
-      "status": "N/A",
-      "lat": "",
-      "long": "",
-      "nation": "",
-      "author": ""
-    },
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/5c76cb904c3fd40024c376c4/fetch",
-      "description": "Order issued relating to Condition 23 of Schedule B to EAC E14-03 requires that the Certificate Holder must, at least six months prior to carrying out activities that may affect tenured rights, notify all known tenure holders who hold tenures as of the date of the EAC.",
-      "name": "Section 34 Order - Traplines",
-      "date": "26-Feb-19",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Enforcement Action",
-      "complianceDocumentSubtype": "",
-      "segment": "",
-      "status": "Active ",
-      "lat": "",
-      "long": "",
-      "nation": "",
-      "author": ""
-    },
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/5c89200af6240c00242594d3/fetch",
-      "description": "Order issued relating to Condition 17 of Schedule B to EAC E14-03 requires that the Certificate Holder must,prior to Construction, for any red and blue listed plants and ecological communities identified by the British Columbia Conservation Data Centre, conduct site habitat assessment surveys for all locations within the Certified Pipeline Corridor, and propose mitigation to address adverse effects to those plants and ecological communities. The survey results and mitigations are to be included in relevant permit applications. ",
-      "name": "Section 34 Order - Endangered Plants and Ecosystems",
-      "date": "20-Feb-19",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Enforcement Action",
-      "complianceDocumentSubtype": "",
-      "segment": "",
-      "status": "Active ",
-      "lat": "",
-      "long": "",
-      "nation": "",
-      "author": ""
-    },
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/5c76cd26e9647600240bf8b7/fetch",
-      "description": "An inspection was completed as a result of a complaint received to the EAO on January 25, 2019.  The onsite component of this inspection focused on work within “Section 7” of the Project, southwest of Houston BC, including the Camp 9A location (also known as Multi Use Area 9A and 9B) located at UTM 9U 591502 6008707",
-      "name": "Inspection Record - 2019-01-29",
-      "date": "29-Jan-19",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Inspection",
-      "complianceDocumentSubtype": "",
-      "segment": "Section 7",
-      "status": "Complete",
-      "lat": "",
-      "long": "",
-      "nation": "",
-      "author": ""
-    },
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/5c90210fd69ab9002440620e/fetch",
-      "description": "An inspection was completed as a result of a complaint received to the EAO on January 25, 2019.  The onsite component of this inspection focused on work within “Section 7” of the Project, southwest of Houston BC, including the Camp 9A location (also known as Multi Use Area 9A and 9B) located at UTM 9U 591502 6008707",
-      "name": "Supplemental Inspection Record - 2019-01-29",
-      "date": "29-Jan-19",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Inspection",
-      "complianceDocumentSubtype": "",
-      "segment": "Section 7",
-      "status": "Complete",
-      "lat": "",
-      "long": "",
-      "nation": "",
-      "author": ""
-    },
-    {
-      "url": "https://projects.eao.gov.bc.ca/api/document/5c507b6c4d28ef002459ff7f/fetch",
-      "description": "EAO Compliance and Enforcement (C&E) received a complaint in January of 2018 regarding the Coastal Gas Link Project (Project). As a result, the EAO completed an inspection which spanned several days focusing on six locations along the pipeline route",
-      "name": "Inspection Record - 2018-06-19 to 21 and 2018-07-09",
-      "date": "16-Jan-19",
-      "agency": "Environmental Assessment Office",
-      "category": "Compliance",
-      "complianceDocumentType": "Inspection",
-      "complianceDocumentSubtype": "",
-      "segment": "Various",
-      "status": "Complete",
-      "lat": "",
-      "long": "",
-      "nation": "",
-      "author": ""
-    }
-  ]
+  "text": [],
+  "documents": {
+    "headers": [
+      { "displayName": "Name", "fieldName": "name" },
+      { "displayName": "Government Agency", "fieldName": "agency" },
+      { "displayName": "Author", "fieldName": "author" },
+      { "displayName": "Authorization Type", "fieldName": "complianceDocumentType" },
+      { "displayName": "Date", "fieldName": "date" }
+    ],
+    "filters": [
+      {
+        "displayName": "Document Type",
+        "textFilters": [
+          {
+            "displayName": "Inspection",
+            "fieldName": "inspection",
+            "documentFieldName": "complianceDocumentType",
+            "documentFieldValues": ["Inspection"]
+          },
+          {
+            "displayName": "Enforcement Action",
+            "fieldName": "enforcementAction",
+            "documentFieldName": "complianceDocumentType",
+            "documentFieldValues": ["Enforcement Action"]
+          },
+          {
+            "displayName": "Warning Letter",
+            "fieldName": "warningLetter",
+            "documentFieldName": "complianceDocumentType",
+            "documentFieldValues": ["Warning Letter"]
+          },
+          {
+            "displayName": "Compliance Self Report",
+            "fieldName": "complianceSelfReport",
+            "documentFieldName": "complianceDocumentType",
+            "documentFieldValues": ["Compliance Self Report"]
+          }
+        ]
+      },
+      {
+        "displayName": "Status",
+        "textFilters": [
+          {
+            "displayName": "Active",
+            "fieldName": "active",
+            "documentFieldName": "status",
+            "documentFieldValues": ["Active"]
+          },
+          {
+            "displayName": "Rescinded",
+            "fieldName": "rescinded",
+            "documentFieldName": "status",
+            "documentFieldValues": ["N/A"]
+          },
+          {
+            "displayName": "Resolved",
+            "fieldName": "resolved",
+            "documentFieldName": "status",
+            "documentFieldValues": ["Complete"]
+          }
+        ]
+      },
+      {
+        "displayName": "Agency",
+        "textFilters": [
+          {
+            "displayName": "Environmental Assessment Office",
+            "fieldName": "agencyEAO",
+            "documentFieldName": "agency",
+            "documentFieldValues": ["Environmental Assessment Office"]
+          },
+          {
+            "displayName": "BC Oil and Gas Commission",
+            "fieldName": "agencyBCOGC",
+            "documentFieldName": "agency",
+            "documentFieldValues": ["BC Oil and Gas Commission"]
+          }
+        ]
+      }
+    ],
+    "docs": [
+      {
+        "url": "https://www.bcogc.ca/node/15344/download",
+        "description": "Warning letter issued to Coastal Gaslink Pipeline Ltd for failing to provide notice of construction start to the Oil and Gas commission a minimum of 48 hours prior to the commencement of activities.",
+        "name": "Warning Letter 2019-001TE CGL",
+        "date": "07-Feb-19",
+        "agency": "BC Oil and Gas commission",
+        "category": "Compliance",
+        "complianceDocumentType": "Warning Letter",
+        "complianceDocumentSubtype": "",
+        "segment": "Unknown",
+        "status": "Active ",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": "BC Oil and Gas commission"
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5bf73809cfbe8f00249a10ed/fetch",
+        "description": "Compliance Self Report for the pre-construction phase of the Coastal Gaslink Pipeline Project submitted in accordance with the Environmental Assessment Certificate #E14-03 Condition 1 - Compliance Report.",
+        "name": "Pre-Construction Self Report",
+        "date": "19-Nov-18",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Compliance Self Report",
+        "complianceDocumentSubtype": "",
+        "segment": "All",
+        "status": "N/A",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": ""
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5c76cb904c3fd40024c376c4/fetch",
+        "description": "Order issued relating to Condition 23 of Schedule B to EAC E14-03 requires that the Certificate Holder must, at least six months prior to carrying out activities that may affect tenured rights, notify all known tenure holders who hold tenures as of the date of the EAC.",
+        "name": "Section 34 Order - Traplines",
+        "date": "26-Feb-19",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Enforcement Action",
+        "complianceDocumentSubtype": "",
+        "segment": "",
+        "status": "Active ",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": ""
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5c89200af6240c00242594d3/fetch",
+        "description": "Order issued relating to Condition 17 of Schedule B to EAC E14-03 requires that the Certificate Holder must,prior to Construction, for any red and blue listed plants and ecological communities identified by the British Columbia Conservation Data Centre, conduct site habitat assessment surveys for all locations within the Certified Pipeline Corridor, and propose mitigation to address adverse effects to those plants and ecological communities. The survey results and mitigations are to be included in relevant permit applications. ",
+        "name": "Section 34 Order - Endangered Plants and Ecosystems",
+        "date": "20-Feb-19",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Enforcement Action",
+        "complianceDocumentSubtype": "",
+        "segment": "",
+        "status": "Active ",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": ""
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5c76cd26e9647600240bf8b7/fetch",
+        "description": "An inspection was completed as a result of a complaint received to the EAO on January 25, 2019.  The onsite component of this inspection focused on work within “Section 7” of the Project, southwest of Houston BC, including the Camp 9A location (also known as Multi Use Area 9A and 9B) located at UTM 9U 591502 6008707",
+        "name": "Inspection Record - 2019-01-29",
+        "date": "29-Jan-19",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "complianceDocumentSubtype": "",
+        "segment": "Section 7",
+        "status": "Complete",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": ""
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5c90210fd69ab9002440620e/fetch",
+        "description": "An inspection was completed as a result of a complaint received to the EAO on January 25, 2019.  The onsite component of this inspection focused on work within “Section 7” of the Project, southwest of Houston BC, including the Camp 9A location (also known as Multi Use Area 9A and 9B) located at UTM 9U 591502 6008707",
+        "name": "Supplemental Inspection Record - 2019-01-29",
+        "date": "29-Jan-19",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "complianceDocumentSubtype": "",
+        "segment": "Section 7",
+        "status": "Complete",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": ""
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5c507b6c4d28ef002459ff7f/fetch",
+        "description": "EAO Compliance and Enforcement (C&E) received a complaint in January of 2018 regarding the Coastal Gas Link Project (Project). As a result, the EAO completed an inspection which spanned several days focusing on six locations along the pipeline route",
+        "name": "Inspection Record - 2018-06-19 to 21 and 2018-07-09",
+        "date": "16-Jan-19",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "complianceDocumentSubtype": "",
+        "segment": "Various",
+        "status": "Complete",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": ""
+      }
+    ]
+  }
 }

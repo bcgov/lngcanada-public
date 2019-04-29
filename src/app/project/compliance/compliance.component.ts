@@ -22,4 +22,10 @@ export class ComplianceComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  public openInNewWindow(url: string): void {
+    if (url) {
+      window.open(url);
+    }
+  }
 }
