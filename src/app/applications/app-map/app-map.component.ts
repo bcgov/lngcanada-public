@@ -238,15 +238,13 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
     const displayData = data => {
       const tooltipOffset = L.point(0, -15);
-      console.log(data);
-
       layers.facility = L.geoJSON(data.facility, {
         style:{color: '#6092ff', weight: 2}
-      }).addTo(this.map);
+      });
 
       layers.pipeline = L.geoJSON(data.pipeline, {
         style:{color: '#6092ff', weight: 2}
-      }).addTo(this.map);
+      });
 
       // Add the pipeline segment layer
       layers.sections = L.geoJSON(data.sections, {
@@ -400,17 +398,32 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       () => {
         const z = this.map.getZoom();
         if (z >= 10) {
-          if (this.map.hasLayer(layers.facility)) {
-            this.map.removeLayer(layers.facility);
+          if (layers.sections) {
+            this.map.removeLayer(layers.sections);
+          }
+          if (layers.facilities) {
+            this.map.removeLayer(layers.facilities);
+          }
+          if (layers.facility) {
+            this.map.addLayer(layers.facility);
+          }
+          if (layers.pipeline) {
+            this.map.addLayer(layers.pipeline);
           }
         } else {
-            // layers.facility.getElement.style.display = 'none';
-            // layers.facilities.getElement().style.display = 'none';
-            // layers.pipeline.getElement().style.display = 'none';
-            // layers.sections.getElement().style.display = 'none';
+          if (layers.sections) {
+            this.map.addLayer(layers.sections);
+          }
+          if (layers.facilities) {
+            this.map.addLayer(layers.facilities);
+          }
+          if (layers.facility) {
+            this.map.removeLayer(layers.facility);
+          }
+          if (layers.pipeline) {
+            this.map.removeLayer(layers.pipeline);
+          }
         }
-        // console.log('zoomstart');
-        // this.oldZoom = this.map.getZoom();
       },
       this
     );
