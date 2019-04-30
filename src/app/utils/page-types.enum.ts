@@ -7,6 +7,7 @@
 export enum PageTypes {
   HOME = 'home',
   OVERVIEW = 'overview',
+  BACKGROUND = 'background',
   AUTHORIZATIONS = 'authorizations',
   COMPLIANCE = 'compliance',
   PLANS = 'plans',

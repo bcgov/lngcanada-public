@@ -11,6 +11,7 @@ import { DocumentsModule } from './documents/documents.module';
 // Components
 import { ProjectComponent } from './project.component';
 import { OverviewComponent } from './overview/overview.component';
+import { BackgroundComponent } from './background/background.component';
 import { AuthorizationsComponent } from './authorizations/authorizations.component';
 import { ComplianceComponent } from './compliance/compliance.component';
 import { NationsComponent } from './nations/nations.component';
@@ -21,6 +22,7 @@ import { PlansComponent } from './plans/plans.component';
   declarations: [
     ProjectComponent,
     OverviewComponent,
+    BackgroundComponent,
     AuthorizationsComponent,
     ComplianceComponent,
     NationsComponent,

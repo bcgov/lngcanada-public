@@ -9,6 +9,7 @@ import { AuthorizationsComponent } from './project/authorizations/authorizations
 import { ComplianceComponent } from './project/compliance/compliance.component';
 import { NationsComponent } from './project/nations/nations.component';
 import { OverviewComponent } from './project/overview/overview.component';
+import { BackgroundComponent } from './project/background/background.component';
 import { PlansComponent } from './project/plans/plans.component';
 import { ProjectComponent } from './project/project.component';
 import { ProjectsComponent } from './projects/projects.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
     component: ProjectComponent,
     children: [
       { path: 'overview', component: OverviewComponent },
+      { path: 'background', component: BackgroundComponent },
       { path: 'authorizations', component: AuthorizationsComponent },
       { path: 'compliance', component: ComplianceComponent },
       { path: 'plans', component: PlansComponent },
