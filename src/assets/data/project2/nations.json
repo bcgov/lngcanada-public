@@ -54,40 +54,94 @@
     ],
     "docs": [
       {
-        "fileName": "doc1",
-        "name": "Document 1",
-        "agency": "Ministry of Environment",
-        "complianceDocumentType": "Government Inspection",
-        "date": "June 1, 2015",
-        "description": "",
-        "url": "https://www.bcogc.ca/node/13274/download"
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/doig_-_cgl_pba_-_signed2.pdf",
+        "nation": "Doig River Natural Gas Pipeline Benefits Agreement",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Apr 16 2015"
       },
       {
-        "fileName": "doc2",
-        "name": "Document 3",
-        "agency": "BC Oil and Gas Commission",
-        "complianceDocumentType": "Enforcement Order",
-        "date": "Dec 31, 2019",
-        "description": "",
-        "url": "https://www.bcogc.ca/node/11009/download"
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/halfway_river_first_nation_-_cgl_pba_-_signed.pdf",
+        "nation": "Halfway River First Nation",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Dec 29 2014"
       },
       {
-        "fileName": "doc3",
-        "name": "Document 2",
-        "agency": "Environmental Assessment Office",
-        "complianceDocumentType": "Company Self Report",
-        "date": "June 1, 2018",
-        "description": "",
-        "url": "https://www.bcogc.ca/node/5944/download"
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/kitselas_first_nation_pba_westcoast_connector_-_jan_19_2015.pdf",
+        "nation": "Kitselas First Nation",
+        "name": "Natural Gas Pipeline Benefits Umbrella Agreement",
+        "date": "Dec 17 2014"
       },
       {
-        "fileName": "doc4",
-        "name": "Document 4",
-        "agency": "BC Oil and Gas Commission",
-        "complianceDocumentType": "Enforcement Order",
-        "date": "April 12, 2000",
-        "description": "",
-        "url": "https://www.bcogc.ca/node/11268/download"
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/lheidli_tenneh_-_pba_-_signed_-_release_date_dec_10_2015.pdf",
+        "nation": "Lheidli T’enneh First Nation",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Dec 18 2014"
+      },
+      {
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/mcleod_lake_-_cgl_pba_-_signed.pdf",
+        "nation": "McLeod Lake Indian Band",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Oct 1 2015"
+      },
+      {
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/moricetown_band_pba_cgl_signed_bcr.pdf",
+        "nation": "Moricetown Band",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Jan 23 2015"
+      },
+      {
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/nee-tahi-buhn_midstream_natural_gas_pipeline_benefits_agreement_-_dec_1_2014_-_signed.pdf",
+        "nation": "Nee-Tahi-Buhn Band",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Dec 1 2014"
+      },
+      {
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/saikuz_first_nation_-_cgl_pba_-_signed_-_2016.pdf",
+        "nation": "Saik'uz First Nation",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Mar 31 2015"
+      },
+      {
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/saulteau_-_cgl_pba_-_signed.pdf",
+        "nation": "Saulteau First Nations",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Feb 5 2015"
+      },
+      {
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/skin_tyee_natural_gase_pipeline_benefits_agreement_-_dec_1_2014_-_signed.pdf",
+        "nation": "Skin Tyee Band",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Dec 1 2014"
+      },
+      {
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/stellaten_first_nation_-_cgl_pba_-_signed.pdf",
+        "nation": "Stellat'en First Nation",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Mar 31 2015"
+      },
+      {
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/tsil_kaz_koh_burns_lake_first_nation_-_cgl_pba_-_signed.pdf",
+        "nation": "Ts'il Kaz Koh First Nation ",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Mar 31 2015"
+      },
+      {
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/west_moberly_-_cgl_pba_-_signed.pdf",
+        "nation": "West Moberly First Nations",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "July 29 2015"
+      },
+      {
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/wetsuweten_first_nation_pba_cgl_signed_bcr_-_jan_2015.pdf",
+        "nation": "Wet'suwet'en First Nation",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Dec 10 2014"
+      },
+      {
+        "url": "https://www2.gov.bc.ca/assets/gov/environment/natural-resource-stewardship/consulting-with-first-nations/agreements/yekooche_first_nation_pba_cgl_signed_bcr.pdf",
+        "nation": "Yekooche First Nation",
+        "name": "Natural Gas Pipeline Benefits Agreement",
+        "date": "Dec 10 2014"
       }
     ]
   }

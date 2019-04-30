@@ -17,6 +17,7 @@ export class Document {
   description: string;
   url: string;
   mime: string;
+  nation: string;
 
   constructor(obj?: any) {
     this._id = (obj && obj._id) || null;
@@ -35,5 +36,6 @@ export class Document {
     this.description = (obj && obj.description) || null;
     this.url = (obj && obj.url) || null;
     this.mime = (obj && obj.mime) || null;
+    this.nation = (obj && obj.nation) || null;
   }
 }
