@@ -282,15 +282,15 @@ table {
   @extend %responive-tables;
 
   &.authorizations {
-    @include responive-tables('Name', 'Government Agency', 'Authorization Type', 'Date');
+    @include responive-tables('Name', 'Government Agency', 'Authorization Type', 'Authorization Sub-Type', 'Date');
   }
 
   &.compliance {
-    @include responive-tables('Name', 'Government Agency', 'Author', 'Authorization Type', 'Status', 'Date');
+    @include responive-tables('Name', 'Government Agency', 'Author', 'Authorization Type', 'Date');
   }
 
   &.plans {
-    @include responive-tables('Name', 'Government Agency', 'Phase', 'Section', 'Authorization #', 'Date');
+    @include responive-tables('Name', 'Government Agency', 'Phase', 'Type', 'Date');
   }
 
   &.nations {
@@ -302,15 +302,15 @@ table {
   @extend %responive-tables-large;
 
   &.authorizations {
-    @include responive-tables-large('Name', 'Government Agency', 'Authorization Type', 'Date');
+    @include responive-tables-large('Name', 'Government Agency', 'Authorization Type', 'Authorization Sub-Type', 'Date');
   }
 
   &.compliance {
-    @include responive-tables-large('Name', 'Government Agency', 'Author', 'Authorization Type', 'Status', 'Date');
+    @include responive-tables-large('Name', 'Government Agency', 'Author', 'Authorization Type', 'Date');
   }
 
   &.plans {
-    @include responive-tables-large('Name', 'Government Agency', 'Phase', 'Section', 'Authorization #', 'Date');
+    @include responive-tables-large('Name', 'Government Agency', 'Phase', 'Type', 'Date');
   }
 
   &.nations {
