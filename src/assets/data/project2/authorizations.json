@@ -23,7 +23,7 @@
             "documentFieldValues": ["Environmental Assessment Office"]
           },
           {
-            "displayName": "BC Oil & Gas Commission",
+            "displayName": "BC Oil and Gas Commission",
             "fieldName": "agencyBCOGC",
             "documentFieldName": "agency",
             "documentFieldValues": ["BC Oil and Gas Commission"]

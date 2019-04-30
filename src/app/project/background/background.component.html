@@ -1,15 +1,19 @@
 <div class="container">
-  <h1>
-    Project Background
-  </h1>
-  <ng-container *ngFor="let section of text">
-    <h2 *ngIf="section['heading']">
-      {{section['heading']}}
-    </h2>
-    <div *ngFor="let line of section['text']">
-      <p>
-        {{line}}
-      </p>
+  <section>
+    <h1>
+      Project Background
+    </h1>
+    <div>
+      <ng-container *ngFor="let section of text">
+        <h2 *ngIf="section['heading']">
+          {{section['heading']}}
+        </h2>
+        <div *ngFor="let line of section['text']">
+          <p>
+            {{line}}
+          </p>
+        </div>
+      </ng-container>
     </div>
-  </ng-container>
+  </section>
 </div>
