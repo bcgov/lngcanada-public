@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent implements OnInit {
-  public id: number;
+  public id: string;
   public project: string;
 
   constructor(private route: ActivatedRoute) {}
@@ -17,9 +17,9 @@ export class ProjectComponent implements OnInit {
       this.id = params['id'];
       this.project = ((proj) => {
         switch (proj) {
-          case 1: return 'LNG Canada';
-          case 2: return 'Coastal Gas Link';
-          default: return null;
+          case '1': return 'LNG Canada';
+          case '2': return 'Coastal Gas Link';
+          default: return 'hi';
         }
       })(this.id);
     });
