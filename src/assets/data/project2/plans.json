@@ -9,8 +9,7 @@
       { "displayName": "Name", "fieldName": "name" },
       { "displayName": "Government Agency", "fieldName": "agency" },
       { "displayName": "Phase", "fieldName": "phase" },
-      { "displayName": "Section", "fieldName": "section" },
-      { "displayName": "Authorization #", "fieldName": "authorizationId" },
+      { "displayName": "Type", "fieldName": "type" },
       { "displayName": "Date", "fieldName": "date" }
     ],
     "filters": [
@@ -28,6 +27,23 @@
             "fieldName": "agencyBCOGC",
             "documentFieldName": "agency",
             "documentFieldValues": ["BC Oil and Gas Commission"]
+          }
+        ]
+      },
+      {
+        "displayName": "Type",
+        "textFilters": [
+          {
+            "displayName": "Management",
+            "fieldName": "management",
+            "documentFieldName": "type",
+            "documentFieldValues": ["Management"]
+          },
+          {
+            "displayName": "Construction",
+            "fieldName": "construction",
+            "documentFieldName": "type",
+            "documentFieldValues": ["Construction"]
           }
         ]
       }

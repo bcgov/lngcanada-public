@@ -1,12 +1,16 @@
 {
-  "text": [],
+  "text": [
+    "Construction, development and operation activities are subject to oversight by the provincial government and strict compliance procedures.",
+    "Industry is expected to operate in compliance with all conditions and requirements identified by the provincial government. These conditions and requirements are set out in the environmental assessment certificate or individual permit.",
+    "Compliance and enforcement actions vary, and often depend on the severity of the situation requiring attention or correction. When non-compliances are identified the goal is always the same: to bring the company back into compliance.",
+    "The list below includes all compliance actions imposed to date. For a full list of all authorizations and their associated requirements, please visit the Authorizations page."
+  ],
   "documents": {
     "headers": [
       { "displayName": "Name", "fieldName": "name" },
       { "displayName": "Government Agency", "fieldName": "agency" },
       { "displayName": "Author", "fieldName": "author" },
       { "displayName": "Authorization Type", "fieldName": "complianceDocumentType" },
-      { "displayName": "Status", "fieldName": "status" },
       { "displayName": "Date", "fieldName": "date" }
     ],
     "filters": [
@@ -32,33 +36,10 @@
             "documentFieldValues": ["Warning Letter"]
           },
           {
-            "displayName": "Compliance Self Report",
+            "displayName": "Compliance Self-Report",
             "fieldName": "complianceSelfReport",
             "documentFieldName": "complianceDocumentType",
-            "documentFieldValues": ["Compliance Self Report"]
-          }
-        ]
-      },
-      {
-        "displayName": "Status",
-        "textFilters": [
-          {
-            "displayName": "Active",
-            "fieldName": "active",
-            "documentFieldName": "status",
-            "documentFieldValues": ["Active"]
-          },
-          {
-            "displayName": "Rescinded",
-            "fieldName": "rescinded",
-            "documentFieldName": "status",
-            "documentFieldValues": ["N/A"]
-          },
-          {
-            "displayName": "Resolved",
-            "fieldName": "resolved",
-            "documentFieldName": "status",
-            "documentFieldValues": ["Complete"]
+            "documentFieldValues": ["Compliance Self-Report"]
           }
         ]
       },
@@ -76,6 +57,12 @@
             "fieldName": "authorLNG",
             "documentFieldName": "author",
             "documentFieldValues": ["LNG Canada"]
+          },
+          {
+            "displayName": "BC Oil and Gas commission",
+            "fieldName": "authorBCOGC",
+            "documentFieldName": "author",
+            "documentFieldValues": ["BC Oil and Gas commission"]
           }
         ]
       }

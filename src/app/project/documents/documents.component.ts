@@ -41,7 +41,7 @@ export class DocumentsComponent implements OnInit {
   public filterSections: FilterSection[] = [];
   public documents: Document[] = [];
 
-  public sortColumn = '';
+  public sortColumn = 'date';
   public sortDirection = 1;
 
   public documentCountMessage = 'Total Results: ';

@@ -3,9 +3,6 @@
     <h1>
       Authorizations
     </h1>
-    <div class="slideshow">
-      <slideshow [imageUrls]="slideshowImages"></slideshow>
-    </div>
     <div>
       <ng-container *ngFor="let line of text">
         <p>
@@ -15,9 +12,6 @@
     </div>
   </section>
   <section>
-    <h1>
-      Authorization Documents
-    </h1>
     <app-documents [pageType]="pageType"></app-documents>
   </section>
 </div>

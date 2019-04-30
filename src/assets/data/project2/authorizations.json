@@ -9,7 +9,8 @@
     "headers": [
       { "displayName": "Name", "fieldName": "name" },
       { "displayName": "Government Agency", "fieldName": "agency" },
-      { "displayName": "Authorization Type", "fieldName": "complianceDocumentSubtype" },
+      { "displayName": "Type", "fieldName": "complianceDocumentType" },
+      { "displayName": "Subtype", "fieldName": "complianceDocumentSubtype" },
       { "displayName": "Date", "fieldName": "date" }
     ],
     "filters": [
@@ -37,7 +38,7 @@
             "displayName": "Project General",
             "fieldName": "projectGeneral",
             "documentFieldName": "complianceDocumentSubtype",
-            "documentFieldValues": ["General"]
+            "documentFieldValues": ["General", "Project Description", "Project Description", "Table of Conditions", "Amendment"]
           },
           {
             "displayName": "Investigative Use",
@@ -99,8 +100,8 @@
         "description": "Certified Project Description Appendices - Map Sheet for the Environmental Assessment Certificate #E14-03 for the CGL Project dated October 23, 2014.",
         "complianceDocumentType": "Certificate",
         "complianceDocumentSubtype": "Project Description",
-        "OGCLabel": "Certified Project Description - Map Sheets",
-        "name": "",
+        "OGCLabel": "",
+        "name": "Certified Project Description - Map Sheets",
         "url": "https://projects.eao.gov.bc.ca/api/document/58868fd9e036fb0105768797/fetch"
       },
       {

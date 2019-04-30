@@ -9,7 +9,8 @@
     "headers": [
       { "displayName": "Name", "fieldName": "name" },
       { "displayName": "Government Agency", "fieldName": "agency" },
-      { "displayName": "Authorization Type", "fieldName": "complianceDocumentSubtype" },
+      { "displayName": "Type", "fieldName": "complianceDocumentType" },
+      { "displayName": "Subtype", "fieldName": "complianceDocumentSubtype" },
       { "displayName": "Date", "fieldName": "date" }
     ],
     "filters": [
@@ -37,7 +38,7 @@
             "displayName": "Project General",
             "fieldName": "projectGeneral",
             "documentFieldName": "complianceDocumentSubtype",
-            "documentFieldValues": ["General"]
+            "documentFieldValues": ["General", "Project Description", "Project Description", "Table of Conditions", "Amendment"]
           },
           {
             "displayName": "Investigative Use",

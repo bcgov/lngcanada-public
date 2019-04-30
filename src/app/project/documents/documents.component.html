@@ -19,7 +19,7 @@
   </section> -->
 
   <section class="filter-nav">
-    <button class="inline-btn btn btn-primary" (click)="toggleFilterPanel()">
+  <button class="inline-btn btn btn-primary" [hidden]="pageType === 'nations'" (click)="toggleFilterPanel()">
       <i class="material-icons">visibility</i>
       <label class="control-label">Filter Documents</label>
     </button>
