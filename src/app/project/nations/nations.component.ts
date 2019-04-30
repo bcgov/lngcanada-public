@@ -17,6 +17,7 @@ export class NationsComponent implements OnInit {
   constructor(private dataService: DataService, private route: ActivatedRoute) {
     this.route.parent.params.subscribe(params => {
       this.id = params.id;
+
       this.text = this.dataService.getText(this.id, this.pageType);
     });
   }
