@@ -292,6 +292,10 @@ table {
   &.plans {
     @include responive-tables('Name', 'Government Agency', 'Phase', 'Section', 'Authorization #', 'Date');
   }
+
+  &.nations {
+    @include responive-tables('Name', 'Indigenous Nation', 'Date');
+  }
 }
 
 .table-cards-large {
@@ -307,5 +311,9 @@ table {
 
   &.plans {
     @include responive-tables-large('Name', 'Government Agency', 'Phase', 'Section', 'Authorization #', 'Date');
+  }
+
+  &.nations {
+    @include responive-tables-large('Name', 'Indigenous Nation', 'Date');
   }
 }
