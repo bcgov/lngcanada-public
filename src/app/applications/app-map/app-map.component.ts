@@ -14,6 +14,7 @@ import {
 } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+// import { takeUntil, map } from 'rxjs/operators';
 import 'leaflet';
 import 'leaflet.markercluster';
 import * as _ from 'lodash';
@@ -196,16 +197,6 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     // identify when map has initialized with a view
     this.map.whenReady(() => (this.isMapReady = true));
 
-    // map state change events
-    this.map.on(
-      'zoomstart',
-      () => {
-        // console.log('zoomstart');
-        // this.oldZoom = this.map.getZoom();
-      },
-      this
-    );
-
     // this.map.on('movestart', function () {
     //   console.log('movestart');
     // }, this);
@@ -234,23 +225,29 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       '/assets/data/corridor-29mar2019.json',
       '/assets/data/facilities-29mar2019.json',
       '/assets/data/semicenterline-sections-09apr2019.json',
-      '/assets/data/semicenter-pipeline-29mar2019.json'
+      '/assets/data/facility-29apr2019.json',
+      '/assets/data/pipeline-29apr2019.json'
     ];
+
+    const layers = {
+      facility: null,
+      facilities: null,
+      pipeline: null,
+      sections: null
+    };
 
     const displayData = data => {
       const tooltipOffset = L.point(0, -15);
+      layers.facility = L.geoJSON(data.facility, {
+        style: {color: '#6092ff', weight: 2}
+      });
 
-      // L.Icon.Default.prototype.options.iconUrl = 'assets/images/marker-icon.png';
-      // L.Icon.Default.prototype.options.iconRetinaUrl = 'assets/images/marker-icon-2x.png';
-      // L.Icon.Default.prototype.options.shadowUrl = 'assets/images/marker-shadow.png';
-      // const icon = new L.icon({
-      //     iconUrl: 'assets/images/marker-icon.png',
-      //     iconRetinaUrl: 'assets/images/marker-icon-2x.png',
-      //     shadowUrl: 'assets/images/marker-shadow.png'
-      //   });
+      layers.pipeline = L.geoJSON(data.pipeline, {
+        style: {color: '#6092ff', weight: 2}
+      });
 
       // Add the pipeline segment layer
-      L.geoJSON(data.sections, {
+      layers.sections = L.geoJSON(data.sections, {
         style: { color: '#6092ff', weight: 5 },
         onEachFeature: (_, layer) => {
           layer.on('mouseover', e => {
@@ -331,7 +328,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         </div>
       `;
 
-      L.geoJSON(data.facilities, {
+      layers.facilities = L.geoJSON(data.facilities, {
         pointToLayer: (_, latlng) => {
           return L.circleMarker(latlng, markerOptions);
         },
@@ -395,6 +392,43 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         .addTo(this.map);
     };
 
+    // map state change events
+    this.map.on(
+      'zoomend',
+      () => {
+        const z = this.map.getZoom();
+        if (z >= 10) {
+          if (layers.sections) {
+            this.map.removeLayer(layers.sections);
+          }
+          if (layers.facilities) {
+            this.map.removeLayer(layers.facilities);
+          }
+          if (layers.facility) {
+            this.map.addLayer(layers.facility);
+          }
+          if (layers.pipeline) {
+            this.map.addLayer(layers.pipeline);
+          }
+        } else {
+          if (layers.sections) {
+            this.map.addLayer(layers.sections);
+          }
+          if (layers.facilities) {
+            this.map.addLayer(layers.facilities);
+          }
+          if (layers.facility) {
+            this.map.removeLayer(layers.facility);
+          }
+          if (layers.pipeline) {
+            this.map.removeLayer(layers.pipeline);
+          }
+        }
+      },
+      this
+    );
+
+
     // Data collection function
     const getIt = (loc: string, callback: any) => {
       $.get(loc)
@@ -418,7 +452,8 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       dataGeoJson.corridor = topojson.feature(data[0], data[0].objects['corridor-29mar2019']);
       dataGeoJson.facilities = topojson.feature(data[1], data[1].objects['facilities-29mar2019']);
       dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-09apr2019']);
-      dataGeoJson.pipeline = topojson.feature(data[3], data[3].objects['semicenter-pipeline']);
+      dataGeoJson.facility = topojson.feature(data[3], data[3].objects['facility-29apr2019']);
+      dataGeoJson.pipeline = topojson.feature(data[4], data[4].objects['pipline-29apr2019']);
 
       displayData(dataGeoJson);
     };
