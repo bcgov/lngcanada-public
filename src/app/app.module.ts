@@ -13,6 +13,7 @@ import { BootstrapModalModule } from 'ng2-bootstrap-modal';
 import { SharedModule } from 'app/shared.module';
 import { AppRoutingModule } from 'app/app-routing.module';
 import { ApplicationsModule } from 'app/applications/applications.module';
+import { ProjectModule } from 'app/project/project.module';
 
 // components
 import { HomeProxyComponent } from 'app/home-proxy.component';
@@ -24,6 +25,7 @@ import { ContactComponent } from 'app/contact/contact.component';
 import { HeaderComponent } from 'app/header/header.component';
 import { AboutComponent } from 'app/about/about.component';
 import { FooterComponent } from 'app/footer/footer.component';
+import { HomeComponent } from 'app/home/home.component';
 
 // services
 import { ApiService } from 'app/services/api';
@@ -37,9 +39,7 @@ import { FeatureService } from 'app/services/feature.service';
 import { ProjectsComponent } from './projects/projects.component';
 import { UrlService } from 'app/services/url.service';
 import { DataService } from 'app/services/data.service';
-import { FaqComponent } from './faq/faq.component';
-import { ProjectModule } from './project/project.module';
-import { HomeComponent } from './home/home.component';
+import { FaqComponent } from 'app/faq/faq.component';
 
 @NgModule({
   imports: [

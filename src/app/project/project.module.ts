@@ -9,13 +9,12 @@ import { SharedModule } from 'app/shared.module';
 import { DocumentsModule } from './documents/documents.module';
 
 // Components
-import { ProjectComponent } from 'app/project/project.component';
+import { ProjectComponent } from './project.component';
 import { OverviewComponent } from './overview/overview.component';
 import { AuthorizationsComponent } from './authorizations/authorizations.component';
 import { ComplianceComponent } from './compliance/compliance.component';
 import { NationsComponent } from './nations/nations.component';
 import { PlansComponent } from './plans/plans.component';
-import { ActivityComponent } from './activity/activity.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, NgbModule.forRoot(), RouterModule, DocumentsModule, SharedModule],
@@ -25,8 +24,7 @@ import { ActivityComponent } from './activity/activity.component';
     AuthorizationsComponent,
     ComplianceComponent,
     NationsComponent,
-    PlansComponent,
-    ActivityComponent
+    PlansComponent
   ],
   entryComponents: []
 })

@@ -187,6 +187,12 @@ export class DocumentsComponent implements OnInit {
 
     return (
       this.filters.textFilters.filter((textFilter: TextFilter) => {
+        if (!document[textFilter.documentFieldName]) {
+          // document doesn't have this field
+          // return false to remove it from the filtered results, or true to include it in the filtered results.
+          return false;
+        }
+
         return textFilter.documentFieldValues
           .map(x => x.toLowerCase())
           .includes(document[textFilter.documentFieldName].toLowerCase());

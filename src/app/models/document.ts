@@ -8,6 +8,9 @@ export class Document {
   agency: string;
   author: string;
   status: string;
+  phase: string;
+  section: string;
+  authorizationId: string;
   complianceDocumentType: string;
   complianceDocumentSubtype: string;
   date: string;
@@ -23,6 +26,9 @@ export class Document {
     this.agency = (obj && obj.agency) || null;
     this.author = (obj && obj.author) || null;
     this.status = (obj && obj.status) || null;
+    this.phase = (obj && obj.phase) || null;
+    this.section = (obj && obj.section) || null;
+    this.authorizationId = (obj && obj.authorizationId) || null;
     this.complianceDocumentType = (obj && obj.complianceDocumentType) || null;
     this.complianceDocumentSubtype = (obj && obj.complianceDocumentSubtype) || null;
     this.date = (obj && obj.date && moment(obj.date, 'DD-MMM-YY').format('MMMM DD, YYYY')) || null;
