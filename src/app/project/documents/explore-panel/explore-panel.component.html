@@ -26,7 +26,7 @@
           <ng-container *ngFor="let filter of section.textFilters">
             <div class="select-badge">
               <input type="checkbox" name="{{filter.fieldName}}" id="_{{filter.fieldName}}" [(ngModel)]="_textFilters[filter.fieldName]" />
-              <label for="_{{filter.fieldName}}">{{filter.displayName | titlecase}}</label>
+              <label for="_{{filter.fieldName}}">{{filter.displayName}}</label>
             </div>
           </ng-container>
         </div>

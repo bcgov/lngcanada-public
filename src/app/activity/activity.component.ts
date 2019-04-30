@@ -15,7 +15,7 @@ import { Activity } from 'app/models/activity';
   styleUrls: ['./activity.component.scss']
 })
 export class ActivityComponent implements OnInit, OnChanges {
-  @Input() activitiesJSON: string[];
+  @Input() activitiesJSON: object[];
 
   public allActivities: Activity[] = [];
 

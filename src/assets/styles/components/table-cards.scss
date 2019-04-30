@@ -288,6 +288,10 @@ table {
   &.compliance {
     @include responive-tables('Name', 'Government Agency', 'Author', 'Authorization Type', 'Status', 'Date');
   }
+
+  &.plans {
+    @include responive-tables('Name', 'Government Agency', 'Phase', 'Section', 'Authorization #', 'Date');
+  }
 }
 
 .table-cards-large {
@@ -299,5 +303,9 @@ table {
 
   &.compliance {
     @include responive-tables-large('Name', 'Government Agency', 'Author', 'Authorization Type', 'Status', 'Date');
+  }
+
+  &.plans {
+    @include responive-tables-large('Name', 'Government Agency', 'Phase', 'Section', 'Authorization #', 'Date');
   }
 }

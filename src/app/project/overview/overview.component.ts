@@ -13,8 +13,8 @@ export class OverviewComponent implements OnInit {
 
   public id: number;
   public text: string[];
-  public details: string[];
-  public activities: string[];
+  public details: object;
+  public activities: object[];
 
   constructor(private dataService: DataService, private route: ActivatedRoute) {
     this.route.parent.params.subscribe(params => {

@@ -67,7 +67,7 @@
             </td>
           </ng-container>
           <td>
-            <button class="inline-btn btn btn-primary" (click)="downloadFile(document)">
+            <button class="inline-btn btn btn-primary" (click)="downloadFile(document)" *ngIf="document.url">
               <i class="material-icons">cloud_download</i>
               <label class="control-label">Download</label>
             </button>

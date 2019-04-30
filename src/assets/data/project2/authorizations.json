@@ -1,5 +1,10 @@
 {
-  "text": [],
+  "text": [
+    "All Major Projects require layers of approval from the provincial government.",
+    "A company must apply for all the permits and other forms of authorization they require. These applications are then reviewed by the appropriate government agency. If approved, these authorizations allow industry to move forward with construction, development and/or operations. Associated activities, such as the use of resource roads to haul equipment around, are all subject to review and approval as well.",
+    "The provincial government often imposes a set of conditions, or requirements, on these authorizations to increase public safety or strengthen environment protection.",
+    "The list below includes permits and other related documents. Additional, ancillary forms of authorizations will be included over time."
+  ],
   "documents": {
     "headers": [
       { "displayName": "Name", "fieldName": "name" },
