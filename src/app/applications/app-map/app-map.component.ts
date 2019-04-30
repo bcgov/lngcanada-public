@@ -239,11 +239,11 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     const displayData = data => {
       const tooltipOffset = L.point(0, -15);
       layers.facility = L.geoJSON(data.facility, {
-        style:{color: '#6092ff', weight: 2}
+        style: {color: '#6092ff', weight: 2}
       });
 
       layers.pipeline = L.geoJSON(data.pipeline, {
-        style:{color: '#6092ff', weight: 2}
+        style: {color: '#6092ff', weight: 2}
       });
 
       // Add the pipeline segment layer
