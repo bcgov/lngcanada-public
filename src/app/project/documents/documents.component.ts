@@ -42,7 +42,7 @@ export class DocumentsComponent implements OnInit {
   public documents: Document[] = [];
 
   public sortColumn = 'date';
-  public sortDirection = 1;
+  public sortDirection = -1;
 
   public documentCountMessage = 'Total Results: ';
 
