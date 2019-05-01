@@ -1,15 +1,14 @@
 import moment from 'moment';
+import { ActivityTypes } from 'app/utils/activity-types.enum';
 
 export class Activity {
-  _id: string;
   type: string;
   title: string;
   description: string;
   date: Date;
 
   constructor(obj?: any) {
-    this._id = (obj && obj._id) || null;
-    this.type = (obj && obj.type) || null;
+    this.type = (obj && obj.type && ActivityTypes[obj.type]) || ActivityTypes.INFO;
     this.title = (obj && obj.title) || null;
     this.description = (obj && obj.description) || null;
     this.date = (obj && obj.date && moment(obj.date, 'DD-MM-YYYY').toDate()) || null;

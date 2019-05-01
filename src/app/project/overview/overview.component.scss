@@ -123,9 +123,4 @@
 
 .material-icons {
   line-height: 32px !important;
-
-  /* prevent icons text from showing before material icons has loaded */
-  &::before {
-    display: none;
-  }
 }

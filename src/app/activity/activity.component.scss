@@ -1,6 +1,6 @@
 @import "~assets/styles/base/base.scss";
 
-$icon-padding: 3rem;
+$icon-padding: 2rem;
 $vertical-line-width: 0.2rem;
 
 .activity-list {
@@ -28,7 +28,7 @@ $vertical-line-width: 0.2rem;
 
     flex: 1;
     flex-direction: column;
-    padding: 1rem 2rem 1rem $icon-padding;
+    padding: 1rem 2rem 1rem $icon-padding+0.25rem;
     border-bottom: 1px solid $gray4;
 
     .extend-border {
@@ -106,12 +106,14 @@ $vertical-line-width: 0.2rem;
 
 .material-icons-activity {
   position: absolute;
-  font-size: 6rem;
-  color: $gray8;
+  border: 3px solid red;
+  font-size: 4rem;
+  color: $gray7;
+  top: 12%;
 }
 
 .vertical-line {
-  border-right: $vertical-line-width solid $gray6;
+  border-right: $vertical-line-width solid $gray5;
   height: 100%;
   width: 100%;
   margin-left: $vertical-line-width/2; // half the width of the line

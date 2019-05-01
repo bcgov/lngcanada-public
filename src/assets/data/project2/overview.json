@@ -20,43 +20,43 @@
   },
   "activities": [
     {
-      "type": "Construction",
+      "type": "INFO",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
       "date": "15-01-2018"
     },
     {
-      "type": "Stage",
+      "type": "DOCUMENT_ADDED",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
       "date": "01-06-2015"
     },
     {
-      "type": "Stage",
+      "type": "REPORT_ADDED",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus.",
       "date": "01-06-2015"
     },
     {
-      "type": "Stage",
+      "type": "AUTHORIZATION_ADDED",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
       "date": "01-06-2015"
     },
     {
-      "type": "Stage",
+      "type": "INSPECTION_COMPLETE",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
       "date": "01-06-2015"
     },
     {
-      "type": "Stage",
+      "type": "ENFORCEMENT_ACTION",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
       "date": "01-06-2015"
     },
     {
-      "type": "Stage",
+      "type": "IMPORTANT_DATE",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "date": "01-06-2015"
