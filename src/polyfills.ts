@@ -35,6 +35,9 @@ import 'core-js/es6/set';
 import 'core-js/es6/reflect';
 import 'core-js/client/shim';
 
+/** IE8 object-fit/position support */
+import 'object-fit-images';
+
 /** IE10 and IE11 requires the following for NgClass support on SVG elements */
 import 'classlist.js'; // Run `npm install --save classlist.js`.
 

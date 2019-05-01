@@ -14,6 +14,7 @@ export class OverviewComponent implements OnInit {
   public id: number;
   public text: string[];
   public details: object;
+  public images: object;
   public activities: object[];
 
   constructor(private dataService: DataService, private route: ActivatedRoute) {
@@ -22,6 +23,7 @@ export class OverviewComponent implements OnInit {
 
       this.text = this.dataService.getText(this.id, this.pageType);
       this.details = this.dataService.getDetails(this.id, this.pageType);
+      this.images = this.dataService.getImages(this.id, this.pageType);
       this.activities = this.dataService.getActivities(this.id, this.pageType);
     });
   }
