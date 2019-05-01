@@ -8,14 +8,23 @@
   background: $white;
 }
 
+#project-header {
+  background: $gray6;
+  color: white;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  font-size: 26px;
+}
+
 .project-app-header {
   @include clearfix;
 
   position: relative;
   padding: 0;
-  border-bottom: 2px solid $gray5;
-  background: $gray6;
-  color: $white;
+  border-bottom: 1px solid $gray5;
+  // background: $gray6;
+  // color: $white;
+  color: $gray8;
   z-index: 1004;
 }
 
@@ -32,20 +41,26 @@
     transition: all linear 0.2s;
   }
 
+  .nav-link.active-link {
+    background: $gray2;
+  }
+
   .project-app-header--flex {
     @include flex(0 0 auto);
 
     position: relative;
-    border-bottom-width: 2px;
+    border-bottom-width: 1px;
     border-bottom-color: $gray5;
-    background: $gray6;
-    color: $white;
+    // background: $gray6;
+    // color: $white;
+    color: $gray8;
   }
 
   .project-app-header--solid {
-    border-bottom: 2px solid $gray5;
-    background: $gray6;
-    color: $white;
+    border-bottom: 1px solid $gray5;
+    // background: $gray6;
+    // color: $white;
+    color: $gray8;
   }
 }
 
@@ -54,7 +69,8 @@
   margin-right: 0.5rem;
   padding: 0.5rem 0.4rem;
   border: 2px solid $gray4;
-  color: $white;
+  // color: $white;
+  color: $gray8;
   font-size: medium;
   font-weight: 600;
   outline: none; // override user agent stylesheet default
@@ -97,18 +113,19 @@
 // NAVBAR
 .project-navbar {
   padding: 0;
-  background-color: $gray6;
+  // background-color: $gray6;
   z-index: 1000;
 
   .navbar-nav {
-    margin-top: 0.5rem;
+    // margin-top: 0.5rem;
 
     .nav-link {
       position: relative;
       z-index: 1001; // +1 to keep above dropdown menus
       padding: 0.875rem 1rem;
       border-top: 1px solid $mn-border-color;
-      color: $mn-color;
+      // color: $mn-color;
+      color: $gray8;
       text-transform: uppercase;
       white-space: nowrap;
       font-size: $mn-font-size;
@@ -171,21 +188,27 @@
   .project-navbar {
     background: transparent;
 
+    #projectNav { // Centering buttons
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .navbar-nav {
       margin-top: 0;
 
       .nav-link {
-        height: 4.2rem; // 60px to match the branding height
-        padding: 0.5rem 0.75rem !important;
+        // height: 3.8rem;
+        // padding: 0.5rem 0.75rem !important;
         border-top: none;
 
         span {
-          margin-top: 0.9rem;
+          // margin-top: 0.9rem;
           display: inline-block;
         }
 
         &:hover {
-          background-color: #002663;
+          background-color: $gray3;
         }
       }
 
