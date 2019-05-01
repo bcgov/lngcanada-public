@@ -11,43 +11,43 @@
       "type": "Construction",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
-      "date": "Jan 15, 2018"
+      "date": "15-01-2018"
     },
     {
       "type": "Stage",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
-      "date": "June 1, 2015"
+      "date": "01-06-2015"
     },
     {
       "type": "Stage",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus.",
-      "date": "June 1, 2015"
+      "date": "01-06-2015"
     },
     {
       "type": "Stage",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "date": "June 1, 2015"
+      "date": "01-06-2015"
     },
     {
       "type": "Stage",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "date": "June 1, 2015"
+      "date": "01-06-2015"
     },
     {
       "type": "Stage",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "date": "June 1, 2015"
+      "date": "01-06-2015"
     },
     {
       "type": "Stage",
       "title": "Activity Update 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "date": "June 1, 2015"
+      "date": "01-06-2015"
     }
   ]
 }
