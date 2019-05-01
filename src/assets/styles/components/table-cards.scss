@@ -282,11 +282,11 @@ table {
   @extend %responive-tables;
 
   &.authorizations {
-    @include responive-tables('Name', 'Government Agency', 'Authorization Type', 'Authorization Sub-Type', 'Date');
+    @include responive-tables('Name', 'Government Agency', 'Authorization Type', 'Authorization Sub-Type', 'Date', 'description');
   }
 
   &.compliance {
-    @include responive-tables('Name', 'Government Agency', 'Author', 'Authorization Type', 'Date');
+    @include responive-tables('Name', 'Government Agency', 'Author', 'Authorization Type', 'Date', 'description');
   }
 
   &.plans {
@@ -302,11 +302,11 @@ table {
   @extend %responive-tables-large;
 
   &.authorizations {
-    @include responive-tables-large('Name', 'Government Agency', 'Authorization Type', 'Authorization Sub-Type', 'Date');
+    @include responive-tables-large('Name', 'Government Agency', 'Authorization Type', 'Authorization Sub-Type', 'Date', 'description');
   }
 
   &.compliance {
-    @include responive-tables-large('Name', 'Government Agency', 'Author', 'Authorization Type', 'Date');
+    @include responive-tables-large('Name', 'Government Agency', 'Author', 'Authorization Type', 'Date', 'description');
   }
 
   &.plans {

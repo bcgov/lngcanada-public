@@ -11,7 +11,8 @@
       { "displayName": "Government Agency", "fieldName": "agency" },
       { "displayName": "Type", "fieldName": "complianceDocumentType" },
       { "displayName": "Subtype", "fieldName": "complianceDocumentSubtype" },
-      { "displayName": "Date", "fieldName": "date" }
+      { "displayName": "Date", "fieldName": "date" },
+      { "displayName": "Description", "fieldName": "description" }
     ],
     "filters": [
       {

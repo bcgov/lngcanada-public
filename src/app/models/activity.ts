@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export class Activity {
   _id: string;
   type: string;
@@ -10,6 +12,6 @@ export class Activity {
     this.type = (obj && obj.type) || null;
     this.title = (obj && obj.title) || null;
     this.description = (obj && obj.description) || null;
-    this.date = (obj && obj.date && new Date(obj.date)) || null;
+    this.date = (obj && obj.date && moment(obj.date, 'DD-MM-YYYY').toDate()) || null;
   }
 }

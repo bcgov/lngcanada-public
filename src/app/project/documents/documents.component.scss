@@ -119,3 +119,14 @@
     transform: translateX(0);
   }
 }
+
+// specific width condition for table columns
+@media (min-width: 1024px) {
+  .description-width {
+    width: 25%;
+  }
+}
+
+.download-btn-width {
+  width: 8rem;
+}
