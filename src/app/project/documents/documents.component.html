@@ -63,7 +63,7 @@
         <tr>
           <ng-container *ngFor="let header of headers">
             <td>
-              {{document[header.fieldName]}}
+              {{ header.fieldName === 'date' ? (document[header.fieldName] | date:'MMMM dd, yyyy') : document[header.fieldName] }}
             </td>
           </ng-container>
           <td>

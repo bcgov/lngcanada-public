@@ -154,7 +154,7 @@ export class DocumentsComponent implements OnInit {
    * @returns {boolean}
    * @memberof DocumentsComponent
    */
-  public isDateRangeFiltered(date: string): boolean {
+  public isDateRangeFiltered(date: Date): boolean {
     if (!this.filters.dateRangeFrom && !this.filters.dateRangeTo) {
       return true;
     }
