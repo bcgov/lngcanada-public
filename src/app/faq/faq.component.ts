@@ -14,7 +14,7 @@ export class FaqComponent implements OnInit {
     This hides and shows all question answers.
   */
   public toggleOpen = (e) => {
-    let el = $(e.srcElement);
+    const el = $(e.srcElement);
     if (el.hasClass('open')) {
       el.removeClass('open');
       el.html('Show All (+)');
