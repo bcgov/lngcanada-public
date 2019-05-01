@@ -1,10 +1,10 @@
-<div class="container">
-  <section>
-    <h1>
-      Project Background
-    </h1>
-    <div>
-      <ng-container *ngFor="let section of text">
+<main>
+  <ng-container *ngFor="let section of text; let odd = odd; let first = first">
+    <div [class.bg-light]="odd">
+      <section class="container">
+        <h1 [hidden]="!first">
+          Project Background
+        </h1>
         <h2 *ngIf="section['heading']">
           {{section['heading']}}
         </h2>
@@ -13,7 +13,7 @@
             {{line}}
           </p>
         </div>
-      </ng-container>
+      </section>
     </div>
-  </section>
-</div>
+  </ng-container>
+</main>

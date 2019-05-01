@@ -42,10 +42,6 @@ const routes: Routes = [
     component: FaqComponent
   },
   {
-    path: 'about',
-    component: AboutComponent
-  },
-  {
     path: 'connect',
     component: ContactComponent
   },

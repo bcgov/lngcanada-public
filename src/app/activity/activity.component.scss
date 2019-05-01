@@ -67,11 +67,13 @@ $vertical-line-width: 0.2rem;
     font-size: 1rem;
     font-weight: 700;
     text-transform: uppercase;
+    color: $gray8;
   }
 
   p {
     margin-bottom: 1rem;
     line-height: 1.25rem;
+    color: $gray7;
   }
 
   a {
@@ -81,7 +83,7 @@ $vertical-line-width: 0.2rem;
 
   strong {
     font-weight: 600;
-    color: #007bff;
+    color: $gray8;
   }
 
   .icon-container {
@@ -93,7 +95,6 @@ $vertical-line-width: 0.2rem;
     font-size: 32px !important;
 
     i {
-      color: $black;
       font-size: 20px;
 
       &-light {
@@ -106,7 +107,7 @@ $vertical-line-width: 0.2rem;
 .material-icons-activity {
   position: absolute;
   font-size: 6rem;
-  color: $primary;
+  color: $gray8;
 }
 
 .vertical-line {

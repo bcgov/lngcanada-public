@@ -35,7 +35,7 @@ p {
   grid-area: sidebar;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
   #home-content {
     display: block;
   }
@@ -45,18 +45,6 @@ p {
 
 .container {
   padding-top: 0;
-}
-
-#activities {
-  margin-top: 2rem;
-  border: solid;
-  border-width: 1.3px;
-  color: $gray5;
-  padding: 0.5rem 1rem 0.5rem 1rem;
-}
-
-#activities h3 {
-  color: $gray5;
 }
 
 #map-btn button {

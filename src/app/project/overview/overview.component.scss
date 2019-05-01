@@ -58,7 +58,7 @@
 
       strong {
         font-weight: 600;
-        color: #007bff;
+        color: $gray8;
       }
     }
 
@@ -123,4 +123,9 @@
 
 .material-icons {
   line-height: 32px !important;
+
+  /* prevent icons text from showing before material icons has loaded */
+  &::before {
+    display: none;
+  }
 }
