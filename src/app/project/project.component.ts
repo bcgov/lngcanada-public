@@ -15,11 +15,12 @@ export class ProjectComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = params['id'];
+      console.log(this.route);
       this.project = ((proj) => {
         switch (proj) {
           case '1': return 'LNG Canada';
           case '2': return 'Coastal Gas Link';
-          default: return 'hi';
+          default: return null;
         }
       })(this.id);
     });

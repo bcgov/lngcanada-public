@@ -9,7 +9,6 @@
 }
 
 #project-header {
-  // height: 2rem;
   background: $gray6;
   color: white;
   font-weight: 700;
@@ -40,6 +39,10 @@
     border-bottom-color: rgba(#5475a7, 0.4);
     background-color: transparent;
     transition: all linear 0.2s;
+  }
+
+  .nav-link.active-link {
+    background: $gray1;
   }
 
   .project-app-header--flex {
