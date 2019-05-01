@@ -56,6 +56,7 @@
         "condition number": 1,
         "name": "Air Quality Management Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "07-10-2018",
         "url": "https://projects.eao.gov.bc.ca/api/document/5a7cc9d537c109001a100b4b/fetch"
@@ -67,6 +68,7 @@
         "condition number": 2,
         "name": "Noise Management Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "06-10-2015",
         "url": "https://projects.eao.gov.bc.ca/api/document/5a7cc9dbf7fae400194a5aae/fetch"
@@ -78,6 +80,7 @@
         "condition number": 3,
         "name": "Greenhouse Gas Emissions Management Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "",
         "url": ""
@@ -89,6 +92,7 @@
         "condition number": 4,
         "name": "Fish Management and Monitoring Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "07-10-2015",
         "url": "https://projects.eao.gov.bc.ca/api/document/5a7cc9f3f7fae400194a5ad1/fetch/LNG_Canada_Fish_Habitat_Management_Plan_(dated_Oct_7,_2015)"
@@ -100,6 +104,7 @@
         "condition number": 5,
         "name": "Marine Mammal Management and Monitoring Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "",
         "url": ""
@@ -111,6 +116,7 @@
         "condition number": 6,
         "name": "Marine Water Quality Management and Monitoring Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "21-06-2018",
         "url": "https://projects.eao.gov.bc.ca/api/document/5b2d3ce74aa05000244bcf76/fetch"
@@ -122,6 +128,7 @@
         "condition number": 8,
         "name": "Vegetation Management and Monitoring Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "07-10-2015",
         "url": "https://projects.eao.gov.bc.ca/api/document/5a7cc9cf37c109001a100b28/fetch"
@@ -133,6 +140,7 @@
         "condition number": 9,
         "name": "Invasive Plant Management Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "07-10-2015",
         "url": "https://projects.eao.gov.bc.ca/api/document/5a7cc9eb37c109001a100b91/fetch"
@@ -144,6 +152,7 @@
         "condition number": 10,
         "name": "Wetland Compensation Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "01-07-2015",
         "url": "https://projects.eao.gov.bc.ca/api/document/5a7cc9fc80fc410019e4be82/fetch"
@@ -155,6 +164,7 @@
         "condition number": 11,
         "name": "Surface Water Quality Management Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "07-10-2015",
         "url": "https://projects.eao.gov.bc.ca/api/document/5a7cc9e337c109001a100b6e/fetch"
@@ -166,6 +176,7 @@
         "condition number": 12,
         "name": "Wildlife Management Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "14-10-2015",
         "url": "https://projects.eao.gov.bc.ca/api/document/5a7cc9463ad6770019387f85/fetch"
@@ -177,6 +188,7 @@
         "condition number": 14,
         "name": "Community Services and Infrastructure Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "01-06-2016",
         "url": "https://projects.eao.gov.bc.ca/api/document/5892314bb637cc02bea1632d/fetch"
@@ -188,6 +200,7 @@
         "condition number": 15,
         "name": "Health and Medical Services Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "23-07-2018",
         "url": "https://projects.eao.gov.bc.ca/api/document/5b75e2f52400e500244290d2/fetch"
@@ -199,6 +212,7 @@
         "condition number": 16,
         "name": "Traffic Impact Assessment and Traffic Management Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "",
         "url": ""
@@ -210,6 +224,7 @@
         "condition number": 17,
         "name": "Marine Activities Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "16-01-2018",
         "url": "https://projects.eao.gov.bc.ca/api/document/5a7cc8073ad6770019387f62/fetch"
@@ -221,6 +236,7 @@
         "condition number": 18,
         "name": "wake verification plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "",
         "url": ""
@@ -232,6 +248,7 @@
         "condition number": 19,
         "name": "Workforce Air Quality Health Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "",
         "url": ""
@@ -243,6 +260,7 @@
         "condition number": 20,
         "name": "Construction Environmental Management Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "14-10-2015",
         "url": "https://projects.eao.gov.bc.ca/api/document/5a7cc93af7fae400194a5a8b/fetch"
@@ -254,6 +272,7 @@
         "condition number": 22,
         "name": "EAO-Approved LNG Canada Aboriginal Consultation Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "",
         "url": ""
@@ -265,6 +284,7 @@
         "condition number": 22,
         "name": "EAO-Approved LNG Canada Public Consultation Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "",
         "url": ""
@@ -276,6 +296,7 @@
         "condition number": 22,
         "name": "Aboriginal Consultation Report",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": " ",
         "url": ""
@@ -287,6 +308,7 @@
         "condition number": 22,
         "name": "Public Consultation Report",
         "description": "Due - 2 years Post Construction Commencement & 1 year Post Commencement of Operations",
+        "type": "",
         "phase": "Construction",
         "date": "",
         "url": ""
@@ -298,6 +320,7 @@
         "condition number": 17,
         "name": "Marine Access Traffic Management Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "02-10-2017",
         "url": "https://projects.eao.gov.bc.ca/api/document/5a7cc81980fc410019e4be5f/fetch"
@@ -309,6 +332,7 @@
         "condition number": null,
         "name": "LNG Canada Dredge Environmental Management Plan",
         "description": "",
+        "type": "",
         "phase": "Construction",
         "date": "21-06-2018",
         "url": "https://projects.eao.gov.bc.ca/api/document/5b2d3ce7d46d3f00242684a4/fetch"
@@ -320,6 +344,7 @@
         "condition number": null,
         "name": "9709124 Construction Plan",
         "description": "PROPOSED FACILITY SITE WITHIN UNITS 5, 14, 15, 16, 24, 25, 26, 34, 35, 36 & 37 WITHIN BLOCK B, 103-I-2 AND UNIT 95 WITHIN BLOCK J, 103-H-15, DL 94, DL 6001, DL 6002, BLOCK 1506 DL 73, DL 186, DL 187, LOT 1 DL 187, DL 6004, W 1/2 DL 6003, PCL A DL 6003, LOT 2 DL 187, DL 96, DL 93, DL 5469, & LOT 1 DLS 981, 5469 & 7940 , RANGE 5 COAST DISTRICT",
+        "type": "",
         "phase": "Construction",
         "date": "15-05-2015",
         "url": "https://www.bcogc.ca/node/13814/download"

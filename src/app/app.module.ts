@@ -23,7 +23,6 @@ import { CommentModalComponent } from 'app/comment-modal/comment-modal.component
 import { ConfirmComponent } from 'app/confirm/confirm.component';
 import { ContactComponent } from 'app/contact/contact.component';
 import { HeaderComponent } from 'app/header/header.component';
-import { AboutComponent } from 'app/about/about.component';
 import { FooterComponent } from 'app/footer/footer.component';
 import { HomeComponent } from 'app/home/home.component';
 
@@ -65,7 +64,6 @@ import { FaqComponent } from 'app/faq/faq.component';
     ConfirmComponent,
     ContactComponent,
     HeaderComponent,
-    AboutComponent,
     FooterComponent,
     ProjectsComponent,
     FaqComponent,

@@ -8,8 +8,10 @@ export class Document {
   agency: string;
   author: string;
   status: string;
+  type: string;
   phase: string;
   section: string;
+  nation: string;
   authorizationId: string;
   complianceDocumentType: string;
   complianceDocumentSubtype: string;
@@ -17,7 +19,6 @@ export class Document {
   description: string;
   url: string;
   mime: string;
-  nation: string;
 
   constructor(obj?: any) {
     this._id = (obj && obj._id) || null;
@@ -27,16 +28,16 @@ export class Document {
     this.agency = (obj && obj.agency) || null;
     this.author = (obj && obj.author) || null;
     this.status = (obj && obj.status) || null;
+    this.type = (obj && obj.type) || null;
     this.phase = (obj && obj.phase) || null;
     this.section = (obj && obj.section) || null;
+    this.nation = (obj && obj.nation) || null;
     this.authorizationId = (obj && obj.authorizationId) || null;
     this.complianceDocumentType = (obj && obj.complianceDocumentType) || null;
     this.complianceDocumentSubtype = (obj && obj.complianceDocumentSubtype) || null;
-    this.date = (obj && obj.date && moment(obj.date, 'DD-MM-YYYY').toDate()) || null;
     this.description = (obj && obj.description) || null;
     this.url = (obj && obj.url) || null;
     this.mime = (obj && obj.mime) || null;
-    this.nation = (obj && obj.nation) || null;
 
     const momentDate = (obj && obj.date && moment(obj.date, 'DD-MM-YYYY')) || null;
     if (momentDate && momentDate.isValid()) {
