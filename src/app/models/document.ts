@@ -13,7 +13,7 @@ export class Document {
   authorizationId: string;
   complianceDocumentType: string;
   complianceDocumentSubtype: string;
-  date: string;
+  date: Date;
   description: string;
   url: string;
   mime: string;
@@ -32,7 +32,7 @@ export class Document {
     this.authorizationId = (obj && obj.authorizationId) || null;
     this.complianceDocumentType = (obj && obj.complianceDocumentType) || null;
     this.complianceDocumentSubtype = (obj && obj.complianceDocumentSubtype) || null;
-    this.date = (obj && obj.date && moment(obj.date, 'DD-MMM-YY').format('MMMM DD, YYYY')) || null;
+    this.date = (obj && obj.date && moment(obj.date, 'DD-MMM-YY').toDate()) || null;
     this.description = (obj && obj.description) || null;
     this.url = (obj && obj.url) || null;
     this.mime = (obj && obj.mime) || null;
