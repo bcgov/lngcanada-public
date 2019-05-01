@@ -13,6 +13,12 @@
     "location": "Kitimat, BC",
     "status": "Preliminary construction activities underway"
   },
+  "images": {
+    "map": {
+      "img": "lng-canada-site-rendering-smaller.jpg",
+      "alt": "LNG Canada Image"
+    }
+  },
   "activities": [
     {
       "type": "Construction",

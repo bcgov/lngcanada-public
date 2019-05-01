@@ -12,6 +12,12 @@
     "location": "Dawson Creek, BC to Kitimat, BC (670-kilometres)",
     "status": "Preliminary construction activities underway"
   },
+  "images": {
+    "map": {
+      "img": "coastal-gaslink-pipeline-smaller.jpg",
+      "alt": "Coastal Gaslink Image"
+    }
+  },
   "activities": [
     {
       "type": "Construction",

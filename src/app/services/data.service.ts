@@ -77,6 +77,14 @@ export class DataService {
     return projectData[id][pageType.toString()].details;
   }
 
+  getImages(id: number, pageType: PageTypes) {
+    if (!id || !pageType) {
+      return;
+    }
+
+    return projectData[id][pageType.toString()].images;
+  }
+
   getDocumentHeaders(id: number, pageType: PageTypes) {
     if (!id || !pageType) {
       return;

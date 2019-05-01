@@ -68,20 +68,21 @@
   }
 }
 
-// map
+// image
 
 .map-outer {
   border: 1px solid $black;
+  width: 100%;
   height: 100%;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  overflow: hidden;
 
-  .map-inner {
-    background-color: rgba($header-bg, 1);
-    background-image: url("~assets/images/prc-hero-banner-img.jpg");
-    background-position: center bottom;
-    // background-size: 350%;
-    box-shadow: 0 0 4rem #00264d inset;
+  .card-image {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     opacity: 0.8;
     transition: 0.5s ease-in-out;
 
