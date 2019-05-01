@@ -1,5 +1,85 @@
 @import "~assets/styles/base/base.scss";
 
+// table that collapses to cards
+// .grid-table {
+//   display: grid;
+
+//   .grid-head {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(5%, 1fr));
+
+//     .grid-header {
+//       padding: 1rem 0;
+//     }
+//   }
+
+//   .grid-body {
+//     display: grid;
+
+//     .grid-row {
+//       display: grid;
+//       grid-template-columns: auto;
+//       padding: 1rem 0;
+//       border-bottom: 1px solid $gray3;
+
+//       .grid-row-headers {
+//         display: none;
+
+//         .grid-header {
+
+//         }
+//       }
+
+//       .grid-row-top {
+//         display: grid;
+//         grid-template-columns: repeat(auto-fit, minmax(5%, 1fr));
+//         margin-bottom: 0.5rem;
+//       }
+
+//       .grid-row-bottom {
+//         display: grid;
+//         grid-template-columns: repeat(auto-fit, minmax(5rem, auto));
+//       }
+
+//       .grid-column {
+
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 1024px) {
+//   .grid-table {
+//     grid-template-rows: auto;
+//     grid-template-columns: 1fr;
+
+//     .grid-head {
+//       display: none;
+//     }
+
+//     .grid-body {
+//       display: block;
+
+//       .grid-row {
+//         grid-template-columns: 1fr 1fr;
+
+//         .grid-row-headers {
+//           display: block;
+//         }
+
+//         .grid-row-top {
+//           display: block;
+//         }
+
+//         .grid-row-bottom {
+//           display: block;
+//           grid-column: 1 / end;
+//         }
+//       }
+//     }
+//   }
+// }
+
 .flex {
   @include flex-box();
 }

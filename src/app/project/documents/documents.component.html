@@ -1,25 +1,7 @@
 <div class="documents-view" [ngClass]="{'filter-panel__open': isFilterPanelVisible}">
 
-  <!-- <section>
-
-  </section> -->
-
-  <!-- <section>
-    <div class="side-nav">
-      <ul>
-        <li class="side-nav-item"
-          [ngClass]="{'active': isFilterPanelVisible}">
-          <button class="btn" (click)="toggleFilterPanel()">
-            <i class="material-icons">visibility</i>
-            <div>Explore</div>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </section> -->
-
   <section class="filter-nav">
-  <button class="inline-btn btn btn-primary" [hidden]="pageType === 'nations'" (click)="toggleFilterPanel()">
+    <button class="inline-btn btn btn-primary" [hidden]="pageType === 'nations'" (click)="toggleFilterPanel()">
       <i class="material-icons">visibility</i>
       <label class="control-label">Filter Documents</label>
     </button>
@@ -28,23 +10,65 @@
     </div>
   </section>
 
-  <!-- <section class="left-side-1 section-left">
-    <div>
-      <app-explore-panel #explorePanel (updateFilters)="updateDocumentFilters($event)" (hideSidePanel)="closeSidePanel()"></app-explore-panel>
-    </div>
-  </section> -->
-
   <section class="table-panel">
     <div class="filter-panel">
       <button class="close-btn btn btn-icon" (click)="closeSidePanel()">
         <i class="material-icons">close</i>
       </button>
-      <app-explore-panel #explorePanel
-        [filterSections]="filterSections"
-        (updateFilters)="updateDocumentFilters($event)"
+      <app-explore-panel #explorePanel [filterSections]="filterSections" (updateFilters)="updateDocumentFilters($event)"
         (hideSidePanel)="closeSidePanel()">
       </app-explore-panel>
     </div>
+
+    <!-- <div class="grid-table">
+      <div class="grid-head">
+        <ng-container *ngFor="let header of headers">
+          <div class="grid-header" (click)="sort(header.fieldName)">
+            {{header.displayName}}
+            <i class="sort"
+              [ngClass]="{'sort-asc': (sortColumn == header.fieldName && sortDirection < 0), 'sort-desc': (sortColumn == header.fieldName && sortDirection > 0) }"
+              aria-hidden="true"></i>
+          </div>
+        </ng-container>
+        <div class="grid-header">
+        </div>
+      </div>
+      <div class="grid-body">
+        <ng-container *ngFor="let document of documents | orderBy: {property: sortColumn, direction: sortDirection}">
+          <div class="grid-row">
+            <div class="grid-row-headers">
+              <ng-container *ngFor="let header of headers">
+                <div class="grid-header">
+                  {{header.displayName}}
+                </div>
+              </ng-container>
+              <div class="grid-header">
+              </div>
+            </div>
+            <div class="grid-row-top">
+              <ng-container *ngFor="let header of headers">
+                <div class="grid-column">
+                  {{document[header.fieldName] || '&nbsp;'}}
+                </div>
+              </ng-container>
+              <div class="grid-column">
+                <button class="inline-btn btn btn-primary" (click)="downloadFile(document)" *ngIf="document.url">
+                  <i class="material-icons">cloud_download</i>
+                  <label class="control-label">Download</label>
+                </button>
+              </div>
+            </div>
+            <div class="grid-row-bottom">
+              <div class="grid-column">
+                <ng-container *ngIf="document['description']">
+                  {{document['description'] || '&nbsp;'}}
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div> -->
 
     <table class="table-cards-large {{pageType}}">
       <thead>
@@ -52,7 +76,9 @@
           <ng-container *ngFor="let header of headers">
             <th class="sortable" (click)="sort(header.fieldName)">
               {{header.displayName}}
-              <i class="sort" [ngClass]="{'sort-asc': (sortColumn == header.fieldName && sortDirection < 0), 'sort-desc': (sortColumn == header.fieldName && sortDirection > 0) }" aria-hidden="true"></i>
+              <i class="sort"
+                [ngClass]="{'sort-asc': (sortColumn == header.fieldName && sortDirection < 0), 'sort-desc': (sortColumn == header.fieldName && sortDirection > 0) }"
+                aria-hidden="true"></i>
             </th>
           </ng-container>
           <th>
