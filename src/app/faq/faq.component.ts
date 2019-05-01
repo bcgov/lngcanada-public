@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+const $ = window['jQuery'];
 
 @Component({
   selector: 'app-faq',
@@ -7,6 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaqComponent implements OnInit {
   constructor() {}
+
+  /*
+    Bootstrap uses jQuery to control it's widgets.
+    This hides and shows all question answers.
+  */
+  public toggleOpen = (e) => {
+    let el = $(e.srcElement);
+    if (el.hasClass('open')) {
+      el.removeClass('open');
+      el.html('Show All (+)');
+      $('.collapse').collapse('hide');
+    } else {
+      el.addClass('open');
+      el.html('Hide All (-)');
+      $('.collapse').collapse('show');
+    }
+  }
 
   ngOnInit() {}
 }

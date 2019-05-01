@@ -37,3 +37,17 @@
 .answer {
   margin-left: 2rem;
 }
+
+#show-hide-all {
+  cursor: pointer;
+  font-family: monospace;
+  color: $gray6;
+}
+
+#show-hide-all:hover {
+  color: $gray8;
+}
+
+#top-hr {
+  margin-top: 0;
+}
