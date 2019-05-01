@@ -37,5 +37,12 @@ export class Document {
     this.url = (obj && obj.url) || null;
     this.mime = (obj && obj.mime) || null;
     this.nation = (obj && obj.nation) || null;
+
+    const momentDate = (obj && obj.date && moment(obj.date, 'DD-MM-YYYY')) || null;
+    if (momentDate && momentDate.isValid()) {
+      this.date = momentDate.toDate();
+    } else {
+      this.date = null;
+    }
   }
 }

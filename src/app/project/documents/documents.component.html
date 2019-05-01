@@ -19,7 +19,7 @@
   </section> -->
 
   <section class="filter-nav">
-  <button class="inline-btn btn btn-primary" [hidden]="pageType === 'nations'" (click)="toggleFilterPanel()">
+    <button class="inline-btn btn btn-primary" [hidden]="pageType === 'nations'" (click)="toggleFilterPanel()">
       <i class="material-icons">visibility</i>
       <label class="control-label">Filter Documents</label>
     </button>
@@ -39,9 +39,7 @@
       <button class="close-btn btn btn-icon" (click)="closeSidePanel()">
         <i class="material-icons">close</i>
       </button>
-      <app-explore-panel #explorePanel
-        [filterSections]="filterSections"
-        (updateFilters)="updateDocumentFilters($event)"
+      <app-explore-panel #explorePanel [filterSections]="filterSections" (updateFilters)="updateDocumentFilters($event)"
         (hideSidePanel)="closeSidePanel()">
       </app-explore-panel>
     </div>
@@ -52,7 +50,9 @@
           <ng-container *ngFor="let header of headers">
             <th class="sortable" (click)="sort(header.fieldName)">
               {{header.displayName}}
-              <i class="sort" [ngClass]="{'sort-asc': (sortColumn == header.fieldName && sortDirection < 0), 'sort-desc': (sortColumn == header.fieldName && sortDirection > 0) }" aria-hidden="true"></i>
+              <i class="sort"
+                [ngClass]="{'sort-asc': (sortColumn == header.fieldName && sortDirection < 0), 'sort-desc': (sortColumn == header.fieldName && sortDirection > 0) }"
+                aria-hidden="true"></i>
             </th>
           </ng-container>
           <th>
@@ -62,11 +62,11 @@
       <ng-container *ngFor="let document of documents | orderBy: {property: sortColumn, direction: sortDirection}">
         <tr>
           <ng-container *ngFor="let header of headers">
-            <td>
+            <td [ngClass]="{'description-width': header.fieldName === 'description'}">
               {{ header.fieldName === 'date' ? (document[header.fieldName] | date:'MMMM dd, yyyy') : document[header.fieldName] }}
             </td>
           </ng-container>
-          <td>
+          <td class="download-btn-width">
             <button class="inline-btn btn btn-primary" (click)="downloadFile(document)" *ngIf="document.url">
               <i class="material-icons">cloud_download</i>
               <label class="control-label">Download</label>

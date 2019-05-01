@@ -145,7 +145,7 @@
         "name": "Wetland Compensation Plan",
         "description": "",
         "phase": "Construction",
-        "date": "July, 2015",
+        "date": "01-07-2015",
         "url": "https://projects.eao.gov.bc.ca/api/document/5a7cc9fc80fc410019e4be82/fetch"
       },
       {
@@ -277,7 +277,7 @@
         "name": "Aboriginal Consultation Report",
         "description": "",
         "phase": "Construction",
-        "date": "Received ",
+        "date": " ",
         "url": ""
       },
       {
@@ -286,9 +286,9 @@
         "authorization url": "https://projects.eao.gov.bc.ca/p/lng-canada-export-terminal/docs?folder=47",
         "condition number": 22,
         "name": "Public Consultation Report",
-        "description": "",
+        "description": "Due - 2 years Post Construction Commencement & 1 year Post Commencement of Operations",
         "phase": "Construction",
-        "date": "Due - 2 years Post Construction Commencement & 1 year Post Commencement of Operations",
+        "date": "",
         "url": ""
       },
       {
