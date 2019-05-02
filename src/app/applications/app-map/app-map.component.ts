@@ -40,6 +40,15 @@ const async = window['async'];
 const topojson = window['topojson'];
 const $ = window['jQuery']; // Yeah... I know. But I'm in a hurry
 
+// Make sure layer definitions are global to this component.
+const layers = {
+  facility: null,
+  facilities: null,
+  pipeline: null,
+  sections: null
+};
+
+
 // L.Icon.Default.prototype.options.iconUrl = 'assets/images/marker-icon.png';
 // L.Icon.Default.prototype.options.iconRetinaUrl = 'assets/images/marker-icon-2x.png';
 // L.Icon.Default.prototype.options.shadowUrl = 'assets/images/marker-shadow.pngonsole.log(L.Icon.Default.prototype.options);
@@ -229,13 +238,6 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       '/assets/data/pipeline-29apr2019.json'
     ];
 
-    const layers = {
-      facility: null,
-      facilities: null,
-      pipeline: null,
-      sections: null
-    };
-
     const displayData = data => {
       const tooltipOffset = L.point(0, -15);
       layers.facility = L.geoJSON(data.facility, {
@@ -252,9 +254,11 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         onEachFeature: (_, layer) => {
           layer.on('mouseover', e => {
             e.target.setStyle({ color: '#00f6ff' });
+            $('#gas-button').css('background', '#c4f9ff');
           });
           layer.on('mouseout', e => {
             e.target.setStyle({ color: '#6092ff' });
+            $('#gas-button').css('background', '#ffffff');
           });
         }
       })
@@ -332,7 +336,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         pointToLayer: (_, latlng) => {
           return L.circleMarker(latlng, markerOptions);
         },
-        onEachFeature: (_, layer) => {
+        onEachFeature: (feature, layer) => {
           // Remove the Meter Station for now
           const popupOptions = {
             className: 'map-popup-content',
@@ -369,17 +373,22 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
             }
           }
 
-          // TODO: Highlight legend entry
-          // layer.on('click', e => {
-          //   const f = e.target.feature;
-          //   this.urlService.save('segment', f.properties.LABEL);
-          //   this.urlService.setFragment('details');
-          // });
           layer.on('mouseover', e => {
-            e.target.setStyle({ color: '#00f6ff' });
+            e.target.setStyle({ color: '#00f6ff' }); // Highlight geo feature
+            if (feature.properties.LABEL === 'Kitimat M/S') { // Highlight legend entry
+              $('#lng-button').css('background', '#c4f9ff');
+            } else {
+              $('#gas-button').css('background', '#c4f9ff');
+            }
           });
+
           layer.on('mouseout', e => {
-            e.target.setStyle({ color: '#6092ff' });
+            e.target.setStyle({ color: '#6092ff' }); // Unhighlight geo feature
+            if (feature.properties.LABEL === 'Kitimat M/S') { // Unhighlight legend entry
+              $('#lng-button').css('background', '#ffffff');
+            } else {
+              $('#gas-button').css('background', '#ffffff');
+            }
           });
         }
       })
@@ -522,17 +531,51 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     }
   }
 
+  // facility: null,
+  // facilities: null,
+  // pipeline: null,
+  // sections: null
+
   public ngOnLegendLngEnter() {
-    console.log('enter');
+    // Highlight the facility ... that last dot
+    $('#lng-button').css('background', '#c4f9ff');
+    layers.facilities.eachLayer((feature) => {
+      if (feature.feature.properties.LABEL === 'Kitimat M/S') {
+        feature.setStyle({color: '#00f6ff'});
+      }
+    });
   }
   public ngOnLegendLngLeave() {
-    console.log('leave');
+    $('#lng-button').css('background', '#ffffff');
+    layers.facilities.eachLayer((feature) => {
+      if (feature.feature.properties.LABEL === 'Kitimat M/S') {
+        feature.setStyle({color: '#6092ff'});
+      }
+    });
   }
+
   public ngOnLegendGasEnter() {
-    console.log('enter');
+    $('#gas-button').css('background', '#c4f9ff');
+    layers.facilities.eachLayer((feature) => {
+      if (feature.feature.properties.LABEL !== 'Kitimat M/S') {
+        feature.setStyle({color: '#00f6ff'});
+      }
+    });
+    layers.sections.eachLayer((feature) => {
+      feature.setStyle({color: '#00f6ff'});
+    });
   }
+
   public ngOnLegendGasLeave() {
-    console.log('leave');
+    $('#gas-button').css('background', '#ffffff');
+    layers.facilities.eachLayer((feature) => {
+      if (feature.feature.properties.LABEL !== 'Kitimat M/S') {
+        feature.setStyle({color: '#6092ff'});
+      }
+    });
+    layers.sections.eachLayer((feature) => {
+      feature.setStyle({color: '#6092ff'});
+    });
   }
 
   // called when apps list changes
