@@ -254,9 +254,11 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         onEachFeature: (_, layer) => {
           layer.on('mouseover', e => {
             e.target.setStyle({ color: '#00f6ff' });
+            $('#gas-button').css('background', '#c4f9ff');
           });
           layer.on('mouseout', e => {
             e.target.setStyle({ color: '#6092ff' });
+            $('#gas-button').css('background', '#ffffff');
           });
         }
       })
