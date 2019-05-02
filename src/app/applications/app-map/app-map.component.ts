@@ -40,6 +40,15 @@ const async = window['async'];
 const topojson = window['topojson'];
 const $ = window['jQuery']; // Yeah... I know. But I'm in a hurry
 
+// Make sure layer definitions are global to this component.
+const layers = {
+  facility: null,
+  facilities: null,
+  pipeline: null,
+  sections: null
+};
+
+
 // L.Icon.Default.prototype.options.iconUrl = 'assets/images/marker-icon.png';
 // L.Icon.Default.prototype.options.iconRetinaUrl = 'assets/images/marker-icon-2x.png';
 // L.Icon.Default.prototype.options.shadowUrl = 'assets/images/marker-shadow.pngonsole.log(L.Icon.Default.prototype.options);
@@ -228,13 +237,6 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       '/assets/data/facility-29apr2019.json',
       '/assets/data/pipeline-29apr2019.json'
     ];
-
-    const layers = {
-      facility: null,
-      facilities: null,
-      pipeline: null,
-      sections: null
-    };
 
     const displayData = data => {
       const tooltipOffset = L.point(0, -15);
@@ -522,17 +524,47 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     }
   }
 
+  // facility: null,
+  // facilities: null,
+  // pipeline: null,
+  // sections: null
+
   public ngOnLegendLngEnter() {
-    console.log('enter');
+    // Highlight the facility ... that last dot
+    layers.facilities.eachLayer((feature) => {
+      if (feature.feature.properties.LABEL === 'Kitimat M/S') {
+        feature.setStyle({color: '#00f6ff'});
+      }
+    });
   }
   public ngOnLegendLngLeave() {
-    console.log('leave');
+    layers.facilities.eachLayer((feature) => {
+      if (feature.feature.properties.LABEL === 'Kitimat M/S') {
+        feature.setStyle({color: '#6092ff'});
+      }
+    });
   }
+
   public ngOnLegendGasEnter() {
-    console.log('enter');
+    layers.facilities.eachLayer((feature) => {
+      if (feature.feature.properties.LABEL !== 'Kitimat M/S') {
+        feature.setStyle({color: '#00f6ff'});
+      }
+    });
+    layers.sections.eachLayer((feature) => {
+      feature.setStyle({color: '#00f6ff'});
+    });
   }
+
   public ngOnLegendGasLeave() {
-    console.log('leave');
+    layers.facilities.eachLayer((feature) => {
+      if (feature.feature.properties.LABEL !== 'Kitimat M/S') {
+        feature.setStyle({color: '#6092ff'});
+      }
+    });
+    layers.sections.eachLayer((feature) => {
+      feature.setStyle({color: '#6092ff'});
+    });
   }
 
   // called when apps list changes
