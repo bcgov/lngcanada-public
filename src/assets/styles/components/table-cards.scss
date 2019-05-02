@@ -2,8 +2,8 @@
 
 /* Include CSS Normalize */
 
-$primary-color: #008cba;
-$gray-color: #ddd;
+$primary-color: $primary;
+$gray-color: $gray4;
 $medium-up: 768px;
 $large-up: 1024px;
 $global-radius: 4px;

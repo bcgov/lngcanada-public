@@ -16,6 +16,46 @@
     ],
     "filters": [
       {
+        "displayName": "Government Agency",
+        "textFilters": [
+          {
+            "displayName": "Environmental Assessment Office",
+            "fieldName": "agencyEAO",
+            "documentFieldName": "agency",
+            "documentFieldValues": ["Environmental Assessment Office"]
+          },
+          {
+            "displayName": "BC Oil and Gas Commission",
+            "fieldName": "agencyBCOGC",
+            "documentFieldName": "agency",
+            "documentFieldValues": ["BC Oil and Gas Commission"]
+          }
+        ]
+      },
+      {
+        "displayName": "Author",
+        "textFilters": [
+          {
+            "displayName": "Environmental Assessment Office",
+            "fieldName": "authorEAO",
+            "documentFieldName": "author",
+            "documentFieldValues": ["Environmental Assessment Office"]
+          },
+          {
+            "displayName": "LNG Canada",
+            "fieldName": "authorLNG",
+            "documentFieldName": "author",
+            "documentFieldValues": ["LNG Canada"]
+          },
+          {
+            "displayName": "BC Oil and Gas commission",
+            "fieldName": "authorBCOGC",
+            "documentFieldName": "author",
+            "documentFieldValues": ["BC Oil and Gas commission"]
+          }
+        ]
+      },
+      {
         "displayName": "Document Type",
         "textFilters": [
           {
@@ -41,29 +81,6 @@
             "fieldName": "complianceSelfReport",
             "documentFieldName": "complianceDocumentType",
             "documentFieldValues": ["Compliance Self-Report"]
-          }
-        ]
-      },
-      {
-        "displayName": "Author",
-        "textFilters": [
-          {
-            "displayName": "Environmental Assessment Office",
-            "fieldName": "authorEAO",
-            "documentFieldName": "author",
-            "documentFieldValues": ["Environmental Assessment Office"]
-          },
-          {
-            "displayName": "LNG Canada",
-            "fieldName": "authorLNG",
-            "documentFieldName": "author",
-            "documentFieldValues": ["LNG Canada"]
-          },
-          {
-            "displayName": "BC Oil and Gas commission",
-            "fieldName": "authorBCOGC",
-            "documentFieldName": "author",
-            "documentFieldValues": ["BC Oil and Gas commission"]
           }
         ]
       }

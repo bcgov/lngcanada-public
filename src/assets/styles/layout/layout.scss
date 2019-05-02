@@ -6,7 +6,6 @@
   padding-bottom: 4rem;
   padding-left: 2rem;
   max-width: none;
-  font-family: 'myriad-pro', 'Calibri', 'Arial', sans-serif;
 
   h1 {
     margin-bottom: 1.15rem;
@@ -73,15 +72,6 @@ hr {
   margin-top: 2.5rem;
   margin-bottom: 2.25rem;
   border-width: 2px;
-}
-
-@media (min-width: 1600px) {
-  main {
-    .container {
-      padding-top: 2.5rem;
-      padding-bottom: 3rem;
-    }
-  }
 }
 
 // Flex panel

@@ -16,7 +16,7 @@
     ],
     "filters": [
       {
-        "displayName": "Agency",
+        "displayName": "Government Agency",
         "textFilters": [
           {
             "displayName": "Environmental Assessment Office",
@@ -33,7 +33,7 @@
         ]
       },
       {
-        "displayName": "Authorization Type",
+        "displayName": "Type",
         "textFilters": [
           {
             "displayName": "Project General",

@@ -63,7 +63,7 @@
   }
 
   label {
-    margin: 4px 0 0 0.5rem;
+    margin: 0.3rem 0 0 0.5rem;
   }
 }
 
@@ -99,7 +99,7 @@
 
 @media (min-width: 1024px) {
   .filter-panel {
-    width: 30rem;
+    width: 35rem;
     box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.25);
     z-index: 1000;
     transition: transform ease-out 0.2s;
