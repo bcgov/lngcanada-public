@@ -4,10 +4,8 @@
       Plans
     </h1>
     <div>
-      <ng-container *ngFor="let line of text">
-        <p>
-          {{line}}
-        </p>
+      <ng-container *ngFor="let line of text | linkify">
+        <p [innerHTML]="line"></p>
       </ng-container>
     </div>
   </section>
