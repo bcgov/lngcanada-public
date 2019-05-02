@@ -336,7 +336,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         pointToLayer: (_, latlng) => {
           return L.circleMarker(latlng, markerOptions);
         },
-        onEachFeature: (_, layer) => {
+        onEachFeature: (feature, layer) => {
           // Remove the Meter Station for now
           const popupOptions = {
             className: 'map-popup-content',
@@ -373,17 +373,22 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
             }
           }
 
-          // TODO: Highlight legend entry
-          // layer.on('click', e => {
-          //   const f = e.target.feature;
-          //   this.urlService.save('segment', f.properties.LABEL);
-          //   this.urlService.setFragment('details');
-          // });
           layer.on('mouseover', e => {
-            e.target.setStyle({ color: '#00f6ff' });
+            e.target.setStyle({ color: '#00f6ff' }); // Highlight geo feature
+            if (feature.properties.LABEL === 'Kitimat M/S') { // Highlight legend entry
+              $('#lng-button').css('background', '#c4f9ff');
+            } else {
+              $('#gas-button').css('background', '#c4f9ff');
+            }
+
           });
           layer.on('mouseout', e => {
-            e.target.setStyle({ color: '#6092ff' });
+            e.target.setStyle({ color: '#6092ff' }); // Unhighlight geo feature
+            if (feature.properties.LABEL === 'Kitimat M/S') { // Unhighlight legend entry
+              $('#lng-button').css('background', '#ffffff');
+            } else {
+              $('#gas-button').css('background', '#ffffff');
+            }
           });
         }
       })
