@@ -380,8 +380,8 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
             } else {
               $('#gas-button').css('background', '#c4f9ff');
             }
-
           });
+
           layer.on('mouseout', e => {
             e.target.setStyle({ color: '#6092ff' }); // Unhighlight geo feature
             if (feature.properties.LABEL === 'Kitimat M/S') { // Unhighlight legend entry
@@ -538,6 +538,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
   public ngOnLegendLngEnter() {
     // Highlight the facility ... that last dot
+    $('#lng-button').css('background', '#c4f9ff');
     layers.facilities.eachLayer((feature) => {
       if (feature.feature.properties.LABEL === 'Kitimat M/S') {
         feature.setStyle({color: '#00f6ff'});
@@ -545,6 +546,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     });
   }
   public ngOnLegendLngLeave() {
+    $('#lng-button').css('background', '#ffffff');
     layers.facilities.eachLayer((feature) => {
       if (feature.feature.properties.LABEL === 'Kitimat M/S') {
         feature.setStyle({color: '#6092ff'});
@@ -553,6 +555,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   public ngOnLegendGasEnter() {
+    $('#gas-button').css('background', '#c4f9ff');
     layers.facilities.eachLayer((feature) => {
       if (feature.feature.properties.LABEL !== 'Kitimat M/S') {
         feature.setStyle({color: '#00f6ff'});
@@ -564,6 +567,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   }
 
   public ngOnLegendGasLeave() {
+    $('#gas-button').css('background', '#ffffff');
     layers.facilities.eachLayer((feature) => {
       if (feature.feature.properties.LABEL !== 'Kitimat M/S') {
         feature.setStyle({color: '#6092ff'});
