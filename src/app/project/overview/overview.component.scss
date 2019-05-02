@@ -44,7 +44,7 @@
   height: 22rem;
 }
 
-// details
+// details box
 
 .details-outer {
   border: 1px solid $black;
@@ -53,22 +53,26 @@
   .details-inner {
     margin: 1rem;
 
-    .details-header {
-      border-bottom: 1px solid $black;
+    .details-item {
+      margin-bottom: 0.5rem;
 
-      strong {
-        font-weight: 600;
-        color: $gray8;
+      .details-header {
+        border-bottom: 1px solid $black;
+
+        strong {
+          font-weight: 600;
+          color: $gray8;
+        }
       }
-    }
 
-    .details-content {
-      margin-bottom: 0.25rem;
+      .details-content {
+        margin-bottom: 0.25rem;
+      }
     }
   }
 }
 
-// image
+// image box
 
 .map-outer {
   border: 1px solid $black;

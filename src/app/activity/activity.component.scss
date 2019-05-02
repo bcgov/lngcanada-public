@@ -112,12 +112,12 @@ $vertical-line-width: 0.2rem;
 }
 
 .vertical-line {
-  border-right: $vertical-line-width solid $gray5;
+  position: absolute;
   height: 100%;
   width: 100%;
-  margin-left: $vertical-line-width/2; // half the width of the line
-  position: absolute;
   top: 0;
+  margin-left: $vertical-line-width/2; // half the width of the line
+  border-right: $vertical-line-width solid $gray5;
 }
 
 // pagination
