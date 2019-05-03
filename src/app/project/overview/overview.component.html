@@ -2,7 +2,7 @@
   <div class="overview-content">
     <section class="left-column">
       <div class="box1">
-        <h1>Project Overview</h1>
+        <h1>OVERVIEW</h1>
         <ng-container *ngFor="let line of text | linkify">
           <p [innerHTML]="line"></p>
         </ng-container>
@@ -58,9 +58,9 @@
       </div>
     </section>
     <section class="right-column">
-      <h1>
-        Activity Updates
-      </h1>
+      <h2>
+        ACTIVITY UPDATES
+      </h2>
       <app-activity [activitiesJSON]='activities'></app-activity>
     </section>
   </div>

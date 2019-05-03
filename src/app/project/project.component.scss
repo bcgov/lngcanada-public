@@ -66,6 +66,9 @@
 
 // Navbar Toggle Button
 .navbar-toggler {
+  display: flex;
+  justify-content: end;
+  margin-left: auto;
   margin-right: 0.5rem;
   padding: 0.5rem 0.4rem;
   border: 2px solid $gray4;
@@ -81,7 +84,6 @@
 
   &.collapsed {
     border: 2px solid transparent;
-    color: #fff;
   }
 
   i {
@@ -115,6 +117,13 @@
   padding: 0;
   // background-color: $gray6;
   z-index: 1000;
+
+  // #projectNav { // Centering buttons
+  //   display: flex;
+  //   // align-items: center;
+  //   justify-content: end;
+  //   margin-left: auto;
+  // }
 
   .navbar-nav {
     // margin-top: 0.5rem;
@@ -192,6 +201,10 @@
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .navbar-toggler {
+      display: none;
     }
 
     .navbar-nav {
