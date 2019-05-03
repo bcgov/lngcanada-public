@@ -284,7 +284,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
       const gasPopup = `
         <div class="popup-header">
-          <div class="popup-title">COAST GASLINK PIPELINE</div>
+          <div class="popup-title">COASTAL GASLINK PIPELINE</div>
           <div class="popup-subtitle">Trans Canada - Coastal Gaslink Pipeline Ltd.</div>
         </div>
         <div class="popup-content">
@@ -306,10 +306,11 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           </a>
         </div>
       `;
+
       const lngPopup = `
         <div class="popup-header">
-          <div class="popup-title">COAST GASLINK PIPELINE</div>
-          <div class="popup-subtitle">Trans Canada - Coastal Gaslink Pipeline Ltd.</div>
+          <div class="popup-title">LNG CANADA</div>
+          <div class="popup-subtitle">LNG Canada</div>
         </div>
         <div class="popup-content">
           <div class="popup-desc-title">Application Description</div>
@@ -320,9 +321,9 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           </div>
           <hr class="popup-hr">
           <div class="popup-value"></div>
-          <a href="/project/2">
+          <a href="/project/1">
             <div class="popup-button">
-              <button type="button" class="btn btn-primary" routerLink="/project/2">
+              <button type="button" class="btn btn-primary" routerLink="/project/1">
                 <i class="material-icons mr-1">image</i>
                 <i class="material-icons mr-1">menu</i>
                 <span>Go to Details</span>
