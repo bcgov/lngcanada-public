@@ -1,82 +1,46 @@
 // Responsive table that changes to a stacked card layout on screen size change.
 
-/* Include CSS Normalize */
-
-$primary-color: $primary;
-$gray-color: $gray4;
-$medium-up: 768px;
-$large-up: 1024px;
-$global-radius: 4px;
-
-@mixin heading-font-regular {
-  font-family: 'myriad-pro', 'Calibri', 'Arial', sans-serif;
-}
-
-//SUPER BASIC PAGE STYLING
-// *,
-// *::before,
-// *::after {
-//   -webkit-box-sizing: border-box;
-//   -moz-box-sizing: border-box;
-//   box-sizing: border-box;
-// }
-
-// main {
-//   padding: 2em;
-//   float: left;
-//   width: 100%;
-// }
-
-// a {
-//   color: #222;
-//   font-weight: bold;
-//   text-decoration: none;
-//   border-bottom: 2px solid #222;
-
-//   &:hover {
-//     color: $primary-color;
-//   }
-// }
-///BASIC TABLE STYLING
-table {
-  border-collapse: collapse;
+.table-cards {
   width: 100%;
-  float: left;
-  margin: 0 0 2em;
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    float: left;
+    margin: 0 0 2rem;
+  }
 
   thead {
-    border-bottom: 3px solid $primary-color;
+    border-bottom: 3px solid $primary;
 
     th {
-      padding: 0.35em 0 0.35em;
+      padding: 0.35rem 0 0.35rem;
       font-weight: 400;
       text-align: left;
-
-      @include heading-font-regular;
-
-      font-size: 1.25em;
+      font-family: 'myriad-pro', 'Calibri', 'Arial', sans-serif;
+      font-size: 1.25rem;
     }
   }
 
   tbody {
-    border-bottom: 3px solid $primary-color;
+    border-bottom: 3px solid $primary;
 
     tr {
       border-bottom: 2px solid #ddd;
 
       td {
-        padding: 0.75em 0;
+        padding: 0.75rem 0;
 
         a {
-          color: $primary-color;
+          color: $primary;
           text-decoration: none;
           display: inline-block;
-          margin: 0 0.5em 0 0;
+          margin: 0 0.5rem 0 0;
 
           &:hover,
           &:active,
           &:focus {
-            color: darken($primary-color, 10%);
+            color: darken($primary, 10%);
             border: none;
           }
         }
@@ -86,234 +50,60 @@ table {
 
   tfoot {
     td {
-      @include heading-font-regular;
-
-      padding: 0.35em 0 0.35em;
+      padding: 0.35rem 0 0.35rem;
       text-align: left;
-      font-size: 1.25em;
+      font-size: 1.25rem;
+      font-family: 'myriad-pro', 'Calibri', 'Arial', sans-serif;
     }
   }
 }
 
-@media screen and (min-width: $large-up) {
-  table {
-    width: 100%;
-
-    thead {
-      border-bottom: 3px solid $primary-color;
-
-      // th {}
-    }
+@media screen and (max-width: 1024px) {
+  #table-card {
+    display: block;
 
     tbody {
-      tr {
-        border-bottom: 1px solid #ddd;
-
-        // td {}
-      }
+      border: none;
     }
-  }
-}
 
-///RWD MIXIN BELOW
-@mixin rwd-first {
-  display: block;
+    tbody,
+    th,
+    td,
+    tr,
+    tfoot {
+      display: block;
+    }
 
-  tbody {
-    border: none;
-  }
+    thead {
+      display: none;
+    }
 
-  tbody,
-  th,
-  td,
-  tr,
-  tfoot {
-    display: block;
-  }
-
-  thead {
-    display: none;
-  }
-
-  tr {
-    float: left;
-    width: 100%;
-    margin: 0 0 1em;
-    border: 1px solid $gray-color;
-    box-shadow: 0 2px 5px 0 $gray-color;
-    border-radius: $global-radius;
-    border-top: 5px solid $primary-color;
-
-    td {
-      padding: 0.5em 0.5em 0.5em 50%;
+    tr {
       float: left;
       width: 100%;
+      margin: 0 0 1rem;
+      border: 1px solid $gray4;
+      box-shadow: 0 2px 5px 0 $gray4;
+      border-radius: 4px;
+      border-top: 5px solid $primary;
 
-      &::before {
-        width: 100%;
-        display: block;
+      td {
+        padding: 0.5rem 0.5rem 0.5rem 50%;
         float: left;
-        padding: 0.5em 0.5em 0.5em 0;
-        clear: both;
-        margin: -0.5em 0 0 -100%;
+        width: 100%;
 
-        @include heading-font-regular;
-
-        font-size: 1.125em;
+        &::before {
+          content: attr(data-label);
+          width: 100%;
+          display: block;
+          float: left;
+          padding: 0.5rem 0.5rem 0.5rem 0;
+          clear: both;
+          margin: -0.5rem 0 0 -100%;
+          font-family: 'myriad-pro', 'Calibri', 'Arial', sans-serif;
+          font-size: 1.125rem;
+        }
       }
     }
-  }
-
-  // tr:nth-of-type(even) {
-  //   //background: $gray-color;
-  //   td {
-  //     &::before {
-
-  //     }
-  //   }
-  // }
-}
-
-@mixin rwd-second {
-  display: table;
-  border: none;
-
-  tbody {
-    border-bottom: 3px solid $primary-color;
-  }
-
-  th,
-  td {
-    display: table-cell;
-  }
-
-  tr {
-    display: table-row;
-    border: none;
-    border-bottom: 1px solid #eee;
-    float: none;
-    margin: 0;
-    box-shadow: none;
-
-    td {
-      padding: 0.75em 0 0.75em 0.25em;
-      float: none;
-      width: auto;
-
-      &::before {
-        padding: 0 !important;
-      }
-    }
-  }
-
-  thead {
-    display: table-header-group;
-  }
-
-  tbody,
-  tfoot {
-    display: table-row-group;
-  }
-
-  tr:nth-of-type(even) {
-    background: none;
-
-    // td {
-    //   &::before {
-
-    //   }
-    // }
-  }
-}
-
-%responive-tables {
-  @include rwd-first;
-
-  @media screen and (min-width: $medium-up) {
-    @include rwd-second;
-  }
-}
-
-%responive-tables-large {
-  @include rwd-first;
-
-  @media screen and (min-width: $large-up) {
-    @include rwd-second;
-  }
-}
-
-@mixin responive-tables($headings...) {
-  $list: $headings;
-
-  @each $list-headings in $list {
-    $i: index($list, $list-headings);
-
-    tbody tr td:nth-of-type(#{$i})::before {
-      content: $list-headings;
-    }
-
-    @media screen and (min-width: $medium-up) {
-      tbody tr td:nth-of-type(#{$i})::before {
-        content: '';
-      }
-    }
-  }
-}
-
-@mixin responive-tables-large($headings...) {
-  $list: $headings;
-
-  @each $list-headings in $list {
-    $i: index($list, $list-headings);
-
-    tbody tr td:nth-of-type(#{$i})::before {
-      content: $list-headings;
-    }
-
-    @media screen and (min-width: $large-up) {
-      tbody tr td:nth-of-type(#{$i})::before {
-        content: '';
-      }
-    }
-  }
-}
-
-.table-cards {
-  @extend %responive-tables;
-
-  &.authorizations {
-    @include responive-tables('Name', 'Government Agency', 'Authorization Type', 'Authorization Sub-Type', 'Date', 'Description');
-  }
-
-  &.compliance {
-    @include responive-tables('Name', 'Government Agency', 'Author', 'Authorization Type', 'Date', 'Description');
-  }
-
-  &.plans {
-    @include responive-tables('Name', 'Government Agency', 'Phase', 'Type', 'Date');
-  }
-
-  &.nations {
-    @include responive-tables('Name', 'Indigenous Nation', 'Date');
-  }
-}
-
-.table-cards-large {
-  @extend %responive-tables-large;
-
-  &.authorizations {
-    @include responive-tables-large('Name', 'Government Agency', 'Authorization Type', 'Authorization Sub-Type', 'Date', 'Description');
-  }
-
-  &.compliance {
-    @include responive-tables-large('Name', 'Government Agency', 'Author', 'Authorization Type', 'Date', 'Description');
-  }
-
-  &.plans {
-    @include responive-tables-large('Name', 'Government Agency', 'Phase', 'Type', 'Date');
-  }
-
-  &.nations {
-    @include responive-tables-large('Name', 'Indigenous Nation', 'Date');
   }
 }

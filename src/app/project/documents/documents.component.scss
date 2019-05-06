@@ -120,13 +120,13 @@
   }
 }
 
-// specific width condition for table columns
+// settings for specific table columns
 @media (min-width: 1024px) {
-  .description-width {
+  .description {
     width: 25%;
   }
 }
 
-.download-btn-width {
+.download {
   width: 8rem;
 }

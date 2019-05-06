@@ -44,7 +44,7 @@
       </app-explore-panel>
     </div>
 
-    <table class="table-cards-large {{pageType}}">
+    <table class="table-cards" id="table-card">
       <thead>
         <tr>
           <ng-container *ngFor="let header of headers">
@@ -62,11 +62,12 @@
       <ng-container *ngFor="let document of documents | orderBy: {property: sortColumn, direction: sortDirection}">
         <tr>
           <ng-container *ngFor="let header of headers">
-            <td [ngClass]="{'description-width': header.fieldName === 'description'}">
+            <td [attr.data-label]="header.displayName"
+              [ngClass]="{'description': header.fieldName === 'description'}">
               {{ header.fieldName === 'date' ? (document[header.fieldName] | date:'MMMM dd, yyyy') : document[header.fieldName] }}
             </td>
           </ng-container>
-          <td class="download-btn-width">
+          <td data-label="" class="download">
             <button class="inline-btn btn btn-primary" (click)="downloadFile(document)" *ngIf="document.url">
               <i class="material-icons">cloud_download</i>
               <label class="control-label">Download</label>
