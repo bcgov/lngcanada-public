@@ -40,6 +40,7 @@ export class DocumentsComponent implements OnInit {
   public filters: IDocumentFilters = { dateRangeFrom: null, dateRangeTo: null, textFilters: [] };
   public filterSections: FilterSection[] = [];
   public documents: Document[] = [];
+  public allDocumentsCount = 0;
 
   public sortColumn = 'date';
   public sortDirection = -1;
@@ -70,7 +71,7 @@ export class DocumentsComponent implements OnInit {
    * @memberof DocumentsComponent
    */
   public updateDocumentCountMessage() {
-    this.documentCountMessage = `Total Results: ${this.documents.length}`;
+    this.documentCountMessage = `Displaying ${this.documents.length} of ${this.allDocumentsCount} documents.`;
   }
 
   /**
@@ -122,7 +123,11 @@ export class DocumentsComponent implements OnInit {
       const documentsJSON = this.dataService.getDocuments(this.id, this.pageType);
 
       this.documents = [];
-      Object.keys(documentsJSON).forEach(key => {
+      const allDocumentKeys = Object.keys(documentsJSON);
+
+      this.allDocumentsCount = allDocumentKeys.length;
+
+      allDocumentKeys.forEach(key => {
         const doc: Document = new Document(documentsJSON[key]);
 
         if (this.isFiltered(doc)) {

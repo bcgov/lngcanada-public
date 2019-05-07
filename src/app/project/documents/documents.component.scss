@@ -1,5 +1,7 @@
 @import "~assets/styles/base/base.scss";
 
+// basic page layout
+
 .flex {
   @include flex-box();
 }
@@ -38,19 +40,22 @@
   @include flex-box();
 
   flex-direction: column;
-  min-height: 36rem;
+  min-height: 40rem;
 }
+
+// table layout
 
 .table-panel {
   flex: 1 1 auto;
   position: relative;
-}
 
-.filter-nav {
-  margin-bottom: 1rem;
+  .table-nav-bar {
+    height: 3.5rem;
 
-  .results-count {
-    float: right;
+    .results-count {
+      margin-bottom: 1rem;
+      float: right;
+    }
   }
 }
 
@@ -62,39 +67,44 @@
     line-height: 32px !important;
   }
 
+  > i,
+  label {
+    pointer-events: none;
+  }
+
   label {
     margin: 0.3rem 0 0 0.5rem;
   }
 }
 
-.filter-panel {
+// filter panel layout
+
+.filter-control {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  overflow-x: hidden;
-  background: $white;
-  box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.25);
-  z-index: 1000;
-  transition: transform ease-out 0.2s;
-  transform: translateX(-120%);
+  height: 0;
 
-  .close-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1001;
+  .filter-button {
+    margin-bottom: 0.5rem;
   }
 
-  // ::ng-deep {
-  //   .flex-panel {
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //     bottom: 0;
-  //     left: 0;
-  //   }
-  // }
+  .filter-panel {
+    overflow-x: hidden;
+    background: $white;
+    box-shadow: 0 0.3rem 0.3rem rgba(0, 0, 0, 0.25);
+    transition: transform ease-out 0.2s;
+    transform: translateX(-120%);
+    z-index: 1000;
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1001;
+    }
+  }
 }
 
 @media (min-width: 1024px) {
@@ -104,13 +114,6 @@
     z-index: 1000;
     transition: transform ease-out 0.2s;
     transform: translateX(-120%);
-
-    // ::ng-deep {
-    //   .flex-panel {
-    //     left: auto;
-    //     width: 30rem;
-    //   }
-    // }
   }
 }
 
@@ -120,7 +123,7 @@
   }
 }
 
-// settings for specific table columns
+// specific settings for certain table columns
 @media (min-width: 1024px) {
   .description {
     width: 25%;

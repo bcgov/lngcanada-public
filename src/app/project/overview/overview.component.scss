@@ -75,19 +75,28 @@
 // image box
 
 .map-outer {
+  position: relative;
   border: 1px solid $black;
   width: 100%;
   height: 100%;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   overflow: hidden;
+
+  .card-text {
+    position: absolute;
+    bottom: 0;
+    right: 0.4rem;
+    font-size: 1.5rem;
+    color: $white;
+    z-index: 1001; // must be larger than .card-image
+    pointer-events: none;
+  }
 
   .card-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0.8;
+    z-index: 1000;
     transition: 0.5s ease-in-out;
 
     &:hover {
