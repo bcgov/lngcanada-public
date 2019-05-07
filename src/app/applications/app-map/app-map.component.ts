@@ -555,6 +555,22 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   // pipeline: null,
   // sections: null
 
+  public ngOnLegendLngClick() {
+    layers.facilities.eachLayer((feature) => {
+      if (feature.feature.properties.name === 'Kitimat M/S') {
+        feature.openPopup();
+      }
+    });
+  }
+
+  public ngOnLegendGasClick() {
+    layers.facilities.eachLayer((feature) => {
+      if (feature.feature.properties.name === 'Wild Lake M/S') {
+        feature.openPopup();
+      }
+    });
+  }
+
   public ngOnLegendLngEnter() {
     // Highlight the facility ... that last dot
     $('#lng-button').css('background', '#c4f9ff');
