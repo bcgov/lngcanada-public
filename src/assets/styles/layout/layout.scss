@@ -2,9 +2,9 @@
 .container {
   margin: 0 auto;
   padding-top: 2rem;
-  padding-right: 2rem;
+  padding-right: 1.25rem;
   padding-bottom: 4rem;
-  padding-left: 2rem;
+  padding-left: 1.25rem;
   max-width: none;
 
   h1 {
@@ -52,7 +52,10 @@ main {
 }
 
 @media (min-width: 768px) {
-  container {
+  .container {
+    padding-right: 2rem;
+    padding-left: 2rem;
+
     h2 {
       line-height: 2.5rem;
     }
