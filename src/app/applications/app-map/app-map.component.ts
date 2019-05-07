@@ -232,7 +232,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
     const dataUrls = [
       '/assets/data/corridor-29mar2019.json',
-      '/assets/data/facilities-29mar2019.json',
+      '/assets/data/facilities-07may2019.json',
       '/assets/data/semicenterline-sections-09apr2019.json',
       '/assets/data/facility-29apr2019.json',
       '/assets/data/pipeline-29apr2019.json'
@@ -242,15 +242,10 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       const tooltipOffset = L.point(0, -15);
       layers.facility = L.geoJSON(data.facility, {
         style: {color: '#6092ff', weight: 2}
-      });
+      }).addTo(this.map);
 
       layers.pipeline = L.geoJSON(data.pipeline, {
-        style: {color: '#6092ff', weight: 2}
-      });
-
-      // Add the pipeline segment layer
-      layers.sections = L.geoJSON(data.sections, {
-        style: { color: '#6092ff', weight: 5 },
+        style: {color: '#6092ff', weight: 3},
         onEachFeature: (_, layer) => {
           layer.on('mouseover', e => {
             e.target.setStyle({ color: '#00f6ff' });
@@ -270,6 +265,29 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           { direction: 'top', offset: tooltipOffset }
         )
         .addTo(this.map);
+
+      // Add the pipeline segment layer
+      // layers.sections = L.geoJSON(data.sections, {
+      //   style: { color: '#6092ff', weight: 5 },
+      //   onEachFeature: (_, layer) => {
+      //     layer.on('mouseover', e => {
+      //       e.target.setStyle({ color: '#00f6ff' });
+      //       $('#gas-button').css('background', '#c4f9ff');
+      //     });
+      //     layer.on('mouseout', e => {
+      //       e.target.setStyle({ color: '#6092ff' });
+      //       $('#gas-button').css('background', '#ffffff');
+      //     });
+      //   }
+      // })
+      //   .bindTooltip(
+      //     layer => {
+      //       const p = layer.feature.properties;
+      //       return `From ${p.from} to ${p.to}.`;
+      //     },
+      //     { direction: 'top', offset: tooltipOffset }
+      //   )
+      //   .addTo(this.map);
 
       // Default marker style
       const markerOptions = {
@@ -344,7 +362,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
             autoPanPaddingTopLeft: L.point(40, 220),
             autoPanPaddingBottomRight: L.point(40, 20)
           };
-          switch (layer.feature.properties.LABEL) {
+          switch (layer.feature.properties.name) {
             case 'Vanderhoof Meter Station': {
               layer.setStyle({
                 radius: 0,
@@ -353,7 +371,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
               });
               break;
             }
-            case 'Wilde Lake M/S': {
+            case 'Wild Lake M/S': {
               layer.setStyle({
                 radius: 8,
                 weight: 3
@@ -376,7 +394,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
           layer.on('mouseover', e => {
             e.target.setStyle({ color: '#00f6ff' }); // Highlight geo feature
-            if (feature.properties.LABEL === 'Kitimat M/S') { // Highlight legend entry
+            if (feature.properties.name === 'Kitimat M/S') { // Highlight legend entry
               $('#lng-button').css('background', '#c4f9ff');
             } else {
               $('#gas-button').css('background', '#c4f9ff');
@@ -385,7 +403,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
           layer.on('mouseout', e => {
             e.target.setStyle({ color: '#6092ff' }); // Unhighlight geo feature
-            if (feature.properties.LABEL === 'Kitimat M/S') { // Unhighlight legend entry
+            if (feature.properties.name === 'Kitimat M/S') { // Unhighlight legend entry
               $('#lng-button').css('background', '#ffffff');
             } else {
               $('#gas-button').css('background', '#ffffff');
@@ -395,7 +413,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       })
         .bindTooltip(
           layer => {
-            return layer.feature.properties.LABEL;
+            return layer.feature.properties.name;
           },
           { direction: 'top', offset: tooltipOffset }
         )
@@ -403,40 +421,40 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     };
 
     // map state change events
-    this.map.on(
-      'zoomend',
-      () => {
-        const z = this.map.getZoom();
-        if (z >= 10) {
-          if (layers.sections) {
-            this.map.removeLayer(layers.sections);
-          }
-          if (layers.facilities) {
-            this.map.removeLayer(layers.facilities);
-          }
-          if (layers.facility) {
-            this.map.addLayer(layers.facility);
-          }
-          if (layers.pipeline) {
-            this.map.addLayer(layers.pipeline);
-          }
-        } else {
-          if (layers.sections) {
-            this.map.addLayer(layers.sections);
-          }
-          if (layers.facilities) {
-            this.map.addLayer(layers.facilities);
-          }
-          if (layers.facility) {
-            this.map.removeLayer(layers.facility);
-          }
-          if (layers.pipeline) {
-            this.map.removeLayer(layers.pipeline);
-          }
-        }
-      },
-      this
-    );
+    // this.map.on(
+    //   'zoomend',
+    //   () => {
+    //     const z = this.map.getZoom();
+    //     if (z >= 10) {
+    //       if (layers.sections) {
+    //         this.map.removeLayer(layers.sections);
+    //       }
+    //       if (layers.facilities) {
+    //         this.map.removeLayer(layers.facilities);
+    //       }
+    //       if (layers.facility) {
+    //         this.map.addLayer(layers.facility);
+    //       }
+    //       if (layers.pipeline) {
+    //         this.map.addLayer(layers.pipeline);
+    //       }
+    //     } else {
+    //       if (layers.sections) {
+    //         this.map.addLayer(layers.sections);
+    //       }
+    //       if (layers.facilities) {
+    //         this.map.addLayer(layers.facilities);
+    //       }
+    //       if (layers.facility) {
+    //         this.map.removeLayer(layers.facility);
+    //       }
+    //       if (layers.pipeline) {
+    //         this.map.removeLayer(layers.pipeline);
+    //       }
+    //     }
+    //   },
+    //   this
+    // );
 
 
     // Data collection function
@@ -460,8 +478,8 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
       // Convert topojson to geojson
       dataGeoJson.corridor = topojson.feature(data[0], data[0].objects['corridor-29mar2019']);
-      dataGeoJson.facilities = topojson.feature(data[1], data[1].objects['facilities-29mar2019']);
-      dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-09apr2019']);
+      dataGeoJson.facilities = data[1];
+      // dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-09apr2019']);
       dataGeoJson.facility = topojson.feature(data[3], data[3].objects['facility-29apr2019']);
       dataGeoJson.pipeline = topojson.feature(data[4], data[4].objects['pipline-29apr2019']);
 
@@ -537,11 +555,27 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   // pipeline: null,
   // sections: null
 
+  public ngOnLegendLngClick() {
+    layers.facilities.eachLayer((feature) => {
+      if (feature.feature.properties.name === 'Kitimat M/S') {
+        feature.openPopup();
+      }
+    });
+  }
+
+  public ngOnLegendGasClick() {
+    layers.facilities.eachLayer((feature) => {
+      if (feature.feature.properties.name === 'Wild Lake M/S') {
+        feature.openPopup();
+      }
+    });
+  }
+
   public ngOnLegendLngEnter() {
     // Highlight the facility ... that last dot
     $('#lng-button').css('background', '#c4f9ff');
     layers.facilities.eachLayer((feature) => {
-      if (feature.feature.properties.LABEL === 'Kitimat M/S') {
+      if (feature.feature.properties.name === 'Kitimat M/S') {
         feature.setStyle({color: '#00f6ff'});
       }
     });
@@ -549,7 +583,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   public ngOnLegendLngLeave() {
     $('#lng-button').css('background', '#ffffff');
     layers.facilities.eachLayer((feature) => {
-      if (feature.feature.properties.LABEL === 'Kitimat M/S') {
+      if (feature.feature.properties.name === 'Kitimat M/S') {
         feature.setStyle({color: '#6092ff'});
       }
     });
@@ -558,11 +592,11 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   public ngOnLegendGasEnter() {
     $('#gas-button').css('background', '#c4f9ff');
     layers.facilities.eachLayer((feature) => {
-      if (feature.feature.properties.LABEL !== 'Kitimat M/S') {
+      if (feature.feature.properties.name !== 'Kitimat M/S') {
         feature.setStyle({color: '#00f6ff'});
       }
     });
-    layers.sections.eachLayer((feature) => {
+    layers.pipeline.eachLayer((feature) => {
       feature.setStyle({color: '#00f6ff'});
     });
   }
@@ -570,11 +604,11 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   public ngOnLegendGasLeave() {
     $('#gas-button').css('background', '#ffffff');
     layers.facilities.eachLayer((feature) => {
-      if (feature.feature.properties.LABEL !== 'Kitimat M/S') {
+      if (feature.feature.properties.name !== 'Kitimat M/S') {
         feature.setStyle({color: '#6092ff'});
       }
     });
-    layers.sections.eachLayer((feature) => {
+    layers.pipeline.eachLayer((feature) => {
       feature.setStyle({color: '#6092ff'});
     });
   }
