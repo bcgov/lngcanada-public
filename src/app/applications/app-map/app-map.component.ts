@@ -247,14 +247,30 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       layers.pipeline = L.geoJSON(data.pipeline, {
         style: {color: '#6092ff', weight: 3},
         onEachFeature: (_, layer) => {
-          layer.on('mouseover', () => {
+          layer.on('click', () => { // Open project popup
+            layers.facilities.eachLayer(feature => {
+              if (feature.feature.properties.FID === 6) {
+                feature.openPopup();
+              }
+            });
+          });
+          layer.on('mouseover', e => {
+            e.target.setStyle({ color: '#00f6ff' });
             $('#gas-button').css('background', '#c4f9ff');
           });
-          layer.on('mouseout', () => {
+          layer.on('mouseout', e => {
+            e.target.setStyle({ color: '#6092ff' });
             $('#gas-button').css('background', '#ffffff');
           });
         }
       })
+        // .bindTooltip(
+        //   layer => {
+        //     const p = layer.feature.properties;
+        //     return `From ${p.from} to ${p.to}.`;
+        //   },
+        //   { direction: 'top', offset: tooltipOffset }
+        // )
         .addTo(this.map);
 
       // Add the pipeline segment layer
@@ -382,6 +398,18 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
               break;
             }
           }
+
+          layer.on('click', (e) => { // Open project popup
+            if (
+              e.target.feature.properties.FID === 6 ||
+              e.target.feature.properties.FID === 0
+              ) { return; }
+            layers.facilities.eachLayer(feature => {
+              if (feature.feature.properties.FID === 6) {
+                feature.openPopup();
+              }
+            });
+          });
 
           layer.on('mouseover', e => {
             e.target.setStyle({ color: '#00f6ff' }); // Highlight geo feature
