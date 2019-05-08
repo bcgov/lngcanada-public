@@ -247,23 +247,14 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       layers.pipeline = L.geoJSON(data.pipeline, {
         style: {color: '#6092ff', weight: 3},
         onEachFeature: (_, layer) => {
-          layer.on('mouseover', e => {
-            e.target.setStyle({ color: '#00f6ff' });
+          layer.on('mouseover', () => {
             $('#gas-button').css('background', '#c4f9ff');
           });
-          layer.on('mouseout', e => {
-            e.target.setStyle({ color: '#6092ff' });
+          layer.on('mouseout', () => {
             $('#gas-button').css('background', '#ffffff');
           });
         }
       })
-        .bindTooltip(
-          layer => {
-            const p = layer.feature.properties;
-            return `From ${p.from} to ${p.to}.`;
-          },
-          { direction: 'top', offset: tooltipOffset }
-        )
         .addTo(this.map);
 
       // Add the pipeline segment layer
