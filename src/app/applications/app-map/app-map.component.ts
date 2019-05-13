@@ -49,10 +49,6 @@ const layers = {
 };
 
 
-// L.Icon.Default.prototype.options.iconUrl = 'assets/images/marker-icon.png';
-// L.Icon.Default.prototype.options.iconRetinaUrl = 'assets/images/marker-icon-2x.png';
-// L.Icon.Default.prototype.options.shadowUrl = 'assets/images/marker-shadow.pngonsole.log(L.Icon.Default.prototype.options);
-
 const markerIcon = L.icon({
   iconUrl: 'assets/images/baseline-location-24px.svg',
   // Retina Icon is not needed here considering we're using an SVG. Enable if you want to change to a raster asset.
@@ -751,7 +747,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
    * Removes deleted / draws added applications.
    */
   private drawMap(deletedApps: Application[], addedApps: Application[]) {
-    // console.log('drawing map');
+    console.log('drawing map');
 
     // remove deleted apps from list and map
     deletedApps.forEach(app => {
@@ -785,21 +781,6 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       }
     });
 
-    // FUTURE
-    // DOESN'T WORK QUITE RIGHT -- ALSO NEEDS TO BE CALLED WHEN MOVING/ZOOMING AROUND THE MAP
-    // // get number visible on map
-    // let count = 0;
-    // const mapBounds = this.map.getBounds();
-    // for (const marker of this.markerList) {
-    //   const app = _.find(this.applications, { tantalisID: marker.dispositionId });
-    //   if (app) {
-    //     // app is visible if map contains its marker
-    //     if (mapBounds.contains(marker.getLatLng())) {
-    //       count++;
-    //     }
-    //   }
-    // }
-    // console.log('numberVisible =', count);
   }
 
   // called when user clicks on app marker
