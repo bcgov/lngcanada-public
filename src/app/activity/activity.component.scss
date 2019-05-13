@@ -123,6 +123,15 @@ $vertical-line-width: 0.2rem;
 // pagination
 .pagination-nav {
   margin-left: $icon-padding;
+  padding-right: 2rem;
+
+  ul {
+    justify-content: flex-end;
+  }
+
+  li {
+    max-width: 3rem;
+  }
 }
 
 @media (max-width: 1025px) {

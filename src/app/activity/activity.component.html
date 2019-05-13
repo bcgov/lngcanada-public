@@ -27,7 +27,7 @@
   <div class="pagination-nav" [hidden]="pagination.pageCount <= 1">
     <ul class="pagination">
       <li>
-        <a class="page-link" (click)="updatePage(-1)" [hidden]="pagination.currentPage <= 1">Previous</a>
+        <a class="page-link" (click)="updatePage(-1)" [hidden]="pagination.currentPage <= 1">Prev</a>
       </li>
       <li>
         <a class="page-link" (click)="setPage(pagination.currentPage - 1)" [hidden]="pagination.currentPage <= 1">{{pagination.currentPage - 1}}</a>

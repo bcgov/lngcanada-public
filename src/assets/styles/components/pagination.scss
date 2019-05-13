@@ -26,7 +26,7 @@ pagination-template {
       &:hover,
       &:focus {
         border-color: $pgn-btn-active-bg;
-        // background-color: rgba($pgn-btn-active-bg, 0.8);
+        background-color: $gray4;
         color: $pgn-btn-active-color;
       }
     }
