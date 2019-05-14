@@ -18,11 +18,11 @@ export class FaqComponent implements OnInit {
     if (el.hasClass('open')) {
       el.removeClass('open');
       el.html('Show All (+)');
-      $('.collapse,.answer').collapse('hide');
+      $('.collapse.answer').collapse('hide');
     } else {
       el.addClass('open');
       el.html('Hide All (-)');
-      $('.collapse,.answer').collapse('show');
+      $('.collapse.answer').collapse('show');
     }
   }
 
