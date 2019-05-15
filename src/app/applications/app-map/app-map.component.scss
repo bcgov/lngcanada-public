@@ -78,6 +78,12 @@ $map-control-button-bg: #fff;
   margin-right: 2rem;
 }
 
+@media (max-width: 768px) {
+  #legend {
+    display: none;
+  }
+}
+
 // Leaflet Control Customization
 ::ng-deep {
   .map-reset-control {
