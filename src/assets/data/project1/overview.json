@@ -22,27 +22,21 @@
   "activities": [
     {
       "type": "INFO",
-      "title": "Activity Update 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
-      "date": "15-01-2018"
+      "title": "Regulatory Interface Launched",
+      "description": "Welcome to British Columbia’s website providing details about the environmental assessment process, permitting, regulatory oversight and compliance procedures as it relates to LNG Canada and the Coastal GasLink pipeline.",
+      "date": "31-05-2019"
     },
     {
       "type": "DOCUMENT_ADDED",
-      "title": "Activity Update 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
-      "date": "01-06-2015"
+      "title": "Compliance Self-Reported",
+      "description": "LNG Canada’s self-report providing a status of compliance with the conditions outlined in the project’s environmental assessment certificate.",
+      "date": "31-01-2019"
     },
     {
       "type": "REPORT_ADDED",
-      "title": "Activity Update 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus.",
-      "date": "01-06-2015"
-    },
-    {
-      "type": "AUTHORIZATION_ADDED",
-      "title": "Activity Update 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
-      "date": "01-06-2015"
+      "title": "Inspection Report Filed",
+      "description": "The BC Environmental Assessment Office’s field and administrative inspection report of work underway at the LNG Canada export site.",
+      "date": "04-12-2018"
     }
   ]
 }

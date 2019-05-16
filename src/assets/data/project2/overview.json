@@ -21,45 +21,52 @@
   "activities": [
     {
       "type": "INFO",
-      "title": "Activity Update 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
-      "date": "15-01-2018"
+      "title": "Regulatory Interface Launched",
+      "description": "Welcome to British Columbia’s website providing details about the environmental assessment process, permitting, regulatory oversight and compliance procedures as it relates to LNG Canada and the Coastal GasLink pipeline.",
+      "date": "31-05-2019"
     },
     {
       "type": "DOCUMENT_ADDED",
-      "title": "Activity Update 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
-      "date": "01-06-2015"
+      "title": "Pipeline Permit Amended",
+      "description": "The BC Oil and Gas Commission provided Coastal GasLink with an approved amendment to re-route a 41-kilometre portion of their pipeline.",
+      "date": "06-05-2019"
     },
     {
       "type": "REPORT_ADDED",
-      "title": "Activity Update 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus.",
-      "date": "01-06-2015"
+      "title": "Inspection Completed",
+      "description": "The BC Environmental Assessment Office’s inspection record for a site visit conducted March 21, 2019. The report identifies three minor incidences of non-compliance.",
+      "date": "30-04-2019"
     },
     {
       "type": "AUTHORIZATION_ADDED",
-      "title": "Activity Update 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
-      "date": "01-06-2015"
+      "title": "Enforcement Order Issued",
+      "description": "Enforcement order requiring Coastal GasLink to provide appropriate notice to registered trapline holders and cease activities under specific conditions.",
+      "date": "26-02-2019"
     },
     {
       "type": "INSPECTION_COMPLETE",
-      "title": "Activity Update 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
-      "date": "01-06-2015"
+      "title": "Enforcement Order Issued",
+      "description": "Enforcement order requiring Coastal GasLink to fully conduct habitat assessments and propose mitigation to address adverse effects to plants and ecological communities.",
+      "date": "20-02-2019"
     },
     {
       "type": "ENFORCEMENT_ACTION",
-      "title": "Activity Update 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem. Vivamus ac elementum quam, ac varius nulla. Sed aliquet nunc vitae risus pellentesque auctor. Proin ac luctus lorem.",
-      "date": "01-06-2015"
+      "title": "Management Plan Submitted",
+      "description": "Coastal GasLink’s contingency plans (appendix C) submitted.",
+      "date": "13-02-2019"
     },
     {
       "type": "IMPORTANT_DATE",
-      "title": "Activity Update 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-      "date": "01-06-2015"
+      "title": "Management Plan Submitted",
+      "description": "Coastal GasLink’s mitigation and monitoring plans (appendix E) submitted.",
+      "date": "13-02-2019"
+    },
+    {
+      "type": "IMPORTANT_DATE",
+      "title": "Warning Letter Issued",
+      "description": "Coastal GasLink’s mitigation and monitoring plans (appendix E) submitted.",
+      "date": "13-02-2019"
     }
+
   ]
 }
