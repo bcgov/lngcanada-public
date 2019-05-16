@@ -10,7 +10,7 @@
       { "displayName": "Name", "fieldName": "name" },
       { "displayName": "Government Agency", "fieldName": "agency" },
       { "displayName": "Author", "fieldName": "author" },
-      { "displayName": "Authorization Type", "fieldName": "complianceDocumentType" },
+      { "displayName": "Type", "fieldName": "complianceDocumentType" },
       { "displayName": "Date", "fieldName": "date" },
       { "displayName": "Description", "fieldName": "description" }
     ],
