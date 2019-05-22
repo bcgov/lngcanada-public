@@ -27,7 +27,7 @@
   }
 }
 
-#feedback-btn {
+.feedback-btn {
   width: 11rem;
 }
 
@@ -42,6 +42,15 @@ p {
   font-weight: 500;
   font-size: 1rem;
   margin-bottom: 1rem;
+}
+
+a.min-link {
+  display: flex !important;
+  align-items: center;
+
+  i {
+    width: auto;
+  }
 }
 
 .block {
@@ -108,7 +117,8 @@ p {
 
 @media (min-width: 1024px) {
   .block {
-    width: 33.333%;
+    width: 30rem;
+    // width: 33.333%;
     float: left;
   }
 }
