@@ -1,8 +1,8 @@
 {
   "text": [
     "Coastal GasLink is a 670-kilometer pipeline that will supply LNG Canada with natural gas from northeastern British Columbia. The pipeline will run from the Dawson Creek area to the LNG Canada facility in Kitimat.",
-    "Coastal GasLink is owned by TransCanada who was selected by LNG Canada to design, build and operate the pipeline.",
-    "The pipeline is being built in eight stages before construction is complete. Building the pipeline in eight separate sections across the province allows the company manage labour demands and schedule construction so it can be completed in time for LNG Canada’s operational date.",
+    "Coastal GasLink is owned by TC Energy who was selected by LNG Canada to design, build and operate the pipeline.",
+    "The pipeline is being built in eight stages before construction is complete. Building the pipeline in eight separate sections allows the company manage labour demands and schedule construction so it can be completed in time for LNG Canada’s operational date.",
     "Construction activities are underway. The pipeline is scheduled to be ready in early 2022."
   ],
   "details": {
@@ -64,7 +64,7 @@
     {
       "type": "ENFORECMENT_ACTION",
       "title": "Warning Letter Issued",
-      "description": "Coastal GasLink’s mitigation and monitoring plans (appendix E) submitted.",
+      "description": "Letter identifying activity that started before the required notification was sent to the BC Oil and Gas Commission.",
       "date": "13-02-2019"
     }
 
