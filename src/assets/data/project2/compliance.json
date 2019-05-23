@@ -116,7 +116,7 @@
         "lat": "",
         "long": "",
         "nation": "",
-        "author": ""
+        "author": "BC Oil and Gas commission"
       },
       {
         "url": "https://projects.eao.gov.bc.ca/api/document/5c76cb904c3fd40024c376c4/fetch",
@@ -132,7 +132,7 @@
         "lat": "",
         "long": "",
         "nation": "",
-        "author": ""
+        "author": "Environmental Assessment Office"
       },
       {
         "url": "https://projects.eao.gov.bc.ca/api/document/5c89200af6240c00242594d3/fetch",
@@ -148,7 +148,7 @@
         "lat": "",
         "long": "",
         "nation": "",
-        "author": ""
+        "author": "Environmental Assessment Office"
       },
       {
         "url": "https://projects.eao.gov.bc.ca/api/document/5c76cd26e9647600240bf8b7/fetch",
@@ -164,7 +164,7 @@
         "lat": "",
         "long": "",
         "nation": "",
-        "author": ""
+        "author": "Environmental Assessment Office"
       },
       {
         "url": "https://projects.eao.gov.bc.ca/api/document/5c90210fd69ab9002440620e/fetch",
@@ -180,7 +180,7 @@
         "lat": "",
         "long": "",
         "nation": "",
-        "author": ""
+        "author": "Environmental Assessment Office"
       },
       {
         "url": "https://projects.eao.gov.bc.ca/api/document/5c507b6c4d28ef002459ff7f/fetch",
@@ -196,7 +196,23 @@
         "lat": "",
         "long": "",
         "nation": "",
-        "author": ""
+        "author": "Environmental Assessment Office"
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5cd49eb8f8f32d002411e60a/fetch/Inspection_Record_-_2019-03-21_to_2019-03-22",
+        "description": "On March 21 and 22, 2019 Environmental Assessment Office (EAO) Compliance and Enforcement Officers Justin Carlson and Shayla Frechette (collectively EAO C&E) inspected the Costal GasLink Project (Project) EAC# E14-03 (Appendix 1, 2 and 3). ",
+        "name": "Inspection Record - 2019-03-21 to 2019-03-22",
+        "date": "22-03-2019",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "complianceDocumentSubtype": "",
+        "segment": "Various",
+        "status": "Complete",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": "Environmental Assessment Office"
       }
     ]
   }
