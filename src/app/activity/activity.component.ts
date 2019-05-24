@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Activity } from 'app/models/activity';
+// import { Router } from '@angular/router';
 
 /**
  * Activity component.
@@ -38,6 +39,8 @@ export class ActivityComponent implements OnInit, OnChanges {
       this.updateActivities();
     }
   }
+
+  // public router: Router;
 
   public updateActivities(): void {
     this.initializeActivities();

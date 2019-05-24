@@ -23,49 +23,57 @@
       "type": "IMPORTANT_DATE",
       "title": "Regulatory Interface Launched",
       "description": "Welcome to British Columbia’s website providing details about the environmental assessment process, permitting, regulatory oversight and compliance procedures as it relates to LNG Canada and the Coastal GasLink pipeline.",
-      "date": "15-05-2019"
+      "date": "15-05-2019",
+      "url": ""
     },
     {
       "type": "DOCUMENT_ADDED",
       "title": "Pipeline Permit Amended",
       "description": "The BC Oil and Gas Commission provided Coastal GasLink with an approved amendment to re-route a 41-kilometre portion of their pipeline.",
-      "date": "06-05-2019"
+      "date": "06-05-2019",
+      "url": "/project/2/authorizations"
     },
     {
       "type": "INSPECTION_COMPLETE",
       "title": "Inspection Completed",
       "description": "The BC Environmental Assessment Office’s inspection record for a site visit conducted March 21, 2019. The report identifies three minor incidences of non-compliance.",
-      "date": "30-04-2019"
+      "date": "30-04-2019",
+      "url": "/project/2/compliance"
     },
     {
       "type": "ENFORCEMENT_ACTION",
       "title": "Enforcement Order Issued",
       "description": "Enforcement order requiring Coastal GasLink to provide appropriate notice to registered trapline holders and cease activities under specific conditions.",
-      "date": "26-02-2019"
+      "date": "26-02-2019",
+      "url": "/project/2/compliance"
     },
     {
       "type": "ENFORCEMENT_ACTION",
       "title": "Enforcement Order Issued",
       "description": "Enforcement order requiring Coastal GasLink to fully conduct habitat assessments and propose mitigation to address adverse effects to plants and ecological communities.",
-      "date": "20-02-2019"
+      "date": "20-02-2019",
+      "url": "/project/2/compliance"
     },
     {
       "type": "DOCUMENT_ADDED",
       "title": "Management Plan Submitted",
       "description": "Coastal GasLink’s contingency plans (appendix C) submitted.",
-      "date": "13-02-2019"
+      "date": "13-02-2019",
+      "url": "/project/2/compliance"
     },
     {
       "type": "DOCUMENT_ADDED",
       "title": "Management Plan Submitted",
       "description": "Coastal GasLink’s mitigation and monitoring plans (appendix E) submitted.",
-      "date": "13-02-2019"
+      "date": "13-02-2019",
+      "url": "/project/2/compliance"
     },
     {
       "type": "ENFORECMENT_ACTION",
       "title": "Warning Letter Issued",
       "description": "Letter identifying activity that started before the required notification was sent to the BC Oil and Gas Commission.",
-      "date": "13-02-2019"
+      "date": "13-02-2019",
+      "url": "/project/2/compliance"
     }
 
   ]

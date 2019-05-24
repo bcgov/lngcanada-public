@@ -9,6 +9,15 @@ $vertical-line-width: 0.2rem;
   flex-direction: column;
 }
 
+.activity-link {
+  text-decoration: none;
+  color: $gray8;
+}
+
+.activity-link:hover {
+  background: $gray1;
+}
+
 // Contact Blocks
 .activity-item {
   @include flex-box();

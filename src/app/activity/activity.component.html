@@ -1,28 +1,31 @@
 <div class="activity-list">
   <ng-container *ngFor="let activityItem of activitiesToDisplay">
-    <div class="activity-item">
-      <div class="block-left">
-        <div class="vertical-line"></div>
-        <img class='activity-icon' src="/assets/images/{{activityItem.type}}.svg">
-      </div>
-      <div class="block-right extend-border">
-        <div class="inner-block-top">
-          <div class="inner-block-top-left">
-            <strong>{{activityItem.title}}</strong>
+
+    <a class="activity-link" href="{{activityItem.url}}">
+      <div class="activity-item">
+        <div class="block-left">
+          <div class="vertical-line"></div>
+          <img class='activity-icon' src="/assets/images/{{activityItem.type}}.svg">
+        </div>
+        <div class="block-right extend-border">
+          <div class="inner-block-top">
+            <div class="inner-block-top-left">
+              <strong>{{activityItem.title}}</strong>
+            </div>
+            <div class="inner-block-top-right">
+              {{activityItem.date | date}}
+            </div>
           </div>
-          <div class="inner-block-top-right">
-            {{activityItem.date | date}}
+          <div class="inner-block-bottom">
+            <div class="inner-block-bottom-left">
+              {{activityItem.description}}
+            </div>
+            <div class="inner-block-bottom-right">
+            </div>
           </div>
         </div>
-        <div class="inner-block-bottom">
-          <div class="inner-block-bottom-left">
-            {{activityItem.description}}
-          </div>
-          <div class="inner-block-bottom-right">
-          </div>
-        </div>
       </div>
-    </div>
+    </a>
   </ng-container>
   <div class="pagination-nav" [hidden]="pagination.pageCount <= 1">
     <ul class="pagination">
