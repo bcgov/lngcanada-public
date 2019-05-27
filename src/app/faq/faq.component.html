@@ -7,13 +7,11 @@
         <div id="show-hide-all" (click)="toggleOpen($event)">Show All (+)</div>
         <hr id="top-hr">
         <div class="question-answer">
-          <a
-            class="question"
-            data-toggle="collapse"
-            href="#collapse1"
-            aria-expanded="false"
-          ><i class="material-icons">chevron_right</i>Why does the provincial government have a regulatory interface for LNG projects?</a>
-          <div class="collapse answer" id="collapse1">
+          <div
+            (click)="status=!status"
+            [ngClass]="status ? 'open' : 'closed'"
+          ><i class="material-icons">chevron_right</i>Why does the provincial government have a regulatory interface for LNG projects?</div>
+          <div class="faq-answer" id="collapse1">
             <p>Major industry projects require provincial approval and the appropriate permits before development can move forward. This site provides context and access to the multiple layers of authorizations, compliance updates and other items that represent the provincial government’s role as it relates to LNG regulation and oversight.</p>
           </div>
         </div>
