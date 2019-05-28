@@ -23,7 +23,7 @@ export class FaqComponent implements OnInit {
 
   public toggleOpen = () => {
     this.showAll = !this.showAll;
-    // ... again... Gotta be a better way 
+    // ... again... Gotta be a better way
     if (this.showAll) {
       this.status1 = true;
       this.status2 = true;
