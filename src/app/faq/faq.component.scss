@@ -17,11 +17,17 @@
 }
 
 .question {
+  color: $gray6;
+  cursor: pointer;
   display: flex;
   align-items: center;
   font-size: 20px;
   font-weight: 600;
   text-decoration: none;
+}
+
+.question:hover {
+  color: $gray8;
 }
 
 .question[aria-expanded="false"] i {
@@ -53,8 +59,21 @@
 }
 
 // Testing some stuff
+.question-answer .open + .faq-answer {
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+
 .question-answer .closed + .faq-answer {
-  display: none;
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+}
+
+.question-answer .closed {
+  i {
+    transition: 0.5s ease-in-out;
+  }
 }
 
 .question-answer .open {

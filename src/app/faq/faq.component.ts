@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-const $ = window['jQuery'];
 
 @Component({
   selector: 'app-faq',
@@ -9,20 +8,44 @@ const $ = window['jQuery'];
 export class FaqComponent implements OnInit {
   constructor() {}
 
-  /*
-    Bootstrap uses jQuery to control it's widgets.
-    This hides and shows all question answers.
-  */
-  public toggleOpen = (e) => {
-    const el = $(e.srcElement);
-    if (el.hasClass('open')) {
-      el.removeClass('open');
-      el.html('Show All (+)');
-      $('.collapse.answer').collapse('hide');
+  // There's gotta be a better way to do this. 😒
+  public showAll = false;
+  public status1 = false;
+  public status2 = false;
+  public status3 = false;
+  public status4 = false;
+  public status5 = false;
+  public status6 = false;
+  public status7 = false;
+  public status8 = false;
+  public status9 = false;
+  public status10 = false;
+
+  public toggleOpen = () => {
+    this.showAll = !this.showAll;
+    // ... again... Gotta be a better way 
+    if (this.showAll) {
+      this.status1 = true;
+      this.status2 = true;
+      this.status3 = true;
+      this.status4 = true;
+      this.status5 = true;
+      this.status6 = true;
+      this.status7 = true;
+      this.status8 = true;
+      this.status9 = true;
+      this.status10 = true;
     } else {
-      el.addClass('open');
-      el.html('Hide All (-)');
-      $('.collapse.answer').collapse('show');
+      this.status1 = false;
+      this.status2 = false;
+      this.status3 = false;
+      this.status4 = false;
+      this.status5 = false;
+      this.status6 = false;
+      this.status7 = false;
+      this.status8 = false;
+      this.status9 = false;
+      this.status10 = false;
     }
   }
 
