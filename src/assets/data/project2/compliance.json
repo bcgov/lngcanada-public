@@ -42,10 +42,10 @@
             "documentFieldValues": ["Environmental Assessment Office"]
           },
           {
-            "displayName": "LNG Canada",
-            "fieldName": "authorLNG",
+            "displayName": "Coastal Gas Link",
+            "fieldName": "authorCGL",
             "documentFieldName": "author",
-            "documentFieldValues": ["LNG Canada"]
+            "documentFieldValues": ["Coastal Gas Link"]
           },
           {
             "displayName": "BC Oil and Gas commission",
