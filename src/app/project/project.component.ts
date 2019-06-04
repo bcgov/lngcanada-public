@@ -18,7 +18,7 @@ export class ProjectComponent implements OnInit {
       this.project = ((proj) => {
         switch (proj) {
           case '1': return 'LNG Canada';
-          case '2': return 'Coastal Gas Link';
+          case '2': return 'Coastal GasLink';
           default: return null;
         }
       })(this.id);

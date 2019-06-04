@@ -306,13 +306,13 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       const gasPopup = `
         <div class="popup-header">
           <div class="popup-title">COASTAL GASLINK PIPELINE</div>
-          <div class="popup-subtitle">Trans Canada - Coastal Gaslink Pipeline Ltd.</div>
+          <div class="popup-subtitle">Coastal Gaslink Pipeline Ltd.</div>
         </div>
         <div class="popup-content">
           <div class="popup-desc-title">Application Description</div>
           <div class="popup-desc">
             A 670-kilometer pipeline that will supply the LNG Canada export facility
-            with raw natural gas from northeastern British Columbia.
+            with gas from northeastern British Columbia.
           </div>
           <hr class="popup-hr">
           <div class="popup-value"></div>
@@ -338,7 +338,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           <div class="popup-desc">
             A large-scale natural gas processing and export facility located in Kitimat,
             British Columbia. After natural gas is converted into a liquid form it will
-            be shipped to Asia.
+            be shipped to Asia and other markets.
           </div>
           <hr class="popup-hr">
           <div class="popup-value"></div>

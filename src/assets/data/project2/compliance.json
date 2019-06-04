@@ -42,10 +42,10 @@
             "documentFieldValues": ["Environmental Assessment Office"]
           },
           {
-            "displayName": "Coastal Gas Link",
+            "displayName": "Coastal GasLink",
             "fieldName": "authorCGL",
             "documentFieldName": "author",
-            "documentFieldValues": ["Coastal Gas Link"]
+            "documentFieldValues": ["Coastal GasLink"]
           },
           {
             "displayName": "BC Oil and Gas commission",
@@ -116,7 +116,7 @@
         "lat": "",
         "long": "",
         "nation": "",
-        "author": "Coastal Gas Link"
+        "author": "Coastal GasLink"
       },
       {
         "url": "https://projects.eao.gov.bc.ca/api/document/5c76cb904c3fd40024c376c4/fetch",
@@ -184,7 +184,7 @@
       },
       {
         "url": "https://projects.eao.gov.bc.ca/api/document/5c507b6c4d28ef002459ff7f/fetch",
-        "description": "EAO Compliance and Enforcement (C&E) received a complaint in January of 2018 regarding the Coastal Gas Link Project (Project). As a result, the EAO completed an inspection which spanned several days focusing on six locations along the pipeline route",
+        "description": "EAO Compliance and Enforcement (C&E) received a complaint in January of 2018 regarding the Coastal GasLink Project (Project). As a result, the EAO completed an inspection which spanned several days focusing on six locations along the pipeline route",
         "name": "Inspection Record - 2018-06-19 to 21 and 2018-07-09",
         "date": "16-01-2019",
         "agency": "Environmental Assessment Office",
