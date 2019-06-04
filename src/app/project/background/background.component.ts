@@ -31,7 +31,8 @@ export class BackgroundComponent implements OnInit {
   ngOnInit() {
     this.sanitizedUrl = this.sanitizer.bypassSecurityTrustUrl('https://www.projects.eao.gov.bc.ca/');
   }
-  sanitize(url:string){
+
+  sanitize(url: string) {
     return this.sanitizer.bypassSecurityTrustUrl(url);
   }
 }
