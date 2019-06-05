@@ -20,6 +20,7 @@ export class FaqComponent implements OnInit {
   public status8 = false;
   public status9 = false;
   public status10 = false;
+  public status11 = false;
 
   public toggleOpen = () => {
     this.showAll = !this.showAll;
@@ -35,6 +36,7 @@ export class FaqComponent implements OnInit {
       this.status8 = true;
       this.status9 = true;
       this.status10 = true;
+      this.status11 = true;
     } else {
       this.status1 = false;
       this.status2 = false;
@@ -46,6 +48,7 @@ export class FaqComponent implements OnInit {
       this.status8 = false;
       this.status9 = false;
       this.status10 = false;
+      this.status11 = false;
     }
   }
 

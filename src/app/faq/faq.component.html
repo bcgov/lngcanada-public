@@ -101,11 +101,21 @@
         <div class="question-answer">
           <div
             class="question"
+            (click)="status11=!status11"
+            [ngClass]="status11 ? 'open' : 'closed'"
+          ><i class="material-icons">chevron_right</i>Where can I find information released by Coastal GasLink about their project?</div>
+          <div class="faq-answer">
+            <p>More details are accessible on the project’s website: <a href="https://www.coastalgaslink.com/">www.coastalgaslink.com</a></p>
+          </div>
+        </div>
+        <div class="question-answer">
+          <div
+            class="question"
             (click)="status10=!status10"
             [ngClass]="status10 ? 'open' : 'closed'"
           ><i class="material-icons">chevron_right</i>What can I do if I don’t see details I am looking for?</div>
           <div class="faq-answer">
-            <p>Please note that information and features will be added to this website on an ongoing basis. If you are interested in providing feedback, please send and email to lng@gov.bc.ca.</p>
+            <p>Please note that information and features will be added to this website on an ongoing basis. If you are interested in providing feedback, please send an email to <a href="mailto: lng@gov.bc.ca">lng@gov.bc.ca</a></p>
           </div>
         </div>
         <hr>
