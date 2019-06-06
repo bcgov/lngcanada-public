@@ -87,6 +87,22 @@
     ],
     "docs": [
       {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5cc0901d94220700244382f7/fetch/CGL-_Annual_Compliance_Report_-_2019-01-31",
+        "description": "Compliance Self-Report for the first year in construction phase for the Coastal GasLink Pipeline Project in accordance with the Environmental Assessment Certificate #E14-03 Condition 1 - Compliance Report.",
+        "name": "Annual Compliance Self-Report",
+        "date": "31-01-2019",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Self Report",
+        "complianceDocumentSubtype": "",
+        "segment": "Unknown",
+        "status": "Active ",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": "Coastal GasLink"
+      },
+      {
         "url": "https://www.bcogc.ca/node/15344/download",
         "description": "Warning letter issued to Coastal Gaslink Pipeline Ltd for failing to provide notice of construction start to the Oil and Gas commission a minimum of 48 hours prior to the commencement of activities.",
         "name": "Warning Letter 2019-001TE CGL",
