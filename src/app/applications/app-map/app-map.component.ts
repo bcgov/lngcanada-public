@@ -227,15 +227,13 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     });
 
     const dataUrls = [
-      '/assets/data/corridor-29mar2019.json',
       '/assets/data/facilities-07may2019.json',
-      '/assets/data/semicenterline-sections-09apr2019.json',
       '/assets/data/facility-29apr2019.json',
-      '/assets/data/pipeline-29apr2019.json'
+      '/assets/data/pipeline-segments-10jun2019.json'
     ];
 
     const displayData = data => {
-      const tooltipOffset = L.point(0, -15);
+      const tooltipOffset = L.point(0, 25);
       layers.facility = L.geoJSON(data.facility, {
         style: {color: '#6092ff', weight: 2}
       }).addTo(this.map);
@@ -260,13 +258,13 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
           });
         }
       })
-        // .bindTooltip(
-        //   layer => {
-        //     const p = layer.feature.properties;
-        //     return `From ${p.from} to ${p.to}.`;
-        //   },
-        //   { direction: 'top', offset: tooltipOffset }
-        // )
+        .bindTooltip(
+          layer => {
+            const p = layer.feature.properties;
+            return `Segment ${p.segment}`;
+          },
+          { direction: 'center', offset: tooltipOffset, sticky: true }
+        )
         .addTo(this.map);
 
       // Add the pipeline segment layer
@@ -491,12 +489,11 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
       const dataGeoJson: any = {}; // This will hold the GeoJSON
 
+      dataGeoJson.facilities = data[0];
+
       // Convert topojson to geojson
-      dataGeoJson.corridor = topojson.feature(data[0], data[0].objects['corridor-29mar2019']);
-      dataGeoJson.facilities = data[1];
-      // dataGeoJson.sections = topojson.feature(data[2], data[2].objects['semicenterline-sections-09apr2019']);
-      dataGeoJson.facility = topojson.feature(data[3], data[3].objects['facility-29apr2019']);
-      dataGeoJson.pipeline = topojson.feature(data[4], data[4].objects['pipline-29apr2019']);
+      dataGeoJson.facility = topojson.feature(data[1], data[1].objects['facility-29apr2019']);
+      dataGeoJson.pipeline = topojson.feature(data[2], data[2].objects['pipeline-segments']);
 
       displayData(dataGeoJson);
     };
