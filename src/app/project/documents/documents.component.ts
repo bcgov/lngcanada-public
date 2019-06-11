@@ -129,14 +129,27 @@ export class DocumentsComponent implements OnInit {
 
       allDocumentKeys.forEach(key => {
         const doc: Document = new Document(documentsJSON[key]);
-
-        if (this.isFiltered(doc)) {
+        if (this.isFiltered(doc) && this.hasUrl(doc)) {
           this.documents.push(doc);
         }
       });
 
       this.updateDocumentCountMessage();
     });
+  }
+
+  /**
+   * Checks to see if there is some form of a link in the url parameter.
+   * @param document {Document} The document object
+   * @returns {boolean}
+   * @memberof DocumentsComponent
+   */
+  public hasUrl(document: Document): boolean {
+    if (document.url && document.url.match(/http/)) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   /**
