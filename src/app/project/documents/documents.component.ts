@@ -145,7 +145,7 @@ export class DocumentsComponent implements OnInit {
    * @memberof DocumentsComponent
    */
   public hasUrl(document: Document): boolean {
-    if (document.url && document.url.match(/http/)) {
+    if (document.url && typeof document.url === 'string' && document.url.match(/http/)) {
       return true;
     } else {
       return false;
