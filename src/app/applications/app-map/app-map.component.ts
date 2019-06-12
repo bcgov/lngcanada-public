@@ -244,7 +244,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
         onEachFeature: (_, layer) => {
           layer.on('click', () => { // Open project popup
             layers.facilities.eachLayer(feature => {
-              if (feature.feature.properties.FID === 6) {
+              if (feature.feature.properties.LABEL === 'Wilde Lake M/S') {
                 feature.openPopup();
               }
             });
@@ -373,7 +373,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
               });
               break;
             }
-            case 'Wild Lake M/S': {
+            case 'Wilde Lake M/S': {
               layer.setStyle({
                 radius: 8,
                 weight: 3
@@ -396,11 +396,11 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
           layer.on('click', (e) => { // Open project popup
             if (
-              e.target.feature.properties.FID === 6 ||
-              e.target.feature.properties.FID === 0
+              e.target.feature.properties.LABEL === 'Kitimat M/S' ||
+              e.target.feature.properties.LABEL === 'Wilde Lake M/S'
               ) { return; }
             layers.facilities.eachLayer(feature => {
-              if (feature.feature.properties.FID === 6) {
+              if (feature.feature.properties.LABEL === 'Wilde Lake M/S') {
                 feature.openPopup();
               }
             });
@@ -570,7 +570,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
   public ngOnLegendLngClick() {
     layers.facilities.eachLayer((feature) => {
-      if (feature.feature.properties.name === 'Kitimat M/S') {
+      if (feature.feature.properties.LABEL === 'Kitimat M/S') {
         feature.openPopup();
       }
     });
@@ -578,7 +578,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
   public ngOnLegendGasClick() {
     layers.facilities.eachLayer((feature) => {
-      if (feature.feature.properties.name === 'Wild Lake M/S') {
+      if (feature.feature.properties.LABEL === 'Wilde Lake M/S') {
         feature.openPopup();
       }
     });
@@ -588,7 +588,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     // Highlight the facility ... that last dot
     $('#lng-button').css('background', '#c4f9ff');
     layers.facilities.eachLayer((feature) => {
-      if (feature.feature.properties.name === 'Kitimat M/S') {
+      if (feature.feature.properties.LABEL === 'Kitimat M/S') {
         feature.setStyle({color: '#00f6ff'});
       }
     });
@@ -596,7 +596,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   public ngOnLegendLngLeave() {
     $('#lng-button').css('background', '#ffffff');
     layers.facilities.eachLayer((feature) => {
-      if (feature.feature.properties.name === 'Kitimat M/S') {
+      if (feature.feature.properties.LABEL === 'Kitimat M/S') {
         feature.setStyle({color: '#6092ff'});
       }
     });
@@ -605,7 +605,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   public ngOnLegendGasEnter() {
     $('#gas-button').css('background', '#c4f9ff');
     layers.facilities.eachLayer((feature) => {
-      if (feature.feature.properties.name !== 'Kitimat M/S') {
+      if (feature.feature.properties.LABEL !== 'Kitimat M/S') {
         feature.setStyle({color: '#00f6ff'});
       }
     });
@@ -617,7 +617,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
   public ngOnLegendGasLeave() {
     $('#gas-button').css('background', '#ffffff');
     layers.facilities.eachLayer((feature) => {
-      if (feature.feature.properties.name !== 'Kitimat M/S') {
+      if (feature.feature.properties.LABEL !== 'Kitimat M/S') {
         feature.setStyle({color: '#6092ff'});
       }
     });
