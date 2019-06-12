@@ -227,13 +227,14 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
     });
 
     const dataUrls = [
-      '/assets/data/facilities-07may2019.json',
+      '/assets/data/facilities-12jun2019.json',
       '/assets/data/facility-29apr2019.json',
-      '/assets/data/pipeline-segments-10jun2019.json'
+      '/assets/data/pipeline-segments-12jun2019.json'
     ];
 
     const displayData = data => {
       const tooltipOffset = L.point(0, 25);
+      const tooltipOffset2 = L.point(0, -5);
       layers.facility = L.geoJSON(data.facility, {
         style: {color: '#6092ff', weight: 2}
       }).addTo(this.map);
@@ -363,7 +364,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
             autoPanPaddingTopLeft: L.point(40, 220),
             autoPanPaddingBottomRight: L.point(40, 20)
           };
-          switch (layer.feature.properties.name) {
+          switch (layer.feature.properties.LABEL) {
             case 'Vanderhoof Meter Station': {
               layer.setStyle({
                 radius: 0,
@@ -407,7 +408,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
           layer.on('mouseover', e => {
             e.target.setStyle({ color: '#00f6ff' }); // Highlight geo feature
-            if (feature.properties.name === 'Kitimat M/S') { // Highlight legend entry
+            if (feature.properties.LABEL === 'Kitimat M/S') { // Highlight legend entry
               $('#lng-button').css('background', '#c4f9ff');
             } else {
               $('#gas-button').css('background', '#c4f9ff');
@@ -416,7 +417,7 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
 
           layer.on('mouseout', e => {
             e.target.setStyle({ color: '#6092ff' }); // Unhighlight geo feature
-            if (feature.properties.name === 'Kitimat M/S') { // Unhighlight legend entry
+            if (feature.properties.LABEL === 'Kitimat M/S') { // Unhighlight legend entry
               $('#lng-button').css('background', '#ffffff');
             } else {
               $('#gas-button').css('background', '#ffffff');
@@ -426,9 +427,9 @@ export class AppMapComponent implements AfterViewInit, OnChanges, OnDestroy {
       })
         .bindTooltip(
           layer => {
-            return layer.feature.properties.name;
+            return layer.feature.properties.LABEL;
           },
-          { direction: 'top', offset: tooltipOffset }
+          { direction: 'top', offset: tooltipOffset2 }
         )
         .addTo(this.map);
     };
