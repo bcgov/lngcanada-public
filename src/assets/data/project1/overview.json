@@ -21,6 +21,13 @@
   },
   "activities": [
     {
+      "type": "DOCUMENT_ADDED",
+      "title": "Management Plan Filed",
+      "description": "LNG Canada's Community-Level Infrastructure and Services Management Plan submitted.",
+      "date": "10-04-2019",
+      "url": "/project/1/plans"
+    },
+    {
       "type": "IMPORTANT_DATE",
       "title": "Regulatory Interface Launched",
       "description": "Welcome to British Columbia’s website providing details about the environmental assessment process, permitting, regulatory oversight and compliance procedures as it relates to LNG Canada and the Coastal GasLink pipeline.",
