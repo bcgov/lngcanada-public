@@ -162,6 +162,17 @@
         "complianceDocumentType": "Inspection",
         "segment": "",
         "author": "Environmental Assessment Office"
+      },
+      {
+        "url": "https://www.projects.eao.gov.bc.ca/api/document/5cf843b0e15200001a782e70/fetch/Fee%20Order%20-%202018-12-04%20Inspection",
+        "description": "Enforcement Fees – Inspections under Section 7 of the Fee Regulation",
+        "name": "Fee Order - 2018-12-04 Inspection",
+        "date": "23-05-2019",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "segment": "",
+        "author": "Environmental Assessment Office"
       }
     ]
   }

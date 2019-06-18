@@ -338,16 +338,16 @@
         "url": "https://projects.eao.gov.bc.ca/api/document/5b2d3ce7d46d3f00242684a4/fetch"
       },
       {
-        "agency": "BC Oil and Gas Commission",
-        "authorization id": "# 100083612",
-        "authorization url": "https://www.bcogc.ca/node/13812/download",
+        "agency": "Environmental Assessment Office",
+        "authorization id": "",
+        "authorization url": "",
         "condition number": null,
-        "name": "9709124 Construction Plan",
-        "description": "PROPOSED FACILITY SITE WITHIN UNITS 5, 14, 15, 16, 24, 25, 26, 34, 35, 36 & 37 WITHIN BLOCK B, 103-I-2 AND UNIT 95 WITHIN BLOCK J, 103-H-15, DL 94, DL 6001, DL 6002, BLOCK 1506 DL 73, DL 186, DL 187, LOT 1 DL 187, DL 6004, W 1/2 DL 6003, PCL A DL 6003, LOT 2 DL 187, DL 96, DL 93, DL 5469, & LOT 1 DLS 981, 5469 & 7940 , RANGE 5 COAST DISTRICT",
-        "type": "Construction",
+        "name": "Community-Level Infrastructure and Services Management Plan Rev. 3",
+        "description": "",
+        "type": "Management",
         "phase": "Construction",
-        "date": "15-05-2015",
-        "url": "https://www.bcogc.ca/node/13814/download"
+        "date": "10-04-2019",
+        "url": "https://www.projects.eao.gov.bc.ca/api/document/5caf7f43f4903600245846ba/fetch/LNG%20Canada%20Community%20Level%20Infrastructure%20and%20Services%20Management%20Plan-Revised%20April%202019.pdf"
       }
     ]
   }
