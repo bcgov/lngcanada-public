@@ -1,6 +1,13 @@
 {
   "activities": [
     {
+      "type": "ENFORCEMENT_ACTION",
+      "title": "Enforcement Order Issued",
+      "description": "Enforcement order requiring Coastal GasLink to manage all wildlife attractants.",
+      "date": "17-06-2019",
+      "url": "/project/2/compliance"
+    },
+    {
       "type": "DOCUMENT_ADDED",
       "title": "Management Plan Filed",
       "description": "LNG Canada's Community-Level Infrastructure and Services Management Plan submitted.",

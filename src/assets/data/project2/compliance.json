@@ -87,6 +87,22 @@
     ],
     "docs": [
       {
+        "url": "https://www.projects.eao.gov.bc.ca/api/document/5d0c0dfbd1faf2001bb1554f/fetch/Section%2034%20Order%20-%202019-06-17%20-%20Attractants",
+        "description": "Order issued under Section 34(1) to secure, dispose of, remove, or otherwise manage all wildlife attractants in a manner that prevents the attraction of wildlife and/or access to attractants by wildlife, to the satisfaction of EAO Compliance and Enforcement.",
+        "name": "Section 34 Order - Wildlife",
+        "date": "17-06-2019",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Enforcement Action",
+        "complianceDocumentSubtype": "",
+        "segment": "Unknown",
+        "status": "Active ",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": "Environmental Assessment Office"
+      },
+      {
         "url": "https://projects.eao.gov.bc.ca/api/document/5cc0901d94220700244382f7/fetch/CGL-_Annual_Compliance_Report_-_2019-01-31",
         "description": "Compliance Self-Report for the first year in construction phase for the Coastal GasLink Pipeline Project in accordance with the Environmental Assessment Certificate #E14-03 Condition 1 - Compliance Report.",
         "name": "Annual Compliance Self-Report",

@@ -19,6 +19,13 @@
   },
   "activities": [
     {
+      "type": "ENFORCEMENT_ACTION",
+      "title": "Enforcement Order Issued",
+      "description": "Enforcement order requiring Coastal GasLink to manage all wildlife attractants.",
+      "date": "17-06-2019",
+      "url": "/project/2/compliance"
+    },
+    {
       "type": "IMPORTANT_DATE",
       "title": "Regulatory Interface Launched",
       "description": "Welcome to British Columbia’s website providing details about the environmental assessment process, permitting, regulatory oversight and compliance procedures as it relates to LNG Canada and the Coastal GasLink pipeline.",
