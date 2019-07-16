@@ -1,6 +1,20 @@
 {
   "activities": [
     {
+      "type": "INSPECTION_COMPLETE",
+      "title": "Inspection Completed",
+      "description": "The BC Environmental Assessment Office’s inspection record for a site visit (LNG Canada) on May 29, 2019.",
+      "date": "03-07-2019",
+      "url": "/project/1/compliance"
+    },
+    {
+      "type": "INSPECTION_COMPLETE",
+      "title": "Inspection Completed",
+      "description": "The BC Environmental Assessment Office’s inspection record for a site visit (Coastal GasLink) on May 29 and May 30, 2019.",
+      "date": "03-07-2019",
+      "url": "/project/2/compliance"
+    },
+    {
       "type": "ENFORCEMENT_ACTION",
       "title": "Enforcement Order Issued",
       "description": "Enforcement order requiring Coastal GasLink to manage all wildlife attractants.",

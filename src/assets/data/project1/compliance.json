@@ -87,6 +87,17 @@
     ],
     "docs": [
       {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5d24aa9acd7bec0021b0cf9d/fetch/LNGC%20-%202019-05-28%20Inspection%20Record%20IR2019-004.pdf",
+        "description": "On May 28th, 2019 Environmental Assessment Office Compliance & Enforcement Officer Shayla Frechette (EAO C&E) inspected against the requirements of EAC E15- 01 (Appendix 1, 2, 3, 4 and 5).",
+        "name": "Inspection Record - 2019-05-28",
+        "date": "03-07-2019",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "segment": "",
+        "author": "Environmental Assessment Office"
+      },
+      {
         "url": "https://projects.eao.gov.bc.ca/api/document/58869078e036fb0105768b62/fetch",
         "description": "LNG Canada Annual Status of Condition Compliance Report. Annual Compliance Self-Report submitted in accordance with Condition #1b of the Environmental Assessment Certificate #E15-01 ",
         "name": "2015 - Compliance Self-Report",
