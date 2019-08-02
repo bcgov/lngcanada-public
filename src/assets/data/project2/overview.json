@@ -20,6 +20,13 @@
   "activities": [
     {
       "type": "INSPECTION_COMPLETE",
+      "title": "Investigation Started",
+      "description": "The BC Oil and Gas Commission has started an investigation following Coastal GasLink’s self-disclosed cutting in the pipeline right-of-way, and a section of road, without the necessary archaeological assessment",
+      "date": "01-08-2019",
+      "url": "https://www.bcogc.ca/whats-new/media/commission-addresses-questions-related-coastal-gaslink-cutting-right-way"
+    },
+    {
+      "type": "INSPECTION_COMPLETE",
       "title": "Inspection Completed",
       "description": "The BC Environmental Assessment Office’s inspection record for a site visit (Coastal GasLink) on June 18, 2019.",
       "date": "09-07-2019",
