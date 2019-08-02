@@ -87,6 +87,22 @@
     ],
     "docs": [
       {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5d4362d94cb2c7001b137bbe/fetch/CGL4703-CGP-SE-RPT-0001%20SEEMP%20STATUS%20REPORT%201.pdf",
+        "description": "The Socio-economic Effects Management Plan (SEEMP) is a consolidated, standalone management plan that identifies Coastal GasLink’s approach to implementing mitigation during construction to avoid or reduce potential adverse socio-economic effects on regional and community infrastructure and services.",
+        "name": "CGL SEEMP Status Report #1 - Dec 2018 to June 2019",
+        "date": "15-07-2019",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "complianceDocumentSubtype": "",
+        "segment": "Unknown",
+        "status": "Active ",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": "Coastal GasLink"
+      },
+      {
         "url": "https://www.projects.eao.gov.bc.ca/api/document/5d2f438c0b923400217a55c3/fetch/CGL%20-%202019-06-18%20Inspection%20Record%20IR2019-014.pdf",
         "description": "On June 18th, 2019 Environmental Assessment Office Compliance & Enforcement Officers Shayla Frechette and Justin Carlson (collectively EAO C&E) inspected against the requirements of Environmental Assessment Certificate# (EAC) E14-04 (Appendices 1, 2, 3 and 4).",
         "name": "Inspection Record - 2019-06-18",
