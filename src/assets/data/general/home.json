@@ -1,6 +1,13 @@
 {
   "activities": [
     {
+      "type": "ENFORCEMENT_ACTION",
+      "title": "Order Issued",
+      "description": "Order issued to Coastal GasLink as a result of cutting activity that occurred without a completed archaeological impact assessment.",
+      "date": "13-09-19",
+      "url": "/project/2/compliance"
+    },
+    {
       "type": "DOCUMENT_ADDED",
       "title": "Amendment Application",
       "description": "The BC Environmental Assessment Office has accepted LNG Canada’s application requesting a simple amendment to its EA Certificate #E15-01. ",

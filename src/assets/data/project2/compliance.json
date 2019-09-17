@@ -87,6 +87,22 @@
     ],
     "docs": [
       {
+        "url": "https://www.bcogc.ca/node/15618/download",
+        "description": "The BC Oil and Gas Commission issued an order  as a result of cutting activity that occurred without a completed archaeological impact assessment. The order identifies four actions required to be taken by Coastal GasLink.",
+        "name": "General Order 2019-09",
+        "date": "13-09-19",
+        "agency": "BC Oil and Gas commission",
+        "category": "Compliance",
+        "complianceDocumentType": "Enforcement Action",
+        "complianceDocumentSubtype": "",
+        "segment": "Unknown",
+        "status": "Active ",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": "BC Oil and Gas commission"
+      },
+      {
         "url": "https://projects.eao.gov.bc.ca/api/document/5d4362d94cb2c7001b137bbe/fetch/CGL4703-CGP-SE-RPT-0001%20SEEMP%20STATUS%20REPORT%201.pdf",
         "description": "The Socio-economic Effects Management Plan (SEEMP) is a consolidated, standalone management plan that identifies Coastal GasLink’s approach to implementing mitigation during construction to avoid or reduce potential adverse socio-economic effects on regional and community infrastructure and services.",
         "name": "CGL SEEMP Status Report #1 - Dec 2018 to June 2019",

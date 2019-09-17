@@ -19,6 +19,13 @@
   },
   "activities": [
     {
+      "type": "ENFORCEMENT_ACTION",
+      "title": "Order Issued",
+      "description": "Order issued to Coastal GasLink as a result of cutting activity that occurred without a completed archaeological impact assessment.",
+      "date": "13-09-19",
+      "url": "/project/2/compliance"
+    },
+    {
       "type": "INSPECTION_COMPLETE",
       "title": "Investigation Started",
       "description": "The BC Oil and Gas Commission has started an investigation following Coastal GasLink’s self-disclosed cutting in the pipeline right-of-way, and a section of road, without the necessary archaeological assessment",
