@@ -1,6 +1,13 @@
 {
   "activities": [
     {
+      "type": "INSPECTION_COMPLETE",
+      "title": "Inspection Completed",
+      "description": "The BC Environmental Assessment Office’s inspection for a site visit (LNG Canada) on August 13, 2019.",
+      "date": "08-10-2019",
+      "url": "/project/1/compliance"
+    },
+    {
       "type": "DOCUMENT_ADDED",
       "title": "Management Plan Filed",
       "description": "LNG Canada’s updated Marine Monitoring Plan issued.",

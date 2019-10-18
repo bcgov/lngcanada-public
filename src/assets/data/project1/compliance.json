@@ -87,6 +87,17 @@
     ],
     "docs": [
       {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5da736149273f300258a5661/fetch/LNGC%20-%202019-08-13%20Inspection%20Record%20IR2019-029.pdf",
+        "description": "On August 13, 2019 Environmental Assessment Office Compliance & Enforcement Officers inspected against the requirements of EAC E15-01 (Appendices 1-5).",
+        "name": "Inspection Record 2019-08-13",
+        "date": "08-10-2019",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Compliance Self-Report",
+        "segment": "",
+        "author": "Environmental Assessment Office"
+      },
+      {
         "url": "https://projects.eao.gov.bc.ca/api/document/5d42192b4cb2c7001b13591e/fetch/EAO%20Management%20Plan%20Update%20Letter%20-%20LNGCJFJV%2019%2007%2031.pdf",
         "description": "Updated Schedule (table) for LNG Canada's Management Plans",
         "name": "Update Schedule for Management Plans - 2019-07-31",
