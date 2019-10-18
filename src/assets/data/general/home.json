@@ -2,6 +2,13 @@
   "activities": [
     {
       "type": "INSPECTION_COMPLETE",
+      "title": "Extension Granted",
+      "description": "Coastal GasLink received an extension to the deadline in their Environment Assessment Certificate to substantially start the CGL Project. The extension is granted under Section 18(4)(a) of the Act.",
+      "date": "18-10-19",
+      "url": "/project/2/authorizations"
+    },
+    {
+      "type": "INSPECTION_COMPLETE",
       "title": "Inspection Complete",
       "description": "The BC Environmental Assessment Office’s inspection for a site visit (Coastal GasLink) on August 19, 2019.",
       "date": "08-10-19",
