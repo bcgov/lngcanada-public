@@ -87,6 +87,38 @@
     ],
     "docs": [
       {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5da735869273f300258a5621/fetch/CGL%20-%202019-08-19%20Inspection%20Record%20IR2019-032_FINAL.pdf",
+        "description": "On August 19, 2019, an Environmental Assessment Office Compliance and Enforcement Officer inspected against the requirements of Environmental Assessment Certificate # (EAC) E14-03.",
+        "name": "Inspection Record - 2019-08-19",
+        "date": "08-10-19",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "complianceDocumentSubtype": "",
+        "segment": "Unknown",
+        "status": "Active ",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": "Environmental Assessment Office"
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/document/5d9e0b529273f3002589db00/fetch/CGL%20-%202019-07-17%20Inspection%20Record%20IR2019-020.pdf",
+        "description": "On July 17, 2019 Environmental Assessment Office Senior Compliance & Enforcement Officers inspected against the requirements of Environmental Assessment Certificate# (EAC) E14-03 (Appendices 1, 2, 3 and 4).",
+        "name": "Inspection Record - 2019-07-17",
+        "date": "01-10-19",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "complianceDocumentSubtype": "",
+        "segment": "Unknown",
+        "status": "Active ",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": "Environmental Assessment Office"
+      },
+      {
         "url": "https://www.bcogc.ca/node/15618/download",
         "description": "The BC Oil and Gas Commission issued an order  as a result of cutting activity that occurred without a completed archaeological impact assessment. The order identifies four actions required to be taken by Coastal GasLink.",
         "name": "General Order 2019-09",
