@@ -1,6 +1,13 @@
 {
   "activities": [
     {
+      "type": "REPORT_ADDED",
+      "title": "Certificate Amended",
+      "description": "The Environmental Assessment Certificate for the LNG Canada Export Terminal Project has been amended to change the LNG production unit referenced in the Certified Project Description to a volume measurement.",
+      "date": "21-10-2019",
+      "url": "/project/1/authorizations"
+    },
+    {
       "type": "INSPECTION_COMPLETE",
       "title": "Extension Granted",
       "description": "Coastal GasLink received an extension to the deadline in their Environment Assessment Certificate to substantially start the CGL Project. The extension is granted under Section 18(4)(a) of the Act.",
