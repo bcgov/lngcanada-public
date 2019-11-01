@@ -41,7 +41,7 @@
     "leaflet": "1.4.0",
     "leaflet.markercluster": "1.4.1",
     "linkify-it": "2.1.0",
-    "lodash": "4.17.11",
+    "lodash": "4.17.13",
     "moment": "2.24.0",
     "mygovbc-bootstrap-theme": "0.4.1",
     "ng2-bootstrap-modal": "1.0.1",
