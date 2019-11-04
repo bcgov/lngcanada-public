@@ -1,6 +1,13 @@
 {
   "activities": [
     {
+      "type": "INSPECTION_COMPLETE",
+      "title": "Inspection Completed",
+      "description": "The BC Environmental Assessment Office’s inspection for a site visit (Coastal GasLink) on August 15, 2019.",
+      "date": "24-10-19",
+      "url": "/project/2/compliance"
+    },
+    {
       "type": "REPORT_ADDED",
       "title": "Certificate Amended",
       "description": "The Environmental Assessment Certificate for the LNG Canada Export Terminal Project has been amended to change the LNG production unit referenced in the Certified Project Description to a volume measurement.",
