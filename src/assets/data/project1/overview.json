@@ -23,6 +23,13 @@
     {
       "type": "INSPECTION_COMPLETE",
       "title": "Inspection Completed",
+      "description": "The BC Environmental Assessment Office’s inspection record for a site visit (LNG Canada) on November 26 & 27, 2019",
+      "date": "30-12-2019",
+      "url": "/project/1/compliance"
+    },
+    {
+      "type": "INSPECTION_COMPLETE",
+      "title": "Inspection Completed",
       "description": "The BC Environmental Assessment Office’s inspection for a site visit (LNG Canada) on October 8, 2019.",
       "date": "15-11-2019",
       "url": "/project/1/compliance"
