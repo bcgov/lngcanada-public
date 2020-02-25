@@ -3,6 +3,13 @@
     {
       "type": "INSPECTION_COMPLETE",
       "title": "Inspection Completed",
+      "description": "The BC Environmental Assessment Office's inspection record for a site visit (Coastal GasLink) from September 24 to 26, 2019.",
+      "date": "07-02-20",
+      "url": "/project/2/compliance"
+    },
+    {
+      "type": "INSPECTION_COMPLETE",
+      "title": "Inspection Completed",
       "description": "The BC Environmental Assessment Office's inspection record for a site visit (Coastal GasLink) on December 10, 2019.",
       "date": "29-01-20",
       "url": "/project/2/compliance"
