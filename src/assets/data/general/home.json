@@ -9,17 +9,17 @@
     },
     {
       "type": "INSPECTION_COMPLETE",
-      "title": "Compliance Self-Reported",
-      "description": "LNG Canada’s self-report providing a status of compliance with the conditions outlined in the project’s environmental assessment certificate.",
-      "date": "30-01-2020",
-      "url": "/project/1/compliance"
-    },
-    {
-      "type": "INSPECTION_COMPLETE",
       "title": "Inspection Completed",
       "description": "The BC Environmental Assessment Office's inspection record for a site visit (Coastal GasLink) from September 24 to 26, 2019.",
       "date": "07-02-20",
       "url": "/project/2/compliance"
+    },
+    {
+      "type": "INSPECTION_COMPLETE",
+      "title": "Compliance Self-Reported",
+      "description": "LNG Canada’s self-report providing a status of compliance with the conditions outlined in the project’s environmental assessment certificate.",
+      "date": "30-01-2020",
+      "url": "/project/1/compliance"
     },
     {
       "type": "INSPECTION_COMPLETE",
