@@ -87,6 +87,38 @@
     ],
     "docs": [
       {
+        "url": "https://projects.eao.gov.bc.ca/api/public/document/5e715705551acb00212aa02b/download/CGL%20-%202020-01-16%20Inspection%20Record%20IR2020-003.pdf",
+        "description": "On January 15th & 16th, 2020, a Environmental Assessment Office Compliance & Enforcement Officer inspected against the requirements of Environmental Assessment Certificate #E14-03.",
+        "name": "Inspection Record - 2020-01-15",
+        "date": "10-03-20",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "complianceDocumentSubtype": "",
+        "segment": "Unknown",
+        "status": "Active ",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": "Environmental Assessment Office"
+      },
+      {
+        "url": "https://projects.eao.gov.bc.ca/api/public/document/5e6fa065551acb00212a1d80/download/Final_Coastal_GasLink_2020-01-22_Inspection_Record_IR2020-004.pdf",
+        "description": "On January 22, 2020, Environmental Assessment Officers inspected the Coastal GasLink Pipeline Project against requirements of the Environmental Assessment Certificate #E14-03.",
+        "name": "Inspection Record - 2020-01-22",
+        "date": "09-03-20",
+        "agency": "Environmental Assessment Office",
+        "category": "Compliance",
+        "complianceDocumentType": "Inspection",
+        "complianceDocumentSubtype": "",
+        "segment": "Unknown",
+        "status": "Active ",
+        "lat": "",
+        "long": "",
+        "nation": "",
+        "author": "Environmental Assessment Office"
+      },
+      {
         "url": "https://projects.eao.gov.bc.ca/api/document/5e618c9f832ab00021629641/fetch/356743_Kate%20Gunn_Final%20Sent.pdf",
         "description": "EAO response to Dark House related to Condition #1, Report #2.",
         "name": "EAO response to Dark House re Condition 1",
