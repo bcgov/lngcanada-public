@@ -37,7 +37,7 @@
     "core-js": "2.6.5",
     "hammerjs": "2.0.8",
     "intl": "1.2.5",
-    "jquery": "3.4.0",
+    "jquery": "3.5.0",
     "leaflet": "1.4.0",
     "leaflet.markercluster": "1.4.1",
     "linkify-it": "2.1.0",
