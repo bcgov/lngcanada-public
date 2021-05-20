@@ -1,4 +1,4 @@
-# bcgov/lngcanada-public
+# bcgov/lngcanada-public [![Lifecycle:Retired](https://img.shields.io/badge/Lifecycle-Retired-d45500)](<Redirect-URL>)
 
 Public front-end for the LNG Canada project.
 
