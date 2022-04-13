@@ -31,7 +31,7 @@
     "@angular/platform-browser-dynamic": "7.2.13",
     "@angular/router": "7.2.13",
     "@ng-bootstrap/ng-bootstrap": "4.1.1",
-    "async": "2.6.2",
+    "async": "3.2.2",
     "bootstrap": "4.3.1",
     "classlist.js": "1.1.20150312",
     "core-js": "2.6.5",
